@@ -2,22 +2,24 @@
 
 /* 1. Color Variables (Light Theme - Default) */
 :root {
-  --primary-color: #007bff; /* اللون الأساسي (أزرق) */
-  --secondary-color: #6c757d; /* اللون الثانوي (رمادي) */
-  --background-color: #ffffff; /* لون الخلفية (أبيض) */
-  --surface-color: #f8f9fa; /* لون الأسطح (مثل الكروت) */
-  --text-color: #212529; /* لون النص الأساسي (أسود) */
-  --text-muted-color: #6c757d; /* لون النص الثانوي (رمادي) */
-  --border-color: #dee2e6; /* لون الحدود */
+  --primary-color: #2899e5;
+  --secondary-color: #ffa500;
+  --background-color: #f7f9fc;
+  --white-color: #ffffff;
+  --black-color: #262626;
+  --surface-color: #f8f9fa;
+  --text-color: #333333;
+  --text-muted-color: #6c757d;
+  --border-color: #dee2e6;
 }
 
 /* 2. Dark Theme Color Overrides */
 [data-theme="dark"] {
   --primary-color: #0d6efd;
   --secondary-color: #6c757d;
-  --background-color: #121212; /* خلفية داكنة */
-  --surface-color: #1e1e1e; /* أسطح أغمق قليلاً */
-  --text-color: #e9ecef; /* نص فاتح */
+  --background-color: #121212;
+  --surface-color: #1e1e1e;
+  --text-color: #e9ecef;
   --text-muted-color: #adb5bd;
   --border-color: #495057;
 }
@@ -25,9 +27,19 @@
 /* 3. Applying the variables */
 body {
   font-family: "Tajawal", sans-serif;
-  background-color: var(--background-color); /* استخدام متغير لون الخلفية */
-  color: var(--text-color); /* استخدام متغير لون النص */
-  transition: background-color 0.3s, color 0.3s; /* انتقال ناعم عند التبديل */
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
 }
 
-/* Main stylesheet for the City Events Guide */
+/* Nav */
+nav {
+  background-color: var(--secondary-color);
+  color: var(--white-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* theme-toggle */
+.theme-toggle {
+  color: var(--white-color);
+}
