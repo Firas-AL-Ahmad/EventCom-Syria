@@ -1,1 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap");
+
+/* 1. Color Variables (Light Theme - Default) */
+:root {
+  --primary-color: #007bff; /* اللون الأساسي (أزرق) */
+  --secondary-color: #6c757d; /* اللون الثانوي (رمادي) */
+  --background-color: #ffffff; /* لون الخلفية (أبيض) */
+  --surface-color: #f8f9fa; /* لون الأسطح (مثل الكروت) */
+  --text-color: #212529; /* لون النص الأساسي (أسود) */
+  --text-muted-color: #6c757d; /* لون النص الثانوي (رمادي) */
+  --border-color: #dee2e6; /* لون الحدود */
+}
+
+/* 2. Dark Theme Color Overrides */
+[data-theme="dark"] {
+  --primary-color: #0d6efd;
+  --secondary-color: #6c757d;
+  --background-color: #121212; /* خلفية داكنة */
+  --surface-color: #1e1e1e; /* أسطح أغمق قليلاً */
+  --text-color: #e9ecef; /* نص فاتح */
+  --text-muted-color: #adb5bd;
+  --border-color: #495057;
+}
+
+/* 3. Applying the variables */
+body {
+  font-family: "Tajawal", sans-serif;
+  background-color: var(--background-color); /* استخدام متغير لون الخلفية */
+  color: var(--text-color); /* استخدام متغير لون النص */
+  transition: background-color 0.3s, color 0.3s; /* انتقال ناعم عند التبديل */
+}
+
 /* Main stylesheet for the City Events Guide */
