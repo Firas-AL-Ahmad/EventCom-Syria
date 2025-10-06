@@ -3,7 +3,7 @@
   background-color: var(--white-color);
   position: fixed;
   width: 100vw;
-  opacity: 80%;
+  opacity: 98%;
   backdrop-filter: blur(32px);
   z-index: 10;
   border: none;

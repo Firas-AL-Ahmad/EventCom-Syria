@@ -1,27 +1,47 @@
 // Main JavaScript for the City Events Guide
 
 document.addEventListener('DOMContentLoaded', () => {
-    const themeToggleButton = document.getElementById('theme-toggle');
+    "use strict";
+
+    const themeToggle = document.querySelector('.theme-toggle input');
     const currentTheme = localStorage.getItem('theme');
 
-    // Apply the saved theme on page load
     if (currentTheme) {
         document.documentElement.setAttribute('data-theme', currentTheme);
+
+        if (currentTheme === 'dark') {
+            themeToggle.checked = true;
+        }
     }
 
-    if (themeToggleButton) {
-        themeToggleButton.addEventListener('click', () => {
-            let theme = document.documentElement.getAttribute('data-theme');
-            
-            // Switch theme
-            if (theme === 'dark') {
-                theme = 'light';
+    themeToggle.addEventListener('change', function () {
+        if (this.checked) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            document.documentElement.setAttribute('data-theme', 'light');
+            localStorage.setItem('theme', 'light');
+        }
+    });
+
+    // Scroll to top button logic
+    const scrollToTopBtn = document.querySelector('.scroll-to-top');
+
+    if (scrollToTopBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                scrollToTopBtn.classList.add('visible');
             } else {
-                theme = 'dark';
+                scrollToTopBtn.classList.remove('visible');
             }
-            
-            document.documentElement.setAttribute('data-theme', theme);
-            localStorage.setItem('theme', theme); // Save the new theme
+        });
+
+        scrollToTopBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         });
     }
 });
