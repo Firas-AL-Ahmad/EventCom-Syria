@@ -1,0 +1,23 @@
+/* Hero Section */
+.hero.section {
+    background-color: #f0f7ff;
+    padding: 60px 0;
+}
+.hero-gallery .main-image img {
+    max-height: 400px;
+    object-fit: cover;
+    width: 100%;
+}
+.hero-gallery .thumbnail-gallery .img-thumbnail {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid transparent;
+    padding: 0.2rem;
+    transition: border-color 0.3s;
+}
+.hero-gallery .thumbnail-gallery .img-thumbnail:hover,
+.hero-gallery .thumbnail-gallery .img-thumbnail.active {
+    border-color: var(--primary-500);
+}

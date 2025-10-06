@@ -1,0 +1,113 @@
+@import url(./styles.css);
+/* Footer Styles */
+.footer {
+  background-color: #fff;
+  padding-top: 5rem;
+  padding-bottom: 2rem;
+  color: #6c757d;
+  font-family: "Tajawal", sans-serif;
+}
+
+.footer .footer-logo img {
+  width: 248px;
+  min-width: 132px;
+}
+
+.footer .footer-logo p {
+  font-size: 0.9rem;
+}
+
+.footer .footer-heading {
+  font-weight: 700;
+  color: #343a40;
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+}
+
+.footer .footer-links {
+  list-style: none;
+  padding: 0;
+}
+
+.footer .footer-links li {
+  margin-bottom: 0.8rem;
+}
+
+.footer .footer-links a {
+  text-decoration: none;
+  color: #6c757d;
+  transition: color 0.3s;
+}
+
+.footer .footer-links a:hover {
+  color: #0d6efd;
+}
+
+.footer .contact-info .info-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.8rem;
+}
+
+.footer .contact-info .info-item i {
+  font-size: 1.2rem;
+  margin-left: 10px;
+  color: #6c757d;
+}
+
+.footer .scroll-to-top {
+  width: 50px;
+  height: 50px;
+  background-color: #fd7e14;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1.5rem;
+  transition: background-color 0.3s;
+}
+
+.footer .scroll-to-top:hover {
+  background-color: #e86a00;
+}
+
+.footer .footer-divider {
+  border-top: 1px solid #fd7e14;
+  margin: 2rem 0;
+}
+
+.footer .social-links a {
+  color: #343a40;
+  font-size: 1.5rem;
+  margin: 0 10px;
+  transition: color 0.3s;
+}
+
+.footer .social-links a:hover {
+  color: #0d6efd;
+}
+
+.footer .copyright-text {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer .copyright-text strong {
+  font-weight: 700;
+  color: #343a40;
+}
+
+.footer .disclaimer-text {
+  font-size: 0.8rem;
+}
+
+.footer-col {
+  flex-direction: column;
+
+  justify-content: flex-end;
+}
+.footer-link {
+  color: var();
+}
