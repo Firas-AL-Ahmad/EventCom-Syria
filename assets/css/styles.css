@@ -86,8 +86,7 @@ body {
     color: var(--gray-700);
     font-weight: 500;
 }
-
-
+ 
 .navbar-nav .nav-link:hover {
     color: var(--secondary-500);
 }
