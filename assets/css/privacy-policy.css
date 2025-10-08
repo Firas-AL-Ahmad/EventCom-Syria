@@ -1,0 +1,37 @@
+.privacy-policy-content {
+    padding: 8% 8%;
+}
+
+.privacy-policy-card {
+    background-color: var(--white-color);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.privacy-policy-card h1 {
+    font-family: 'Cairo', sans-serif;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 0.5rem;
+}
+
+.privacy-policy-card .effective-date {
+    font-family: 'Inter', sans-serif;
+    color: var(--gray-500);
+    margin-bottom: 2rem;
+}
+
+.privacy-policy-card h2 {
+    font-family: 'Tajawal', sans-serif;
+    font-weight: 500;
+    color: var(--gray-700);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.privacy-policy-card p {
+    font-family: 'Tajawal', sans-serif;
+    color: var(--gray-500);
+    line-height: 1.8;
+}

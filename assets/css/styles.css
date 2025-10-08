@@ -2,9 +2,9 @@
 
 /* 1. Color Variables (Light Theme - Default) */
 :root {
-  --background-color: #F1F8FE
+  --background-color: #f1f8fe;
   --white-color: #ffffff;
-  --black-color:#262626;
+  --black-color: #262626;
 
   /* Primary Colors */
   --primary-900: #0b2232;
@@ -30,14 +30,13 @@
   --gray-200: #d1d1d1;
   --gray-100: #e7e7e7;
   --gray-50: #f6f6f6;
-
 }
 
 /* 2. Dark Theme Color Overrides */
 [data-theme="dark"] {
-  --background-color: #F1F8FE
+  --background-color: #f1f8fe;
   --white-color: #ffffff;
-  --black-color:#262626;
+  --black-color: #262626;
 
   /* Primary Colors */
   --primary-900: #0b2232;
@@ -67,92 +66,87 @@
 /* 3. Applying the variables */
 body {
   font-family: "Tajawal", sans-serif;
-  background-color: #F1F8FE !important;
+  background-color: #f1f8fe !important;
   color: var(--gray-700);
   transition: background-color 0.3s, color 0.3s;
 }
 
 /* Nav */
 .navbar {
-    background-color: rgba(255, 255, 255, 0.50);
-    backdrop-filter: 20%;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: 20%;
 }
 
 .navbar-brand img {
-    height: 40px;
+  height: 40px;
 }
 
 .navbar-nav .nav-link {
-    color: var(--gray-700);
-    font-weight: 500;
+  color: var(--gray-700);
+  font-weight: 500;
 }
- 
+
 .navbar-nav .nav-link:hover {
-    color: var(--secondary-500);
+  color: var(--secondary-500);
 }
 
-.navbar-nav .nav-link.active{
-    color: var(--secondary-500);
-    font-weight: 700;
+.navbar-nav .nav-link.active {
+  color: var(--secondary-500);
+  font-weight: 700;
 }
-
 
 .navbar .btn-primary-contact {
-    border: 1px solid var(--primary-500);
-    color: var(--primary-500);
-    background-color: transparent;
-    border-radius: 0.5rem;
-    padding: 0.5rem 1.5rem;
+  border: 1px solid var(--primary-500);
+  color: var(--primary-500);
+  background-color: transparent;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1.5rem;
 }
 
 .navbar .btn-primary-contact:hover {
-    background-color: var(--secondary-500);
-    border: 1px solid var(--secondary-500);
-    color: white
-
+  background-color: var(--secondary-500);
+  border: 1px solid var(--secondary-500);
+  color: white;
 }
 
 .navbar .dropdown-toggle {
-    background-color: var(--white-color) !;
-    border: 1px solid var(--border-color);
-    color: var(--text-color);
-    display: flex;
-    align-items: center;
+  background-color: var(--white-color) !;
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
 }
 
 [data-theme="dark"] .navbar .dropdown-toggle {
-    background-color: var(--surface-color);
-    border: 1px solid var(--border-color);
-    color: var(--text-color);
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  color: var(--text-color);
 }
 
 .lang-flag {
-    width: 20px;
-    margin-left: 8px;
+  width: 20px;
+  margin-left: 8px;
 }
-
 
 /* lang-dropdown */
-.lang-dropdown{
-    background-color: var(--primary-50);
+.lang-dropdown {
+  background-color: var(--primary-50);
 }
 
-.lang-dropdown:hover{
-    background-color: var(--primary-100);
+.lang-dropdown:hover {
+  background-color: var(--primary-100);
 }
 
-.lang-itme{
-
-    background-color: var(--primary-50);
+.lang-itme {
+  background-color: var(--primary-50);
 }
 
-.lang-itme:hover{
-
-    background-color: var(--primary-100);
-    color:var(--gray-700);
+.lang-itme:hover {
+  background-color: var(--primary-100);
+  color: var(--gray-700);
 }
 
- /* switch settings 👇 */
+/* switch settings 👇 */
 
 .ui-switch {
   /* switch */
@@ -192,9 +186,13 @@ body {
   background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjAiIHdpZHRoPSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj4KICAgIDxwYXRoIGZpbGw9IiNmZmYiCiAgICAgICAgZD0iTTkuMzA1IDEuNjY3VjMuNzVoMS4zODlWMS42NjdoLTEuMzl6bS00LjcwNyAxLjk1bC0uOTgyLjk4Mkw1LjA5IDYuMDcybC45ODItLjk4Mi0xLjQ3My0xLjQ3M3ptMTAuODAyIDBMMTMuOTI3IDUuMDlsLjk4Mi45ODIgMS40NzMtMS40NzMtLjk4Mi0uOTgyek0xMCA1LjEzOWE0Ljg3MiA0Ljg3MiAwIDAwLTQuODYyIDQuODZBNC44NzIgNC44NzIgMCAwMDEwIDE0Ljg2MiA0Ljg3MiA0Ljg3MiAwIDAwMTQuODYgMTAgNC44NzIgNC44NzIgMCAwMDEwIDUuMTM5em0wIDEuMzg5QTMuNDYyIDMuNDYyIDAgMDExMy40NzEgMTBhMy40NjIgMy40NjIgMCAwMS0zLjQ3MyAzLjQ3MkEzLjQ2MiAzLjQ2MiAwIDAxNi41MjcgMTAgMy40NjIgMy40NjIgMCAwMTEwIDYuNTI4ek0xLjY2NSA5LjMwNXYxLjM5aDIuMDgzdi0xLjM5SDEuNjY2em0xNC41ODMgMHYxLjM5aDIuMDg0di0xLjM5aC0yLjA4NHpNNS4wOSAxMy45MjhMMy42MTYgMTUuNGwuOTgyLjk4MiAxLjQ3My0xLjQ3My0uOTgyLS45ODJ6bTkuODIgMGwtLjk4Mi45ODIgMS40NzMgMS40NzMuOTgyLS45ODItMS40NzMtMS40NzN6TTkuMzA1IDE2LjI1djIuMDgzaDEuMzg5VjE2LjI1aC0xLjM5eiIgLz4KPC9zdmc+");
   background-repeat: no-repeat;
   background-position: center center;
-  -webkit-transition: left 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-  -o-transition: left 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-  transition: left 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  -webkit-transition: left 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  -o-transition: left 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: left 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+    -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -204,8 +202,8 @@ body {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12);
-  ;
+  box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 }
 
 .slider .circle::before {
@@ -223,13 +221,13 @@ body {
 
 /* actions */
 
-.ui-switch input:checked+.slider .circle {
+.ui-switch input:checked + .slider .circle {
   left: calc(100% - var(--circle-diameter));
   background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjAiIHdpZHRoPSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj4KICAgIDxwYXRoIGZpbGw9IiNmZmYiCiAgICAgICAgZD0iTTQuMiAyLjVsLS43IDEuOC0xLjguNyAxLjguNy43IDEuOC42LTEuOEw2LjcgNWwtMS45LS43LS42LTEuOHptMTUgOC4zYTYuNyA2LjcgMCAxMS02LjYtNi42IDUuOCA1LjggMCAwMDYuNiA2LjZ6IiAvPgo8L3N2Zz4=");
   background-color: rgb(0, 56, 146);
 }
 
-.ui-switch input:active+.slider .circle::before {
+.ui-switch input:active + .slider .circle::before {
   -webkit-transition: 0s;
   -o-transition: 0s;
   transition: 0s;
@@ -238,41 +236,40 @@ body {
   height: 0;
 }
 
-
 /* Hero */
 .hero-section {
-    padding: 96px 0;
+  padding: 96px 0;
 }
 .hero-gallery .main-image img {
-    object-fit: cover;
-    width: 50%;
+  object-fit: cover;
+  width: 50%;
 }
 .hero-gallery .thumbnail-gallery .img-thumbnail {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    cursor: pointer;
-    border: 2px solid transparent;
-    padding: 0.2rem;
-    transition: border-color 0.3s;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid transparent;
+  padding: 0.2rem;
+  transition: border-color 0.3s;
 }
 .hero-gallery .thumbnail-gallery .img-thumbnail:hover,
 .hero-gallery .thumbnail-gallery .img-thumbnail.active {
-    border-color: var(--primary-500);
+  border-color: var(--primary-500);
 }
 
-.carousel-control{
-width: 48px;
-border: none;
-background: none;
+.carousel-control {
+  width: 48px;
+  border: none;
+  background: none;
 }
 
-.carousel-control-div{
-    position: absolute;
+.carousel-control-div {
+  position: absolute;
 }
 
-.carousel-item{
-padding: 16px;
+.carousel-item {
+  padding: 16px;
 }
 
 /* Scroll to Top Button */
@@ -306,13 +303,11 @@ padding: 16px;
   width: 24px;
 }
 
-
-.hear-right-column{
-
-    width: 50%;
+.hear-right-column {
+  width: 50%;
 }
 
-.scroll-top{
+.scroll-top {
   background-color: var(--secondary-500);
   display: flex;
   width: 56px;
@@ -325,8 +320,8 @@ padding: 16px;
   bottom: 2%;
   left: 4%;
 }
-.scroll-top:hover{
- background-color: var(--secondary-700);
+.scroll-top:hover {
+  background-color: var(--secondary-700);
   display: flex;
   width: 56px;
   height: 56px;
@@ -337,4 +332,10 @@ padding: 16px;
   position: fixed;
   bottom: 2%;
   left: 4%;
+}
+
+/* Logo-Section */
+.Logo-Section {
+  width: 100vw;
+  background-color: var(--primary-100);
 }
