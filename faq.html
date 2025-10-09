@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/navbar.css">
     <link rel="stylesheet" href="assets/css/footer.css">
+    <link rel="stylesheet" href="assets/css/faq.css">
 </head>
 
 <body>
@@ -70,9 +71,211 @@
         </div>
     </nav>
 
-    <main class="container py-5">
-        <h1 class="mb-4">الأسئلة الشائعة</h1>
-        <p>هنا قسم الأسئلة الشائعة. سيتم إضافة المحتوى قريباً.</p>
+    <main class="container py-5 faq-section">
+        <section class="faq-content row justify-content-center">
+            <div class="col-lg-8">
+                <div class="text-center mb-5">
+                    <h1 class="fw-bold">الأسئلة الشائعة</h1>
+                    <p class="lead text-muted">كل ما تحتاج معرفته عن منصتنا والفعاليات.</p>
+                </div>
+
+                <div class="accordion" id="faqAccordion">
+                    <!-- Question 1 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                <span class="faq-question-text">ما هي منصة EventCom Syria؟</span>
+                                <span class="faq-question-number">01</span>
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                EventCom Syria هي منصة متخصصة في جمع وعرض الفعاليات والأنشطة المختلفة التي تقام في جميع
+                                أنحاء سوريا. هدفنا هو تسهيل وصول المستخدمين إلى معلومات دقيقة ومحدثة عن الفعاليات
+                                القادمة، من معارض ومؤتمرات إلى ورش عمل وندوات.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 2 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                <span class="faq-question-text">كيف يمكنني العثور على فعالية معينة؟</span>
+                                <span class="faq-question-number">02</span>
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                يمكنك استخدام شريط البحث في الصفحة الرئيسية للعثور على فعاليات بالاسم، أو تصفح الفعاليات
+                                حسب المحافظة أو التصنيف من خلال القوائم المخصصة لذلك. نوفر أيضًا تقويمًا للفعاليات
+                                لمساعدتك على التخطيط المسبق.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 3 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                <span class="faq-question-text">هل التسجيل في الفعاليات يتم عبر المنصة؟</span>
+                                <span class="faq-question-number">03</span>
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                منصتنا هي دليل للفعاليات. نحن نوفر جميع التفاصيل اللازمة وروابط التسجيل أو التواصل مع
+                                الجهات المنظمة، لكن عملية التسجيل الفعلية تتم مباشرة مع منظمي الفعالية لضمان أفضل تجربة
+                                لك.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 4 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                <span class="faq-question-text">كيف يمكنني إضافة فعالية خاصة بي إلى المنصة؟</span>
+                                <span class="faq-question-number">04</span>
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                حاليًا، يتم تحديث المحتوى من قبل فريقنا. إذا كنت منظمًا لفعالية وترغب في إضافتها، يمكنك
+                                التواصل معنا عبر صفحة "اتصل بنا" وتزويدنا بالتفاصيل، وسيقوم فريقنا بمراجعتها وإضافتها في
+                                أقرب وقت ممكن.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Question 5 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFive">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                <span class="faq-question-text">هل تبيعون التذاكر؟</span>
+                                <span class="faq-question-number">05</span>
+                            </button>
+                        </h2>
+                        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                لا. نحن لا نبيع التذاكر مباشرة. نوفّر روابط المنظّمين أو صفحات الحجز الرسمية—وستجد زر «احجز/التذاكر» ضمن صفحة كل فعالية إن وُجدت.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 6 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSix">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                <span class="faq-question-text">هل تدخل كل الفعاليات ضمن المنصّة؟</span>
+                                <span class="faq-question-number">06</span>
+                            </button>
+                        </h2>
+                        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                نركّز على الفعاليات العامة والمعلنة للجمهور. قد لا ندرج الفعاليات الخاصة/المغلقة أو التي تفتقر للحدّ الأدنى من التفاصيل (عنوان واضح، تاريخ/وقت، مكان).
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 7 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingSeven">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                <span class="faq-question-text">كيف أجد فعالية تناسبني بسرعة؟</span>
+                                <span class="faq-question-number">07</span>
+                            </button>
+                        </h2>
+                        <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                استخدم الفلترة حسب المحافظة والتصنيف والتاريخ. يمكنك كذلك الفرز بـ«الأقرب موعدًا» أو «الأحدث إضافة».
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 8 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingEight">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                <span class="faq-question-text">هل تُرفض بعض الفعاليات؟ ولماذا؟</span>
+                                <span class="faq-question-number">08</span>
+                            </button>
+                        </h2>
+                        <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                قد نعتذر عن نشر فعالية تفتقر للحد الأدنى من المعلومات أو تخالف سياسات المنصّة/القوانين. سنوضّح السبب عند الإمكان.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 9 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingNine">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                                <span class="faq-question-text">هل أماكن الفعاليات مهيّأة لذوي الإعاقة؟</span>
+                                <span class="faq-question-number">09</span>
+                            </button>
+                        </h2>
+                        <div id="collapseNine" class="accordion-collapse collapse" aria-labelledby="headingNine"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                يعتمد ذلك على المكان. نعرض أي معلومات يوفّرها المنظّم (ممرات وصول، مصاعد، مقاعد مخصّصة). إن لم تتوفر التفاصيل، ننصح بمراسلة المنظِّم مباشرة.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 10 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTen">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                                <span class="faq-question-text">هل هناك تعليمات للحضور؟</span>
+                                <span class="faq-question-number">10</span>
+                            </button>
+                        </h2>
+                        <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                أحيانًا يوفّر المنظِّم قواعد للسلامة، التصوير، أو أمتعة الدخول. ابحث عنها داخل قسم «سياسات الحدث» في صفحة الفعالية.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Question 11 -->
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTen">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                                <span class="faq-question-text">هل هناك تعليمات للحضور؟</span>
+                                <span class="faq-question-number">10</span>
+                            </button>
+                        </h2>
+                        <div id="collapseTen" class="accordion-collapse collapse" aria-labelledby="headingTen"
+                            data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                أحيانًا يوفّر المنظِّم قواعد للسلامة، التصوير، أو أمتعة الدخول. ابحث عنها داخل قسم «سياسات الحدث» في صفحة الفعالية.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer Section -->

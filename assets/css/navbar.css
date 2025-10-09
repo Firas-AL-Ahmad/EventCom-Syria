@@ -14,7 +14,7 @@
 }
 
 .navbar-nav .nav-link {
-  color: var(--text-color);
+  color: var(--gray-700);
   font-weight: 500;
 }
 
@@ -38,16 +38,16 @@
 
 .navbar .dropdown-toggle {
   background-color: var(--white-color);
-  border: 1px solid var(--border-color);
-  color: var(--text-color);
+  border: 1px solid var(--gray-200);
+  color: var(--gray-700);
   display: flex;
   align-items: center;
 }
 
 [data-theme="dark"] .navbar .dropdown-toggle {
-  background-color: var(--surface-color);
-  border: 1px solid var(--border-color);
-  color: var(--text-color);
+  background-color: var(--primary-900);
+  border: 1px solid var(--gray-700);
+  color: var(--white-color);
 }
 
 .lang-flag {

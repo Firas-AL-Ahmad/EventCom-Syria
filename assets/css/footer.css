@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  background-color: white !important;
+  background-color: var(--white-color) !important;
 }
 
 .footer-container {
@@ -95,7 +95,7 @@
 }
 
 .footer .social-links a {
-  color: var(--e);
+  color: var(--gray-700);
   font-size: 1.5rem;
   margin: 0 10px;
   transition: color 0.3s;
