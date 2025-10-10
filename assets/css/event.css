@@ -1,73 +1,199 @@
+/* General Hero Section Styling */
 .hero-section {
-    padding: 50px 0;
+  padding: 164px 8%;
 }
 
 .event-details .event-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--primary-900);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-900);
+  margin-bottom: 1rem;
 }
 
 .event-details .event-subtitle {
-    font-size: 1.1rem;
-    color: var(--gray-700);
-    margin-bottom: 20px;
-}
-
-.event-details .event-meta {
-    margin-bottom: 20px;
+  font-size: 1rem;
+  color: var(--gray-700);
+  margin-bottom: 1.5rem;
 }
 
 .event-details .event-meta span {
-    font-size: 1rem;
-    color: var(--gray-900);
+  font-size: 0.9rem;
+  color: var(--gray-900);
 }
 
 .event-details .event-notes h5 {
-    font-weight: 700;
-    color: var(--primary-900);
+  font-weight: 700;
+  color: var(--primary-900);
+  margin-top: 1.5rem;
 }
 
 .event-details .event-notes ul {
-    list-style: none;
-    padding-right: 0;
+  list-style: none;
+  padding-right: 0;
 }
 
 .event-details .event-notes ul li::before {
-    content: "•";
-    color: var(--primary-500);
-    font-weight: bold;
-    display: inline-block;
-    width: 1em;
-    margin-left: -1em;
+  content: "•";
+  color: var(--primary-500);
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.event-details .event-classification {
+  margin-top: 1.5rem;
 }
 
 .event-details .event-classification p {
-    margin-bottom: 5px;
+  margin-bottom: 0.5rem;
+}
+
+.event-details .event-actions {
+  margin-top: 1.5rem;
 }
 
 .event-details .event-actions .btn {
-    margin-right: 10px;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Gallery Styling */
+.hero-gallery {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+
+.main-image {
+    width: 80%;
 }
 
 .hero-gallery .main-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 15px;
+  width: 100%;
+  height: auto;
+  border-radius: 15px;
+  margin-bottom: 1rem;
+}
+
+.hero-gallery .thumbnail-gallery {
+  display: flex;
+  flex-direction: column;
+  /* flex-wrap: wrap; */
+  gap: 0.5rem;
+  justify-content: center;
 }
 
 .hero-gallery .thumbnail-gallery .img-thumbnail {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    cursor: pointer;
-    border: 2px solid transparent;
-    padding: 0.2rem;
-    transition: border-color 0.3s;
-    border-radius: 10px;
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid transparent;
+  padding: 0.2rem;
+  transition: border-color 0.3s;
+  border-radius: 10px;
 }
 
 .hero-gallery .thumbnail-gallery .img-thumbnail:hover,
 .hero-gallery .thumbnail-gallery .img-thumbnail.active {
-    border-color: var(--primary-500);
+  border-color: var(--primary-500);
+}
+
+/* About Event Section */
+.about-event-section {
+  margin-top: 3rem;
+}
+
+.about-event-section .section-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-900);
+  margin-bottom: 2rem;
+  border-bottom: 2px solid var(--primary-100);
+  padding-bottom: 1rem;
+}
+
+.about-event h4,
+.location-details h4 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--primary-900);
+  margin-bottom: 1rem;
+}
+
+.about-event p,
+.location-details p,
+.about-event ul,
+.location-details ul {
+  color: var(--gray-700);
+  font-size: 0.95rem;
+}
+
+.about-event ul,
+.location-details ul {
+  padding-right: 1.2rem;
+  list-style: none;
+}
+
+.about-event ul li::before,
+.location-details ul li::before {
+  content: "•";
+  color: var(--primary-500);
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+.event-section,
+.location-section {
+  margin-bottom: 2rem;
+}
+
+.map-placeholder iframe {
+  border-radius: 15px;
+  width: 100%;
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .event-details .event-title {
+    font-size: 2.2rem;
+  }
+
+  .hero-gallery .thumbnail-gallery .img-thumbnail {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  .hero-section .row {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .event-details {
+    text-align: right;
+  }
+
+  .event-details .event-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-gallery {
+    margin-top: 0;
+  }
+
+  .hero-gallery .thumbnail-gallery {
+    justify-content: space-between;
+  }
+
+  .hero-gallery .thumbnail-gallery .img-thumbnail {
+    width: 80px;
+    height: 80px;
+  }
 }

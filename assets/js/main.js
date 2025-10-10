@@ -44,4 +44,19 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // Event Gallery
+    const mainImage = document.getElementById('mainEventImage');
+    const thumbnails = document.querySelectorAll('.hero-gallery .thumbnail-gallery .img-thumbnail');
+
+    thumbnails.forEach(thumbnail => {
+        thumbnail.addEventListener('click', function () {
+            // Set the main image src to the clicked thumbnail's src
+            mainImage.src = this.src;
+
+            // Update the active class
+            thumbnails.forEach(t => t.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
 });
