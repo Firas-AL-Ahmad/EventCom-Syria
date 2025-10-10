@@ -1,10 +1,9 @@
 /* assets/css/faq.css */
-.faq-content{
+.faq-content {
   padding: 12% 6%;
 }
 .faq-section .accordion-item {
   border: 1px solid var(--gray-100);
-  margin-bottom: 1.5rem;
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
@@ -36,15 +35,20 @@
 
 .faq-question-text {
   flex-grow: 1;
-  margin-left: 1rem;
 }
 
 .faq-question-number {
   color: var(--primary-500);
   font-weight: 700;
   font-size: 1.2rem;
+  margin-left: 1rem;
 }
-
+.accordion {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+}
 .faq-section .accordion-button::after {
   font-family: "bootstrap-icons";
   content: "\F282"; /* bi-chevron-down */
@@ -53,12 +57,9 @@
   color: var(--primary-500);
   transform: rotate(0deg);
   transition: transform 0.3s ease-in-out;
-  order: -1; /* Moves the icon to the start (right side in RTL) */
-  margin-left: 1rem;
 }
 
 .faq-section .accordion-button:not(.collapsed)::after {
-  content: "\F282"; /* bi-chevron-down */
   transform: rotate(-180deg); /* Rotates to point up */
 }
 
