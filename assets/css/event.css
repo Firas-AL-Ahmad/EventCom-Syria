@@ -1,0 +1,73 @@
+.hero-section {
+    padding: 50px 0;
+}
+
+.event-details .event-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-900);
+}
+
+.event-details .event-subtitle {
+    font-size: 1.1rem;
+    color: var(--gray-700);
+    margin-bottom: 20px;
+}
+
+.event-details .event-meta {
+    margin-bottom: 20px;
+}
+
+.event-details .event-meta span {
+    font-size: 1rem;
+    color: var(--gray-900);
+}
+
+.event-details .event-notes h5 {
+    font-weight: 700;
+    color: var(--primary-900);
+}
+
+.event-details .event-notes ul {
+    list-style: none;
+    padding-right: 0;
+}
+
+.event-details .event-notes ul li::before {
+    content: "•";
+    color: var(--primary-500);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.event-details .event-classification p {
+    margin-bottom: 5px;
+}
+
+.event-details .event-actions .btn {
+    margin-right: 10px;
+}
+
+.hero-gallery .main-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+}
+
+.hero-gallery .thumbnail-gallery .img-thumbnail {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid transparent;
+    padding: 0.2rem;
+    transition: border-color 0.3s;
+    border-radius: 10px;
+}
+
+.hero-gallery .thumbnail-gallery .img-thumbnail:hover,
+.hero-gallery .thumbnail-gallery .img-thumbnail.active {
+    border-color: var(--primary-500);
+}
