@@ -114,15 +114,15 @@
             </div>
         </div>
 
-        <div class="tabs-container">
-            <button class="tab-link active" data-tab-target="#all">الكل</button>
-            <button class="tab-link" data-tab-target="#damascus">دمشق</button>
-            <button class="tab-link" data-tab-target="#aleppo">حلب</button>
-            <button class="tab-link" data-tab-target="#homs">حمص</button>
+        <div class="events-tabs-container">
+            <button class="events-tab-link active" data-tab-target="#all">الكل</button>
+            <button class="events-tab-link" data-tab-target="#damascus">دمشق</button>
+            <button class="events-tab-link" data-tab-target="#aleppo">حلب</button>
+            <button class="events-tab-link" data-tab-target="#homs">حمص</button>
         </div>
     </div>
     <div class="events-content">
-        <div id="all" class="tab-content active">
+        <div id="all" class="events-tab-content active">
             <div class="row">
                 <!-- Card 1 -->
                 <div class="col-lg-4 col-md-6 mb-4">
@@ -252,150 +252,281 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div id="damascus" class="tab-content">
-        <div class="row">
-            <!-- Card 1 -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="event-card">
-                    <img class="image-event-card" src="assets/img/events-images/event$-1.png" alt="Event Image">
+                <!-- Card 6 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="event-card">
+                        <img class="image-event-card" src="assets/img/events-images/event$-3.png" alt="Event Image">
 
-                    <div class="event-card-header">
-                        <span class="tag">موسيقى</span>
-                        <span class="city">دمشق</span>
-                    </div>
-                    <div class="event-card-content">
-                        <p class="text-dark fw-bold p-0 m-0">أوركسترا
-                            السيمفوني السوري</p>
-                        <p class="text-end text-secondary p-0 m-0">أمسية
-                            كلاسيكية وعروض حيّة على مسرح
-                            الدراما.
-                        </p>
-                        <div class="date py-3 m-0">
-                            <i class="bi bi-calendar3"></i>
-                            <span>15 نوفمبر 2025</span>
+                        <div class="event-card-header">
+                            <span class="tag">رياضة</span>
+                            <span class="city">حمص</span>
                         </div>
+                        <div class="event-card-content">
+                            <p class="text-dark fw-bold p-0 m-0">مباراة كرة قدم</p>
+                            <p class="text-end text-secondary p-0 m-0">مباراة ودية بين فريقين محليين على الملعب البلدي.
+                            </p>
+                            <div class="date py-3 m-0">
+                                <i class="bi bi-calendar3"></i>
+                                <span>22 نوفمبر 2025</span>
+                            </div>
 
-                        <div class="card-buttons">
-                            <a href="event.html" class="btn btn-primary">التفاصيل</a>
-                            <button type="button" class="btn btn-outline-primary">أضف للتقويم</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Card 2 -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="event-card">
-                    <img class="image-event-card" src="assets/img/events-images/event$-4.png" alt="Event Image">
-
-                    <div class="event-card-header">
-                        <span class="tag">ثقافة</span>
-                        <span class="city">دمشق</span>
-                    </div>
-                    <div class="event-card-content">
-                        <p class="text-dark fw-bold p-0 m-0">أمسية شعرية</p>
-                        <p class="text-end text-secondary p-0 m-0">أمسية شعرية يشارك فيها عدد من الشعراء السوريين.
-                        </p>
-                        <div class="date py-3 m-0">
-                            <i class="bi bi-calendar3"></i>
-                            <span>25 نوفمبر 2025</span>
-                        </div>
-
-                        <div class="card-buttons">
-                            <a href="event.html" class="btn btn-primary">التفاصيل</a>
-                            <button type="button" class="btn btn-outline-primary">أضف للتقويم</button>
+                            <div class="card-buttons">
+                                <a href="event.html" class="btn btn-primary">التفاصيل</a>
+                                <button type="button" class="btn btn-outline-primary">أضف للتقويم</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div id="aleppo" class="tab-content">
-        <div class="row">
-            <!-- Card 1 -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="event-card">
-                    <img class="image-event-card" src="assets/img/events-images/event$-2.png" alt="Event Image">
 
-                    <div class="event-card-header">
-                        <span class="tag">فن</span>
-                        <span class="city">حلب</span>
-                    </div>
-                    <div class="event-card-content">
-                        <p class="text-dark fw-bold p-0 m-0">معرض فني</p>
-                        <p class="text-end text-secondary p-0 m-0">معرض للفن التشكيلي يعرض أعمال فنانين محليين.
-                        </p>
-                        <div class="date py-3 m-0">
-                            <i class="bi bi-calendar3"></i>
-                            <span>20 نوفمبر 2025</span>
+
+        <div id="damascus" class="events-tab-content">
+            <div class="row">
+                <!-- Card 1 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="event-card">
+                        <img class="image-event-card" src="assets/img/events-images/event$-1.png" alt="Event Image">
+
+                        <div class="event-card-header">
+                            <span class="tag">موسيقى</span>
+                            <span class="city">دمشق</span>
                         </div>
+                        <div class="event-card-content">
+                            <p class="text-dark fw-bold p-0 m-0">أوركسترا
+                                السيمفوني السوري</p>
+                            <p class="text-end text-secondary p-0 m-0">أمسية
+                                كلاسيكية وعروض حيّة على مسرح
+                                الدراما.
+                            </p>
+                            <div class="date py-3 m-0">
+                                <i class="bi bi-calendar3"></i>
+                                <span>15 نوفمبر 2025</span>
+                            </div>
 
-                        <div class="card-buttons">
-                            <a href="event.html" class="btn btn-primary">التفاصيل</a>
-                            <button type="button" class="btn btn-outline-primary">أضف للتقويم</button>
+                            <div class="card-buttons">
+                                <a href="event.html" class="btn btn-primary">التفاصيل</a>
+                                <button type="button" class="btn btn-outline-primary">أضف للتقويم</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- Card 2 -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="event-card">
-                    <img class="image-event-card" src="assets/img/events-images/event$-5.png" alt="Event Image">
+                <!-- Card 2 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="event-card">
+                        <img class="image-event-card" src="assets/img/events-images/event$-4.png" alt="Event Image">
 
-                    <div class="event-card-header">
-                        <span class="tag">تكنولوجيا</span>
-                        <span class="city">حلب</span>
-                    </div>
-                    <div class="event-card-content">
-                        <p class="text-dark fw-bold p-0 m-0">ورشة عمل</p>
-                        <p class="text-end text-secondary p-0 m-0">ورشة عمل حول أحدث التقنيات في عالم البرمجة.
-                        </p>
-                        <div class="date py-3 m-0">
-                            <i class="bi bi-calendar3"></i>
-                            <span>30 نوفمبر 2025</span>
+                        <div class="event-card-header">
+                            <span class="tag">ثقافة</span>
+                            <span class="city">دمشق</span>
                         </div>
+                        <div class="event-card-content">
+                            <p class="text-dark fw-bold p-0 m-0">أمسية شعرية</p>
+                            <p class="text-end text-secondary p-0 m-0">أمسية شعرية يشارك فيها عدد من الشعراء السوريين.
+                            </p>
+                            <div class="date py-3 m-0">
+                                <i class="bi bi-calendar3"></i>
+                                <span>25 نوفمبر 2025</span>
+                            </div>
 
-                        <div class="card-buttons">
-                            <a href="event.html" class="btn btn-primary">التفاصيل</a>
-                            <button type="button" class="btn btn-outline-primary">أضف للتقويم</button>
+                            <div class="card-buttons">
+                                <a href="event.html" class="btn btn-primary">التفاصيل</a>
+                                <button type="button" class="btn btn-outline-primary">أضف للتقويم</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="event-card">
+                        <img class="image-event-card" src="assets/img/events-images/event$-1.png" alt="Event Image">
+
+                        <div class="event-card-header">
+                            <span class="tag">موسيقى</span>
+                            <span class="city">دمشق</span>
+                        </div>
+                        <div class="event-card-content">
+                            <p class="text-dark fw-bold p-0 m-0">أوركسترا
+                                السيمفوني السوري</p>
+                            <p class="text-end text-secondary p-0 m-0">أمسية
+                                كلاسيكية وعروض حيّة على مسرح
+                                الدراما.
+                            </p>
+                            <div class="date py-3 m-0">
+                                <i class="bi bi-calendar3"></i>
+                                <span>15 نوفمبر 2025</span>
+                            </div>
+
+                            <div class="card-buttons">
+                                <a href="event.html" class="btn btn-primary">التفاصيل</a>
+                                <button type="button" class="btn btn-outline-primary">أضف للتقويم</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div id="homs" class="tab-content">
-        <div class="row">
-            <!-- Card 1 -->
-            <div class="col-lg-4 col-md-6 mb-4">
-                <div class="event-card">
-                    <img class="image-event-card" src="assets/img/events-images/event$-3.png" alt="Event Image">
+        <div id="aleppo" class="events-tab-content">
+            <div class="row">
+                <!-- Card 1 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="event-card">
+                        <img class="image-event-card" src="assets/img/events-images/event$-2.png" alt="Event Image">
 
-                    <div class="event-card-header">
-                        <span class="tag">رياضة</span>
-                        <span class="city">حمص</span>
-                    </div>
-                    <div class="event-card-content">
-                        <p class="text-dark fw-bold p-0 m-0">مباراة كرة قدم</p>
-                        <p class="text-end text-secondary p-0 m-0">مباراة ودية بين فريقين محليين على الملعب البلدي.
-                        </p>
-                        <div class="date py-3 m-0">
-                            <i class="bi bi-calendar3"></i>
-                            <span>22 نوفمبر 2025</span>
+                        <div class="event-card-header">
+                            <span class="tag">فن</span>
+                            <span class="city">حلب</span>
                         </div>
+                        <div class="event-card-content">
+                            <p class="text-dark fw-bold p-0 m-0">معرض فني</p>
+                            <p class="text-end text-secondary p-0 m-0">معرض للفن التشكيلي يعرض أعمال فنانين محليين.
+                            </p>
+                            <div class="date py-3 m-0">
+                                <i class="bi bi-calendar3"></i>
+                                <span>20 نوفمبر 2025</span>
+                            </div>
 
-                        <div class="card-buttons">
-                            <a href="event.html" class="btn btn-primary">التفاصيل</a>
-                            <button type="button" class="btn btn-outline-primary">أضف للتقويم</button>
+                            <div class="card-buttons">
+                                <a href="event.html" class="btn btn-primary">التفاصيل</a>
+                                <button type="button" class="btn btn-outline-primary">أضف للتقويم</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="event-card">
+                        <img class="image-event-card" src="assets/img/events-images/event$-5.png" alt="Event Image">
+
+                        <div class="event-card-header">
+                            <span class="tag">تكنولوجيا</span>
+                            <span class="city">حلب</span>
+                        </div>
+                        <div class="event-card-content">
+                            <p class="text-dark fw-bold p-0 m-0">ورشة عمل</p>
+                            <p class="text-end text-secondary p-0 m-0">ورشة عمل حول أحدث التقنيات في عالم البرمجة.
+                            </p>
+                            <div class="date py-3 m-0">
+                                <i class="bi bi-calendar3"></i>
+                                <span>30 نوفمبر 2025</span>
+                            </div>
+
+                            <div class="card-buttons">
+                                <a href="event.html" class="btn btn-primary">التفاصيل</a>
+                                <button type="button" class="btn btn-outline-primary">أضف للتقويم</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="event-card">
+                        <img class="image-event-card" src="assets/img/events-images/event$-2.png" alt="Event Image">
+
+                        <div class="event-card-header">
+                            <span class="tag">فن</span>
+                            <span class="city">حلب</span>
+                        </div>
+                        <div class="event-card-content">
+                            <p class="text-dark fw-bold p-0 m-0">معرض فني</p>
+                            <p class="text-end text-secondary p-0 m-0">معرض للفن التشكيلي يعرض أعمال فنانين محليين.
+                            </p>
+                            <div class="date py-3 m-0">
+                                <i class="bi bi-calendar3"></i>
+                                <span>20 نوفمبر 2025</span>
+                            </div>
+
+                            <div class="card-buttons">
+                                <a href="event.html" class="btn btn-primary">التفاصيل</a>
+                                <button type="button" class="btn btn-outline-primary">أضف للتقويم</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div id="homs" class="events-tab-content">
+            <div class="row">
+                <!-- Card 1 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="event-card">
+                        <img class="image-event-card" src="assets/img/events-images/event$-3.png" alt="Event Image">
+
+                        <div class="event-card-header">
+                            <span class="tag">رياضة</span>
+                            <span class="city">حمص</span>
+                        </div>
+                        <div class="event-card-content">
+                            <p class="text-dark fw-bold p-0 m-0">مباراة كرة قدم</p>
+                            <p class="text-end text-secondary p-0 m-0">مباراة ودية بين فريقين محليين على الملعب البلدي.
+                            </p>
+                            <div class="date py-3 m-0">
+                                <i class="bi bi-calendar3"></i>
+                                <span>22 نوفمبر 2025</span>
+                            </div>
+
+                            <div class="card-buttons">
+                                <a href="event.html" class="btn btn-primary">التفاصيل</a>
+                                <button type="button" class="btn btn-outline-primary">أضف للتقويم</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="event-card">
+                        <img class="image-event-card" src="assets/img/events-images/event$-3.png" alt="Event Image">
+
+                        <div class="event-card-header">
+                            <span class="tag">رياضة</span>
+                            <span class="city">حمص</span>
+                        </div>
+                        <div class="event-card-content">
+                            <p class="text-dark fw-bold p-0 m-0">مباراة كرة قدم</p>
+                            <p class="text-end text-secondary p-0 m-0">مباراة ودية بين فريقين محليين على الملعب البلدي.
+                            </p>
+                            <div class="date py-3 m-0">
+                                <i class="bi bi-calendar3"></i>
+                                <span>22 نوفمبر 2025</span>
+                            </div>
+
+                            <div class="card-buttons">
+                                <a href="event.html" class="btn btn-primary">التفاصيل</a>
+                                <button type="button" class="btn btn-outline-primary">أضف للتقويم</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="event-card">
+                        <img class="image-event-card" src="assets/img/events-images/event$-3.png" alt="Event Image">
+
+                        <div class="event-card-header">
+                            <span class="tag">رياضة</span>
+                            <span class="city">حمص</span>
+                        </div>
+                        <div class="event-card-content">
+                            <p class="text-dark fw-bold p-0 m-0">مباراة كرة قدم</p>
+                            <p class="text-end text-secondary p-0 m-0">مباراة ودية بين فريقين محليين على الملعب البلدي.
+                            </p>
+                            <div class="date py-3 m-0">
+                                <i class="bi bi-calendar3"></i>
+                                <span>22 نوفمبر 2025</span>
+                            </div>
+
+                            <div class="card-buttons">
+                                <a href="event.html" class="btn btn-primary">التفاصيل</a>
+                                <button type="button" class="btn btn-outline-primary">أضف للتقويم</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
-    </div>
+
 
     <!-- Footer Section -->
     <footer class="footer">
@@ -469,7 +600,7 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <script src="assets/js/main.js"></script>
-    <script src="assets/js/tabs.js"></script>
+    <script src="assets/js/events-tabs.js"></script>
 </body>
 
 </html>

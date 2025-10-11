@@ -59,4 +59,40 @@ document.addEventListener('DOMContentLoaded', () => {
             this.classList.add('active');
         });
     });
+
+    // Draggable categories section
+    const categoriesContent = document.querySelector('.categories-content');
+    if (categoriesContent) {
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        categoriesContent.addEventListener('mousedown', (e) => {
+            isDown = true;
+            categoriesContent.classList.add('active');
+            startX = e.pageX - categoriesContent.offsetLeft;
+            scrollLeft = categoriesContent.scrollLeft;
+            categoriesContent.style.cursor = 'grabbing';
+        });
+
+        categoriesContent.addEventListener('mouseleave', () => {
+            isDown = false;
+            categoriesContent.classList.remove('active');
+            categoriesContent.style.cursor = 'grab';
+        });
+
+        categoriesContent.addEventListener('mouseup', () => {
+            isDown = false;
+            categoriesContent.classList.remove('active');
+            categoriesContent.style.cursor = 'grab';
+        });
+
+        categoriesContent.addEventListener('mousemove', (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - categoriesContent.offsetLeft;
+            const walk = (x - startX) * 2; //scroll-fast
+            categoriesContent.scrollLeft = scrollLeft - walk;
+        });
+    }
 });

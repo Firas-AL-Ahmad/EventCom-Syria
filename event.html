@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="assets/css/navbar.css">
     <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/css/event.css">
+    <link rel="stylesheet" href="assets/css/events.css">
 </head>
 
 <body>
@@ -71,123 +72,189 @@
         </div>
     </nav>
 
-    <main class="container py-5">
-        <section class="hero-section">
-            <div class="row">
-                <div class="col-lg-6">
-                    <div class="event-details">
-                        <h1 class="event-title">مهرجان ألوان الشام</h1>
-                        <p class="event-subtitle">تظاهرة فنية تجمع عروضًا حية وورشًا ومعارض فنية لجميع الأعمار.</p>
-                        <div class="event-meta">
-                            <span><i class="bi bi-calendar-event"></i> 10 تشرين الأول 2025، 6:00-9:30 م</span>
+    <section class="event-hero-section">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="event-details">
+                    <h1 class="event-title">مهرجان ألوان الشام</h1>
+                    <p class="event-subtitle">تظاهرة فنية تجمع عروضًا حية وورشًا ومعارض فنية لجميع الأعمار.</p>
+                    <div class="event-meta">
+                        <span><i class="bi bi-calendar-event"></i> 10 تشرين الأول 2025، 6:00-9:30 م</span>
+                    </div>
+                    <div class="event-notes">
+                        <h5>ملاحظات</h5>
+                        <ul>
+                            <li>يُفضّل الحضور قبل 30 دقيقة</li>
+                            <li>القاعة مجهّزة بممرات وصول ومقاعد مخصصة</li>
+                        </ul>
+                    </div>
+                    <div class="event-classification">
+                        <p class="m-0 p-0"><strong>التصنيف:</strong> ثقافة</p>
+                        <p class="m-0 p-0"><strong>المحافظة:</strong> دمشق</p>
+                    </div>
+                    <div class="event-actions">
+                        <a href="#" class="calendar-btn py-2 px-5 rounded-2">أضف للتقويم</a>
+                        <a href="#" class="share-btn py-2 px-5 rounded-2">شارك الحدث</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="hero-gallery">
+                    <div class="main-image mb-3">
+                        <img src="assets/img/events-images/image.png" id="mainEventImage" class="img-fluid rounded"
+                            alt="Main Event Image">
+                    </div>
+                    <div class="thumbnail-gallery d-flex justify-content-between">
+                        <img src="assets/img/events-images/Frame 1686552792.png" class="img-thumbnail active"
+                            alt="Thumbnail 1">
+                        <img src="assets/img/events-images/Frame 1686552793.png" class="img-thumbnail"
+                            alt="Thumbnail 2">
+                        <img src="assets/img/events-images/Frame 1686552794.png" class="img-thumbnail"
+                            alt="Thumbnail 3">
+                        <img src="assets/img/events-images/Frame 1686552796.png" class="img-thumbnail"
+                            alt="Thumbnail 4">
+                        <img src="assets/img/events-images/Frame 1686552797.png" class="img-thumbnail"
+                            alt="Thumbnail 5">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row about-event-section gy-5">
+            <h2 class="section-title">تفاصيل الفعالية</h2>
+            <div class="col-lg-7">
+                <div class="about-event">
+                    <div class="event-section">
+                        <h4>عن الفعالية</h4>
+                        <p>يقدّم مهرجان ألوان الشام أمسية متكاملة تجمع الموسيقى الحيّة والعروض الأدائية والمعارض
+                            المصغّرة لفنانين سوريين شباب، ضمن أجواء احتفالية تليق بدمشق.</p>
+                    </div>
+                    <div class="event-section">
+                        <h4>لمن؟</h4>
+                        <p>مناسب للجميع والعائلات</p>
+                    </div>
+                    <div class="event-section">
+                        <h4>ماذا يشمل؟</h4>
+                        <p>عروض حيّة، معرض فنّي مصغّر، أكشاك تذكارية</p>
+                    </div>
+                    <div class="event-section">
+                        <h4>الخدمات</h4>
+                        <p>مقاعد مرقّمة، ممرات وصول، نقاط إسعاف أوّلي</p>
+                    </div>
+                    <div class="event-section">
+                        <h4>برنامج الفقرات:</h4>
+                        <ul>
+                            <li>استقبال وموسيقى ترحيبية (6:00-6:30 م)</li>
+                            <li>افتتاح وعرض رئيسي (6:30-8:00 م)</li>
+                            <li>استراحة ومعرض فني (8:00-8:30 م)</li>
+                            <li>عروض ختامية وتحية الجمهور (8:30-10:00 م)</li>
+                        </ul>
+                    </div>
+                    <div class="event-section">
+                        <h4>الجهة المنظمة</h4>
+                        <p>مبادرة ثقافية — فريق ألوان الشام</p>
+                    </div>
+                    <div class="event-section">
+                        <h4>تواصل المنظّم</h4>
+                        <p>info@alwan-sham.example</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="location-details">
+                    <div class="location-section">
+                        <h4>العنوان</h4>
+                        <p>مبادرة ثقافية — فريق ألوان الشام</p>
+                    </div>
+                    <div class="location-section">
+                        <h4>الوصول</h4>
+                        <ul>
+                            <li>مواصلات عامة قريبة (موقف سرفيس/باص)</li>
+                            <li>مواقف محدودة للسيارات — الوصول مبكرًا مُستحسن</li>
+                            <li>مسارات وصول لذوي الإعاقة ومصعد متاح</li>
+                        </ul>
+                    </div>
+                    <div class="location-section">
+                        <h4>خريطة ثابتة بصورة</h4>
+                        <p>موقع دار الأسد للثقافة والفنون في دمشق على الخريطة.</p>
+                    </div>
+                    <div class="map-placeholder">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3326.572018247317!2d36.28214742450759!3d33.512510473364955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1518e0b4816d3d5f%3A0x80913fe6396f6b34!2z2KfZhNmF2LnZh9ivINin2YTYudin2YTZiiDZhNmE2YHZhtmI2YYg2KfZhNmF2LPYsdit2YrYqS4!5e0!3m2!1sar!2s!4v1760133313418!5m2!1sar!2s"
+                            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Section: فعاليات ذات صلة -->
+    <section class="related-events">
+        <div class="container">
+            <h3 class="section-title fw-bold mb-4">فعاليات ذات صلة</h3>
+            <div class="row gy-4">
+
+                <!-- Card 1 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="event-card">
+                        <img class="image-event-card" src="assets/img/events-images/event$-1.png" alt="Event Image">
+
+                        <div class="event-card-header">
+                            <span class="tag">موسيقى</span>
+                            <span class="city">دمشق</span>
                         </div>
-                        <div class="event-notes">
-                            <h5>ملاحظات</h5>
-                            <ul>
-                                <li>يُفضّل الحضور قبل 30 دقيقة</li>
-                                <li>القاعة مجهّزة بممرات وصول ومقاعد مخصصة</li>
-                            </ul>
-                        </div>
-                        <div class="event-classification">
-                            <p><strong>التصنيف:</strong> ثقافة</p>
-                            <p><strong>المحافظة:</strong> دمشق</p>
-                        </div>
-                        <div class="event-actions">
-                            <a href="#" class="btn btn-outline-primary">شارك الحدث</a>
-                            <a href="#" class="btn btn-primary">أضف للتقويم</a>
+                        <div class="event-card-content">
+                            <p class="text-dark fw-bold p-0 m-0">أوركسترا
+                                السيمفوني السوري</p>
+                            <p class="text-end text-secondary p-0 m-0">أمسية
+                                كلاسيكية وعروض حيّة على مسرح
+                                الدراما.
+                            </p>
+                            <div class="date py-3 m-0">
+                                <i class="bi bi-calendar3"></i>
+                                <span>15 نوفمبر 2025</span>
+                            </div>
+
+                            <div class="card-buttons">
+                                <a href="event.html" class="btn btn-primary">التفاصيل</a>
+                                <button type="button" class="btn btn-outline-primary">أضف للتقويم</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="hero-gallery">
-                        <div class="main-image mb-3">
-                            <img src="assets/img/events-images/image.png" id="mainEventImage" class="img-fluid rounded"
-                                alt="Main Event Image">
+
+                <!-- Card 2 -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="event-card">
+                        <img class="image-event-card" src="assets/img/events-images/event$-1.png" alt="Event Image">
+
+                        <div class="event-card-header">
+                            <span class="tag">موسيقى</span>
+                            <span class="city">دمشق</span>
                         </div>
-                        <div class="thumbnail-gallery d-flex justify-content-between">
-                            <img src="assets/img/events-images/Frame 1686552792.png" class="img-thumbnail active"
-                                alt="Thumbnail 1">
-                            <img src="assets/img/events-images/Frame 1686552793.png" class="img-thumbnail"
-                                alt="Thumbnail 2">
-                            <img src="assets/img/events-images/Frame 1686552794.png" class="img-thumbnail"
-                                alt="Thumbnail 3">
-                            <img src="assets/img/events-images/Frame 1686552796.png" class="img-thumbnail"
-                                alt="Thumbnail 4">
-                            <img src="assets/img/events-images/Frame 1686552797.png" class="img-thumbnail"
-                                alt="Thumbnail 5">
+                        <div class="event-card-content">
+                            <p class="text-dark fw-bold p-0 m-0">أوركسترا
+                                السيمفوني السوري</p>
+                            <p class="text-end text-secondary p-0 m-0">أمسية
+                                كلاسيكية وعروض حيّة على مسرح
+                                الدراما.
+                            </p>
+                            <div class="date py-3 m-0">
+                                <i class="bi bi-calendar3"></i>
+                                <span>15 نوفمبر 2025</span>
+                            </div>
+
+                            <div class="card-buttons">
+                                <a href="event.html" class="btn btn-primary">التفاصيل</a>
+                                <button type="button" class="btn btn-outline-primary">أضف للتقويم</button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row about-event-section gy-5">
-                <h2 class="section-title">تفاصيل الفعالية</h2>
-                <div class="col-lg-7">
-                    <div class="about-event">
-                        <div class="event-section">
-                            <h4>عن الفعالية</h4>
-                            <p>يقدّم مهرجان ألوان الشام أمسية متكاملة تجمع الموسيقى الحيّة والعروض الأدائية والمعارض
-                                المصغّرة لفنانين سوريين شباب، ضمن أجواء احتفالية تليق بدمشق.</p>
-                        </div>
-                        <div class="event-section">
-                            <h4>لمن؟</h4>
-                            <p>مناسب للجميع والعائلات</p>
-                        </div>
-                        <div class="event-section">
-                            <h4>ماذا يشمل؟</h4>
-                            <p>عروض حيّة، معرض فنّي مصغّر، أكشاك تذكارية</p>
-                        </div>
-                        <div class="event-section">
-                            <h4>الخدمات</h4>
-                            <p>مقاعد مرقّمة، ممرات وصول، نقاط إسعاف أوّلي</p>
-                        </div>
-                        <div class="event-section">
-                            <h4>برنامج الفقرات:</h4>
-                            <ul>
-                                <li>استقبال وموسيقى ترحيبية (6:00-6:30 م)</li>
-                                <li>افتتاح وعرض رئيسي (6:30-8:00 م)</li>
-                                <li>استراحة ومعرض فني (8:00-8:30 م)</li>
-                                <li>عروض ختامية وتحية الجمهور (8:30-10:00 م)</li>
-                            </ul>
-                        </div>
-                        <div class="event-section">
-                            <h4>الجهة المنظمة</h4>
-                            <p>مبادرة ثقافية — فريق ألوان الشام</p>
-                        </div>
-                        <div class="event-section">
-                            <h4>تواصل المنظّم</h4>
-                            <p>info@alwan-sham.example</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5">
-                    <div class="location-details">
-                        <div class="location-section">
-                            <h4>العنوان</h4>
-                            <p>مبادرة ثقافية — فريق ألوان الشام</p>
-                        </div>
-                        <div class="location-section">
-                            <h4>الوصول</h4>
-                            <ul>
-                                <li>مواصلات عامة قريبة (موقف سرفيس/باص)</li>
-                                <li>مواقف محدودة للسيارات — الوصول مبكرًا مُستحسن</li>
-                                <li>مسارات وصول لذوي الإعاقة ومصعد متاح</li>
-                            </ul>
-                        </div>
-                        <div class="location-section">
-                            <h4>خريطة ثابتة بصورة</h4>
-                            <p>موقع دار الأسد للثقافة والفنون في دمشق على الخريطة.</p>
-                        </div>
-                        <div class="map-placeholder">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3326.572018247317!2d36.28214742450759!3d33.512510473364955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1518e0b4816d3d5f%3A0x80913fe6396f6b34!2z2KfZhNmF2LnZh9ivINin2YTYudin2YTZiiDZhNmE2YHZhtmI2YYg2KfZhNmF2LPYsdit2YrYqS4!5e0!3m2!1sar!2s!4v1760133313418!5m2!1sar!2s"
-                                width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
     <!-- Footer Section -->
     <footer class="footer">

@@ -1,30 +1,33 @@
+@import url(./styles.css);
+
 /* General Hero Section Styling */
-.hero-section {
-  padding: 164px 8%;
+.event-hero-section {
+  padding: 124px 10%;
+  padding-bottom: 0;
+  background-color: var(--primary-50);
+  width: 100vw;
 }
 
 .event-details .event-title {
-  font-size: 2rem;
+  font-size: 48px;
   font-weight: 700;
   color: var(--primary-900);
-  margin-bottom: 1rem;
 }
 
 .event-details .event-subtitle {
-  font-size: 1rem;
+  font-size: 24px;
   color: var(--gray-700);
-  margin-bottom: 1.5rem;
 }
 
 .event-details .event-meta span {
-  font-size: 0.9rem;
-  color: var(--gray-900);
+  font-size: 20px;
+  color: var(--gray-500);
 }
 
 .event-details .event-notes h5 {
   font-weight: 700;
   color: var(--primary-900);
-  margin-top: 1.5rem;
+  margin-top: 20px;
 }
 
 .event-details .event-notes ul {
@@ -38,62 +41,84 @@
   font-weight: bold;
   display: inline-block;
   width: 1em;
-  margin-left: -1em;
 }
 
-.event-details .event-classification {
-  margin-top: 1.5rem;
+.event-classification {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 4px;
+  padding-bottom: 48px;
 }
 
-.event-details .event-classification p {
-  margin-bottom: 0.5rem;
+.event-actions {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  gap: 32px;
 }
 
-.event-details .event-actions {
-  margin-top: 1.5rem;
+.calendar-btn {
+  text-decoration: none;
+  background-color: var(--primary-500);
+  color: var(--white-color);
+  font-weight: bold;
+}
+.calendar-btn:hover {
+  background-color: var(--primary-700);
 }
 
-.event-details .event-actions .btn {
-  margin-right: 0.5rem;
-  margin-bottom: 0.5rem;
+.share-btn {
+  text-decoration: none;
+  background-color: transparent;
+  border: 1px solid var(--primary-500);
+  color: var(--primary-500);
+  font-weight: bold;
+}
+
+.share-btn:hover {
+  background-color: var(--primary-500);
+  border: 1px solid var(--primary-500);
+  color: var(--white-color);
 }
 
 /* Gallery Styling */
 .hero-gallery {
-  margin-top: 2rem;
   display: flex;
   flex-direction: row;
-  gap: 24px;
+  justify-content: center;
+  gap: 16px;
+  padding-top: 32px;
 }
 
 .main-image {
-    width: 80%;
+  width: 64%;
 }
 
 .hero-gallery .main-image img {
   width: 100%;
   height: auto;
-  border-radius: 15px;
-  margin-bottom: 1rem;
+  border-radius: 16px;
 }
 
 .hero-gallery .thumbnail-gallery {
   display: flex;
   flex-direction: column;
-  /* flex-wrap: wrap; */
-  gap: 0.5rem;
+  flex-wrap: wrap;
+  gap: 8px;
   justify-content: center;
+  height: 100%;
 }
 
 .hero-gallery .thumbnail-gallery .img-thumbnail {
-  width: 60px;
-  height: 60px;
+  width: 56px;
+  height: 56px;
   object-fit: cover;
   cursor: pointer;
   border: 2px solid transparent;
-  padding: 0.2rem;
   transition: border-color 0.3s;
-  border-radius: 10px;
+  border-radius: 16px;
 }
 
 .hero-gallery .thumbnail-gallery .img-thumbnail:hover,
@@ -106,13 +131,12 @@
   margin-top: 3rem;
 }
 
-.about-event-section .section-title {
+.section-title {
   font-size: 1.8rem;
   font-weight: 700;
   color: var(--primary-900);
-  margin-bottom: 2rem;
-  border-bottom: 2px solid var(--primary-100);
-  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--primary-500);
+  padding-bottom: 16px;
 }
 
 .about-event h4,
@@ -171,8 +195,10 @@
 
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
-  .hero-section .row {
+  .event-hero-section .row {
     display: flex;
+    flex-direction: row;
+    justify-content: start;
     align-items: flex-start;
   }
 
@@ -196,4 +222,13 @@
     width: 80px;
     height: 80px;
   }
+}
+
+/* related-events */
+
+.related-events {
+  padding: 64px 10%;
+  padding-bottom: 0;
+  /* background-color: var(--white-color); */
+  width: 100vw;
 }
