@@ -9,8 +9,6 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/navbar.css">
-    <link rel="stylesheet" href="assets/css/footer.css">
     <link rel="stylesheet" href="assets/css/contact.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
@@ -46,20 +44,20 @@
                     </li>
                 </ul>
                 <div class="d-flex align-items-center">
-                    <div class="dropdown lang-dropdown px-2 py-1 rounded-2">
-                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            <img src="assets/img/icons/AR-flag.svg" alt="Arabic" class="lang-flag">
-                            العربية
-                        </button>
-                        <ul class="dropdown-menu w-auto">
-                            <li><a class="dropdown-item lang-itme flex-row" href="#">
-                                    <img src="assets/img/icons/US-flag.svg" alt="English" class="lang-flag">
-                                    الإنكليزية
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                    <ul class="navbar-nav flex-row">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <img src="assets/img/icons/AR-flag.svg" alt="Arabic" class="lang-flag">
+                                العربية
+                            </a>
+                        </li>
+                        <li class="nav-item ms-2">
+                            <a class="nav-link" href="#">
+                                <img src="assets/img/icons/US-flag.svg" alt="English" class="lang-flag">
+                                English
+                            </a>
+                        </li>
+                    </ul>
                     <label class="mx-3 ui-switch">
                         <input type="checkbox">
                         <div class="slider">

@@ -9,10 +9,7 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/navbar.css">
-    <link rel="stylesheet" href="assets/css/hero.css">
-    <link rel="stylesheet" href="assets/css/footer.css">
-    <link rel="stylesheet" href="assets/css/event.css">
+    <link rel="stylesheet" href="assets/css/index.css">
     <link rel="stylesheet" href="assets/css/events.css">
 </head>
 
@@ -47,20 +44,20 @@
                     </li>
                 </ul>
                 <div class="d-flex align-items-center">
-                    <div class="dropdown lang-dropdown px-2 py-1 rounded-2">
-                        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            <img src="assets/img/icons/AR-flag.svg" alt="Arabic" class="lang-flag">
-                            العربية
-                        </button>
-                        <ul class="dropdown-menu w-auto">
-                            <li><a class="dropdown-item lang-itme flex-row" href="#">
-                                    <img src="assets/img/icons/US-flag.svg" alt="English" class="lang-flag">
-                                    الإنكليزية
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+                    <ul class="navbar-nav flex-row">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <img src="assets/img/icons/AR-flag.svg" alt="Arabic" class="lang-flag">
+                                العربية
+                            </a>
+                        </li>
+                        <li class="nav-item ms-2">
+                            <a class="nav-link" href="#">
+                                <img src="assets/img/icons/US-flag.svg" alt="English" class="lang-flag">
+                                English
+                            </a>
+                        </li>
+                    </ul>
                     <label class="mx-3 ui-switch">
                         <input type="checkbox">
                         <div class="slider">
@@ -87,7 +84,7 @@
                             <a href="#" class="btn btn-outline-primary me-2 px-4 py-2">شارك الحدث</a>
                         </div>
                     </div>
-                    <div class="hear-right-column col-lg-6 order-2 order-lg-2">
+                    <div class="hero-right-column col-lg-6 order-2 order-lg-2">
                         <div id="carouselExampleIndicators" class="carousel slide">
                             <div class="carousel-indicators">
                                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
@@ -99,25 +96,23 @@
                             </div>
                             <div class="carousel-images carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="./assets/img/events-images/image.png" class="w-100" alt="...">
+                                    <img src="./assets/img/events-images/image.png" class="d-block w-100" alt="...">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="./assets/img/events-images/image.png" class="w-100" alt="...">
+                                    <img src="./assets/img/events-images/image.png" class="d-block w-100" alt="...">
                                 </div>
                                 <div class="carousel-item">
                                     <img src="./assets/img/events-images/image.png" class="d-block w-100" alt="...">
                                 </div>
                             </div>
-                            <div class="flex-column justify-content-evenly">
-                                <button class="carousel-control carousel-control-prev" type="button"
-                                    data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                                    <img src="./assets/img/icons/carousel-control-L.svg" alt="Previous">
-                                </button>
-                                <button class="carousel-control carousel-control-next" type="button"
-                                    data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                                    <img src="./assets/img/icons/carousel-control-R.svg" alt="Next">
-                                </button>
-                            </div>
+                            <button class="carousel-control carousel-control-prev" type="button"
+                                data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                                <img src="./assets/img/icons/carousel-control-L.svg" alt="Previous">
+                            </button>
+                            <button class="carousel-control carousel-control-next" type="button"
+                                data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                                <img src="./assets/img/icons/carousel-control-R.svg" alt="Next">
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -475,47 +470,47 @@
                     <p>دمشق</p>
                 </div>
                 <!-- Card 2 -->
-                <div class="category-card">
+                <div class="city-card">
                     <img src="assets/img/cities/city09.png" alt="Category Image">
                     <p>دير الزور</p>
                 </div>
                 <!-- Card 3 -->
-                <div class="category-card">
+                <div class="city-card">
                     <img src="assets/img/cities/city08.png" alt="Category Image">
                     <p>حلب</p>
                 </div>
                 <!-- Card 4 -->
-                <div class="category-card">
+                <div class="city-card">
                     <img src="assets/img/cities/city07.png" alt="Category Image">
                     <p>الرقة</p>
                 </div>
                 <!-- Card 5 -->
-                <div class="category-card">
+                <div class="city-card">
                     <img src="assets/img/cities/city06.png" alt="Category Image">
                     <p>حمص</p>
                 </div>
                 <!-- Card 6 -->
-                <div class="category-card">
+                <div class="city-card">
                     <img src="assets/img/cities/city05.png" alt="Category Image">
                     <p>إدلب</p>
                 </div>
                 <!-- Card 7 -->
-                <div class="category-card">
+                <div class="city-card">
                     <img src="assets/img/cities/city04.png" alt="Category Image">
                     <p>اللاذقية</p>
                 </div>
                 <!-- Card 8 -->
-                <div class="category-card">
+                <div class="city-card">
                     <img src="assets/img/cities/city03.png" alt="Category Image">
                     <p>حماة</p>
                 </div>
                 <!-- Card 9 -->
-                <div class="category-card">
+                <div class="city-card">
                     <img src="assets/img/cities/city02.png" alt="Category Image">
                     <p>الحسكة</p>
                 </div>
                 <!-- Card 10 -->
-                <div class="category-card">
+                <div class="city-card">
                     <img src="assets/img/cities/city01.png" alt="Category Image">
                     <p>طرطوس</p>
                 </div>
@@ -524,7 +519,7 @@
 
 
         <!-- Latest Events Section-->
-        <section id="events-by-date" class="index-tabs-container">
+        <section id="latest-events" class="index-tabs-container">
             <div class="container">
                 <div class="section-title-two">
                     <p class="text-dark fs-5 fw-bold font-family-Tajawal  m-0 px-3 py-2">أحدث الفعاليات</p>
