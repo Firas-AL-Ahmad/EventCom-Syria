@@ -17,630 +17,873 @@
     <!-- Header -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary px-md-5 px-sm-4">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">
+            <a class="navbar-brand" href="index.html" data-i18n-attr="aria-label:nav.brand_aria"
+                aria-label="EventCom Syria">
                 <img src="assets/img/icons/Logo.svg" alt="EventCom Syria Logo">
             </a>
+
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">الرئيسية</a>
+                        <a class="nav-link active" aria-current="page" href="index.html"
+                            data-i18n="nav.home">الرئيسية</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="events.html">الفعاليات</a>
+                        <a class="nav-link" href="events.html" data-i18n="nav.events">الفعاليات</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">المحافظات</a>
+                        <a class="nav-link" href="#" data-i18n="nav.governorates">المحافظات</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">التصنيفات</a>
+                        <a class="nav-link" href="#" data-i18n="nav.categories">التصنيفات</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">من نحن</a>
+                        <a class="nav-link" href="about.html" data-i18n="nav.about">من نحن</a>
                     </li>
                 </ul>
-                <div class="d-flex align-items-center">
-                    <ul class="navbar-nav flex-row">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <img src="assets/img/icons/AR-flag.svg" alt="Arabic" class="lang-flag">
-                                العربية
-                            </a>
-                        </li>
-                        <li class="nav-item ms-2">
-                            <a class="nav-link" href="#">
-                                <img src="assets/img/icons/US-flag.svg" alt="English" class="lang-flag">
-                                English
-                            </a>
-                        </li>
-                    </ul>
-                    <label class="mx-3 ui-switch">
+
+                <div class="d-flex align-items-center gap-2">
+
+                    <!-- Language Dropdown -->
+                    <div class="dropdown">
+                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="langDropdown"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <img id="current-lang-flag" src="assets/img/icons/AR-flag.svg" alt=""
+                                class="lang-flag me-1">
+                            <span id="current-lang-label">العربية</span>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
+                            <li>
+                                <button class="dropdown-item d-flex align-items-center" data-lang="ar">
+                                    <img src="assets/img/icons/AR-flag.svg" alt="" class="lang-flag me-2">العربية
+                                </button>
+                            </li>
+                            <li>
+                                <button class="dropdown-item d-flex align-items-center" data-lang="en">
+                                    <img src="assets/img/icons/US-flag.svg" alt="" class="lang-flag me-2">English
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Theme switch (كما هو) -->
+                    <label class="mx-1 ui-switch">
                         <input type="checkbox">
                         <div class="slider">
                             <div class="circle"></div>
                         </div>
                     </label>
-                    <a href="contact.html" class="btn btn-primary-contact">اتصل بنا</a>
+
+                    <a href="contact.html" class="btn btn-primary-contact" data-i18n="nav.contact">اتصل بنا</a>
                 </div>
             </div>
         </div>
     </nav>
+
     <main>
 
         <!-- Hero Section -->
         <section id="hero" class="hero-section">
             <div class="container">
                 <div class="row align-items-center gy-4">
-                    <div class="col-lg-6 order-1 order-lg-1 text-end">
-                        <p class="fs-5 fw-normal text-secondary">🎉 اكتشف. خطّط. احضر!.</p>
-                        <h1 class="fw-bold text-dark">منصة مبسّطة لاكتشاف أحدث الفعاليات في جميع المحافظات السورية.</h1>
-                        <p class="fs-5 fw-bold text-secondary">موسيقى؟ ورشات؟ عائلي؟ كل الخيارات واضحة قدامك.</p>
-                        <div class="hero-actions mt-4">
-                            <a href="#" class="btn btn-primary px-4 py-2">أضف للتقويم</a>
-                            <a href="#" class="btn btn-outline-primary me-2 px-4 py-2">شارك الحدث</a>
+
+                    <!-- عمود النص -->
+                    <div class="col-lg-6 order-1 order-lg-1 text-dir-start">
+                        <p class="fs-5 fw-normal text-secondary" data-i18n="home.hero.tagline">🎉 اكتشف. خطّط. احضر!.
+                        </p>
+
+                        <h1 class="fw-bold text-dark" data-i18n="home.hero.title">
+                            منصة مبسّطة لاكتشاف أحدث الفعاليات في جميع المحافظات السورية.
+                        </h1>
+
+                        <p class="fs-5 fw-bold text-secondary" data-i18n="home.hero.subtitle">
+                            موسيقى؟ ورشات؟ عائلي؟ كل الخيارات واضحة قدامك.
+                        </p>
+
+                        <div class="hero-actions mt-4 d-flex gap-2">
+                            <a href="#" class="btn btn-primary px-4 py-2" data-i18n="home.hero.add_to_calendar">أضف
+                                للتقويم</a>
+                            <a href="#" class="btn btn-outline-primary px-4 py-2" data-i18n="home.hero.share_event">شارك
+                                الحدث</a>
                         </div>
                     </div>
+
+                    <!-- عمود السلايدر -->
                     <div class="hero-right-column col-lg-6 order-2 order-lg-2">
                         <div id="carouselExampleIndicators" class="carousel slide">
                             <div class="carousel-indicators">
                                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+                                    class="active" aria-current="true" data-i18n-attr="aria-label:carousel.slide_1"
+                                    aria-label="Slide 1"></button>
                                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                                    aria-label="Slide 2"></button>
+                                    data-i18n-attr="aria-label:carousel.slide_2" aria-label="Slide 2"></button>
                                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                                    aria-label="Slide 3"></button>
+                                    data-i18n-attr="aria-label:carousel.slide_3" aria-label="Slide 3"></button>
                             </div>
+
                             <div class="carousel-images carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="./assets/img/events-images/image.png" class="d-block w-100" alt="...">
+                                    <img src="./assets/img/events-images/image.png" class="d-block w-100"
+                                        data-i18n-attr="alt:carousel.image_alt" alt="Event image">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="./assets/img/events-images/image.png" class="d-block w-100" alt="...">
+                                    <img src="./assets/img/events-images/image.png" class="d-block w-100"
+                                        data-i18n-attr="alt:carousel.image_alt" alt="Event image">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="./assets/img/events-images/image.png" class="d-block w-100" alt="...">
+                                    <img src="./assets/img/events-images/image.png" class="d-block w-100"
+                                        data-i18n-attr="alt:carousel.image_alt" alt="Event image">
                                 </div>
                             </div>
+
                             <button class="carousel-control carousel-control-prev" type="button"
-                                data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                                <img src="./assets/img/icons/carousel-control-L.svg" alt="Previous">
+                                data-bs-target="#carouselExampleIndicators" data-bs-slide="prev"
+                                data-i18n-attr="aria-label:carousel.prev" aria-label="Previous">
+                                <img src="./assets/img/icons/carousel-control-L.svg" alt="">
                             </button>
+
                             <button class="carousel-control carousel-control-next" type="button"
-                                data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                                <img src="./assets/img/icons/carousel-control-R.svg" alt="Next">
+                                data-bs-target="#carouselExampleIndicators" data-bs-slide="next"
+                                data-i18n-attr="aria-label:carousel.next" aria-label="Next">
+                                <img src="./assets/img/icons/carousel-control-R.svg" alt="">
                             </button>
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
 
+
         <!-- Logos Section -->
-        <section class="client-logo-area client-logo-one">
+        <section class="client-logo-area client-logo-one" aria-labelledby="sponsors-title">
             <div class="section-title-two">
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
                             <div class="content">
-                                <h2 class="fw-bold">الداعمين</h2>
+                                <h2 id="sponsors-title" class="fw-bold" data-i18n="sponsors.title">الداعمين</h2>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+
             <div class="container-fluid">
-                <div class="marquee">
+                <div class="marquee" aria-label="sponsors marquee">
                     <div class="marquee-content">
-                        <div class="single-client"><img src="./assets/img/Logos/Sponsor01.png" alt="Logo" /></div>
-                        <div class="single-client"><img src="./assets/img/Logos/Sponsor02.png" alt="Logo" /></div>
-                        <div class="single-client"><img src="./assets/img/Logos/Sponsor03.png" alt="Logo" /></div>
-                        <div class="single-client"><img src="./assets/img/Logos/Sponsor04.png" alt="Logo" /></div>
-                        <div class="single-client"><img src="./assets/img/Logos/Sponsor05.png" alt="Logo" /></div>
-                        <div class="single-client"><img src="./assets/img/Logos/Sponsor06.png" alt="Logo" /></div>
-                        <div class="single-client"><img src="./assets/img/Logos/Sponsor07.png" alt="Logo" /></div>
-                        <div class="single-client"><img src="./assets/img/Logos/Sponsor08.png" alt="Logo" /></div>
-                        <div class="single-client"><img src="./assets/img/Logos/Sponsor09.png" alt="Logo" /></div>
-                        <div class="single-client"><img src="./assets/img/Logos/Sponsor01.png" alt="Logo" /></div>
-                        <div class="single-client"><img src="./assets/img/Logos/Sponsor02.png" alt="Logo" /></div>
-                        <div class="single-client"><img src="./assets/img/Logos/Sponsor03.png" alt="Logo" /></div>
-                        <div class="single-client"><img src="./assets/img/Logos/Sponsor04.png" alt="Logo" /></div>
-                        <div class="single-client"><img src="./assets/img/Logos/Sponsor05.png" alt="Logo" /></div>
-                        <div class="single-client"><img src="./assets/img/Logos/Sponsor06.png" alt="Logo" /></div>
-                        <div class="single-client"><img src="./assets/img/Logos/Sponsor07.png" alt="Logo" /></div>
-                        <div class="single-client"><img src="./assets/img/Logos/Sponsor08.png" alt="Logo" /></div>
-                        <div class="single-client"><img src="./assets/img/Logos/Sponsor09.png" alt="Logo" /></div>
+                        <!-- ملاحظات:
+                     - أبقينا تكرار الشعارات لخلق تمرير مستمر.
+                     - نترجم alt بشكل عام (Logo) عبر i18n. -->
+                        <div class="single-client">
+                            <img src="./assets/img/Logos/Sponsor01.png" class="img-fluid"
+                                data-i18n-attr="alt:sponsors.logo_alt" alt="Logo" />
+                        </div>
+                        <div class="single-client">
+                            <img src="./assets/img/Logos/Sponsor02.png" class="img-fluid"
+                                data-i18n-attr="alt:sponsors.logo_alt" alt="Logo" />
+                        </div>
+                        <div class="single-client">
+                            <img src="./assets/img/Logos/Sponsor03.png" class="img-fluid"
+                                data-i18n-attr="alt:sponsors.logo_alt" alt="Logo" />
+                        </div>
+                        <div class="single-client">
+                            <img src="./assets/img/Logos/Sponsor04.png" class="img-fluid"
+                                data-i18n-attr="alt:sponsors.logo_alt" alt="Logo" />
+                        </div>
+                        <div class="single-client">
+                            <img src="./assets/img/Logos/Sponsor05.png" class="img-fluid"
+                                data-i18n-attr="alt:sponsors.logo_alt" alt="Logo" />
+                        </div>
+                        <div class="single-client">
+                            <img src="./assets/img/Logos/Sponsor06.png" class="img-fluid"
+                                data-i18n-attr="alt:sponsors.logo_alt" alt="Logo" />
+                        </div>
+                        <div class="single-client">
+                            <img src="./assets/img/Logos/Sponsor07.png" class="img-fluid"
+                                data-i18n-attr="alt:sponsors.logo_alt" alt="Logo" />
+                        </div>
+                        <div class="single-client">
+                            <img src="./assets/img/Logos/Sponsor08.png" class="img-fluid"
+                                data-i18n-attr="alt:sponsors.logo_alt" alt="Logo" />
+                        </div>
+                        <div class="single-client">
+                            <img src="./assets/img/Logos/Sponsor09.png" class="img-fluid"
+                                data-i18n-attr="alt:sponsors.logo_alt" alt="Logo" />
+                        </div>
+
+                        <!-- تكرار للـmarquee المستمر -->
+                        <div class="single-client">
+                            <img src="./assets/img/Logos/Sponsor01.png" class="img-fluid"
+                                data-i18n-attr="alt:sponsors.logo_alt" alt="Logo" />
+                        </div>
+                        <div class="single-client">
+                            <img src="./assets/img/Logos/Sponsor02.png" class="img-fluid"
+                                data-i18n-attr="alt:sponsors.logo_alt" alt="Logo" />
+                        </div>
+                        <div class="single-client">
+                            <img src="./assets/img/Logos/Sponsor03.png" class="img-fluid"
+                                data-i18n-attr="alt:sponsors.logo_alt" alt="Logo" />
+                        </div>
+                        <div class="single-client">
+                            <img src="./assets/img/Logos/Sponsor04.png" class="img-fluid"
+                                data-i18n-attr="alt:sponsors.logo_alt" alt="Logo" />
+                        </div>
+                        <div class="single-client">
+                            <img src="./assets/img/Logos/Sponsor05.png" class="img-fluid"
+                                data-i18n-attr="alt:sponsors.logo_alt" alt="Logo" />
+                        </div>
+                        <div class="single-client">
+                            <img src="./assets/img/Logos/Sponsor06.png" class="img-fluid"
+                                data-i18n-attr="alt:sponsors.logo_alt" alt="Logo" />
+                        </div>
+                        <div class="single-client">
+                            <img src="./assets/img/Logos/Sponsor07.png" class="img-fluid"
+                                data-i18n-attr="alt:sponsors.logo_alt" alt="Logo" />
+                        </div>
+                        <div class="single-client">
+                            <img src="./assets/img/Logos/Sponsor08.png" class="img-fluid"
+                                data-i18n-attr="alt:sponsors.logo_alt" alt="Logo" />
+                        </div>
+                        <div class="single-client">
+                            <img src="./assets/img/Logos/Sponsor09.png" class="img-fluid"
+                                data-i18n-attr="alt:sponsors.logo_alt" alt="Logo" />
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
+
         <!-- Events by Date Section -->
-        <section id="events-by-date" class="index-tabs-container">
+        <section id="events-by-date" class="index-tabs-container" aria-labelledby="events-by-date-title">
             <div class="container">
                 <div class="section-title-two">
-                    <p class="text-dark fs-5 fw-bold font-family-Tajawal  m-0 px-3 py-2">عرض فعاليات</p>
+                    <p id="events-by-date-title" class="text-dark fs-5 fw-bold font-family-Tajawal m-0 px-3 py-2"
+                        data-i18n="events.by_date.title">عرض فعاليات</p>
                 </div>
-                <div class="index-tabs-container">
-                    <button class="index-tab-link active" data-tab-target="#today">اليوم</button>
-                    <button class="index-tab-link" data-tab-target="#end-of-week">نهاية الأسبوع</button>
-                    <button class="index-tab-link" data-tab-target="#this-month">هذا الشهر</button>
+
+                <!-- Tabs -->
+                <div class="index-tabs-container" role="tablist" aria-label="events by date tabs">
+                    <button class="index-tab-link active" data-tab-target="#today" role="tab"
+                        data-i18n="events.by_date.tabs.today">اليوم</button>
+                    <button class="index-tab-link" data-tab-target="#end-of-week" role="tab"
+                        data-i18n="events.by_date.tabs.end_week">نهاية الأسبوع</button>
+                    <button class="index-tab-link" data-tab-target="#this-month" role="tab"
+                        data-i18n="events.by_date.tabs.this_month">هذا الشهر</button>
                 </div>
+
                 <div class="events-content-Categories">
-                    <div id="today" class="index-tab-content active">
+                    <!-- ========== TODAY ========== -->
+                    <div id="today" class="index-tab-content active" role="tabpanel" aria-labelledby="tab-today">
                         <div class="row">
                             <!-- Card 1 -->
                             <div class="col-lg-4 col-md-6 mb-4">
                                 <div class="event-card">
                                     <img class="image-event-card" src="assets/img/events-images/event$-1.png"
-                                        alt="Event Image">
+                                        data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
                                     <div class="event-card-header">
-                                        <span class="tag">موسيقى</span>
-                                        <span class="city">دمشق</span>
+                                        <span class="tag" data-i18n="categories.music">موسيقى</span>
+                                        <span class="city" data-i18n="cities.damascus">دمشق</span>
                                     </div>
                                     <div class="event-card-content">
-                                        <p class="text-dark fw-bold p-0 m-0">أوركسترا السيمفوني السوري</p>
-                                        <p class="text-end text-secondary p-0 m-0">أمسية كلاسيكية وعروض حيّة على مسرح
-                                            الدراما.</p>
+                                        <p class="text-dark fw-bold p-0 m-0" data-i18n="events.today.card1.title">
+                                            أوركسترا
+                                            السيمفوني السوري</p>
+                                        <p class="text-dir-start text-secondary p-0 m-0"
+                                            data-i18n="events.today.card1.subtitle">
+                                            أمسية كلاسيكية وعروض حيّة على مسرح الدراما.
+                                        </p>
                                         <div class="date py-3 m-0">
                                             <i class="bi bi-calendar3"></i>
-                                            <span>15 نوفمبر 2025</span>
+                                            <span data-date-iso="2025-11-15"></span>
                                         </div>
                                         <div class="card-buttons">
-                                            <a href="event.html" class="btn btn-primary">التفاصيل</a>
-                                            <button type="button" class="btn btn-outline-primary">أضف للتقويم</button>
+                                            <a href="event.html" class="btn btn-primary"
+                                                data-i18n="buttons.details">التفاصيل</a>
+                                            <button type="button" class="btn btn-outline-primary"
+                                                data-i18n="buttons.add_to_calendar">أضف للتقويم</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                             <!-- Card 2 -->
                             <div class="col-lg-4 col-md-6 mb-4">
                                 <div class="event-card">
                                     <img class="image-event-card" src="assets/img/events-images/event$-4.png"
-                                        alt="Event Image">
+                                        data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
                                     <div class="event-card-header">
-                                        <span class="tag">ثقافة</span>
-                                        <span class="city">دمشق</span>
+                                        <span class="tag" data-i18n="categories.culture">ثقافة</span>
+                                        <span class="city" data-i18n="cities.damascus">دمشق</span>
                                     </div>
                                     <div class="event-card-content">
-                                        <p class="text-dark fw-bold p-0 m-0">أمسية شعرية</p>
-                                        <p class="text-end text-secondary p-0 m-0">أمسية شعرية يشارك فيها عدد من الشعراء
-                                            السوريين.</p>
+                                        <p class="text-dark fw-bold p-0 m-0" data-i18n="events.today.card2.title">أمسية
+                                            شعرية
+                                        </p>
+                                        <p class="text-dir-start text-secondary p-0 m-0"
+                                            data-i18n="events.today.card2.subtitle">
+                                            أمسية شعرية يشارك فيها عدد من الشعراء السوريين.
+                                        </p>
                                         <div class="date py-3 m-0">
                                             <i class="bi bi-calendar3"></i>
-                                            <span>15 نوفمبر 2025</span>
+                                            <span data-date-iso="2025-11-15"></span>
                                         </div>
                                         <div class="card-buttons">
-                                            <a href="event.html" class="btn btn-primary">التفاصيل</a>
-                                            <button type="button" class="btn btn-outline-primary">أضف للتقويم</button>
+                                            <a href="event.html" class="btn btn-primary"
+                                                data-i18n="buttons.details">التفاصيل</a>
+                                            <button type="button" class="btn btn-outline-primary"
+                                                data-i18n="buttons.add_to_calendar">أضف للتقويم</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                             <!-- Card 3 -->
                             <div class="col-lg-4 col-md-6 mb-4">
                                 <div class="event-card">
                                     <img class="image-event-card" src="assets/img/events-images/event$-2.png"
-                                        alt="Event Image">
+                                        data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
                                     <div class="event-card-header">
-                                        <span class="tag">فن</span>
-                                        <span class="city">حلب</span>
+                                        <span class="tag" data-i18n="categories.art">فن</span>
+                                        <span class="city" data-i18n="cities.aleppo">حلب</span>
                                     </div>
                                     <div class="event-card-content">
-                                        <p class="text-dark fw-bold p-0 m-0">معرض فني</p>
-                                        <p class="text-end text-secondary p-0 m-0">معرض للفن التشكيلي يعرض أعمال فنانين
-                                            محليين.</p>
+                                        <p class="text-dark fw-bold p-0 m-0" data-i18n="events.today.card3.title">معرض
+                                            فني</p>
+                                        <p class="text-dir-start text-secondary p-0 m-0"
+                                            data-i18n="events.today.card3.subtitle">
+                                            معرض للفن التشكيلي يعرض أعمال فنانين محليين.
+                                        </p>
                                         <div class="date py-3 m-0">
                                             <i class="bi bi-calendar3"></i>
-                                            <span>15 نوفمبر 2025</span>
+                                            <span data-date-iso="2025-11-15"></span>
                                         </div>
                                         <div class="card-buttons">
-                                            <a href="event.html" class="btn btn-primary">التفاصيل</a>
-                                            <button type="button" class="btn btn-outline-primary">أضف للتقويم</button>
+                                            <a href="event.html" class="btn btn-primary"
+                                                data-i18n="buttons.details">التفاصيل</a>
+                                            <button type="button" class="btn btn-outline-primary"
+                                                data-i18n="buttons.add_to_calendar">أضف للتقويم</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
-                    <div id="end-of-week" class="index-tab-content">
+
+                    <!-- ========== END OF WEEK ========== -->
+                    <div id="end-of-week" class="index-tab-content" role="tabpanel" aria-labelledby="tab-end-week">
                         <div class="row">
-                            <!-- Card 2 -->
+                            <!-- Card 1 -->
                             <div class="col-lg-4 col-md-6 mb-4">
                                 <div class="event-card">
                                     <img class="image-event-card" src="assets/img/events-images/event$-2.png"
-                                        alt="Event Image">
+                                        data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
                                     <div class="event-card-header">
-                                        <span class="tag">فن</span>
-                                        <span class="city">حلب</span>
+                                        <span class="tag" data-i18n="categories.art">فن</span>
+                                        <span class="city" data-i18n="cities.aleppo">حلب</span>
                                     </div>
                                     <div class="event-card-content">
-                                        <p class="text-dark fw-bold p-0 m-0">معرض فني</p>
-                                        <p class="text-end text-secondary p-0 m-0">معرض للفن التشكيلي يعرض أعمال فنانين
-                                            محليين.</p>
+                                        <p class="text-dark fw-bold p-0 m-0" data-i18n="events.end_week.card1.title">
+                                            معرض فني
+                                        </p>
+                                        <p class="text-dir-start text-secondary p-0 m-0"
+                                            data-i18n="events.end_week.card1.subtitle">
+                                            معرض للفن التشكيلي يعرض أعمال فنانين محليين.
+                                        </p>
                                         <div class="date py-3 m-0">
                                             <i class="bi bi-calendar3"></i>
-                                            <span>20 نوفمبر 2025</span>
+                                            <span data-date-iso="2025-11-20"></span>
                                         </div>
                                         <div class="card-buttons">
-                                            <a href="event.html" class="btn btn-primary">التفاصيل</a>
-                                            <button type="button" class="btn btn-outline-primary">أضف للتقويم</button>
+                                            <a href="event.html" class="btn btn-primary"
+                                                data-i18n="buttons.details">التفاصيل</a>
+                                            <button type="button" class="btn btn-outline-primary"
+                                                data-i18n="buttons.add_to_calendar">أضف للتقويم</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- Card 3 -->
+
+                            <!-- Card 2 -->
                             <div class="col-lg-4 col-md-6 mb-4">
                                 <div class="event-card">
                                     <img class="image-event-card" src="assets/img/events-images/event$-3.png"
-                                        alt="Event Image">
+                                        data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
                                     <div class="event-card-header">
-                                        <span class="tag">رياضة</span>
-                                        <span class="city">حمص</span>
+                                        <span class="tag" data-i18n="categories.sport">رياضة</span>
+                                        <span class="city" data-i18n="cities.homs">حمص</span>
                                     </div>
                                     <div class="event-card-content">
-                                        <p class="text-dark fw-bold p-0 m-0">مباراة كرة قدم</p>
-                                        <p class="text-end text-secondary p-0 m-0">مباراة ودية بين فريقين محليين على
-                                            الملعب البلدي.</p>
+                                        <p class="text-dark fw-bold p-0 m-0" data-i18n="events.end_week.card2.title">
+                                            مباراة كرة
+                                            قدم</p>
+                                        <p class="text-dir-start text-secondary p-0 m-0"
+                                            data-i18n="events.end_week.card2.subtitle">
+                                            مباراة ودية بين فريقين محليين على الملعب البلدي.
+                                        </p>
                                         <div class="date py-3 m-0">
                                             <i class="bi bi-calendar3"></i>
-                                            <span>22 نوفمبر 2025</span>
+                                            <span data-date-iso="2025-11-22"></span>
                                         </div>
                                         <div class="card-buttons">
-                                            <a href="event.html" class="btn btn-primary">التفاصيل</a>
-                                            <button type="button" class="btn btn-outline-primary">أضف للتقويم</button>
+                                            <a href="event.html" class="btn btn-primary"
+                                                data-i18n="buttons.details">التفاصيل</a>
+                                            <button type="button" class="btn btn-outline-primary"
+                                                data-i18n="buttons.add_to_calendar">أضف للتقويم</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- Card 4 -->
+
+                            <!-- Card 3 -->
                             <div class="col-lg-4 col-md-6 mb-4">
                                 <div class="event-card">
                                     <img class="image-event-card" src="assets/img/events-images/event$-5.png"
-                                        alt="Event Image">
+                                        data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
                                     <div class="event-card-header">
-                                        <span class="tag">تكنولوجيا</span>
-                                        <span class="city">حلب</span>
+                                        <span class="tag" data-i18n="categories.tech">تكنولوجيا</span>
+                                        <span class="city" data-i18n="cities.aleppo">حلب</span>
                                     </div>
                                     <div class="event-card-content">
-                                        <p class="text-dark fw-bold p-0 m-0">ورشة عمل</p>
-                                        <p class="text-end text-secondary p-0 m-0">ورشة عمل حول أحدث التقنيات في عالم
-                                            البرمجة.</p>
+                                        <p class="text-dark fw-bold p-0 m-0" data-i18n="events.end_week.card3.title">
+                                            ورشة عمل
+                                        </p>
+                                        <p class="text-dir-start text-secondary p-0 m-0"
+                                            data-i18n="events.end_week.card3.subtitle">
+                                            ورشة عمل حول أحدث التقنيات في عالم البرمجة.
+                                        </p>
                                         <div class="date py-3 m-0">
                                             <i class="bi bi-calendar3"></i>
-                                            <span>21 نوفمبر 2025</span>
+                                            <span data-date-iso="2025-11-21"></span>
                                         </div>
                                         <div class="card-buttons">
-                                            <a href="event.html" class="btn btn-primary">التفاصيل</a>
-                                            <button type="button" class="btn btn-outline-primary">أضف للتقويم</button>
+                                            <a href="event.html" class="btn btn-primary"
+                                                data-i18n="buttons.details">التفاصيل</a>
+                                            <button type="button" class="btn btn-outline-primary"
+                                                data-i18n="buttons.add_to_calendar">أضف للتقويم</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
-                    <div id="this-month" class="index-tab-content">
+
+                    <!-- ========== THIS MONTH ========== -->
+                    <div id="this-month" class="index-tab-content" role="tabpanel" aria-labelledby="tab-this-month">
                         <div class="row">
-                            <!-- Card 5 -->
+                            <!-- Card 1 -->
                             <div class="col-lg-4 col-md-6 mb-4">
                                 <div class="event-card">
                                     <img class="image-event-card" src="assets/img/events-images/event$-5.png"
-                                        alt="Event Image">
+                                        data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
                                     <div class="event-card-header">
-                                        <span class="tag">تكنولوجيا</span>
-                                        <span class="city">حلب</span>
+                                        <span class="tag" data-i18n="categories.tech">تكنولوجيا</span>
+                                        <span class="city" data-i18n="cities.aleppo">حلب</span>
                                     </div>
                                     <div class="event-card-content">
-                                        <p class="text-dark fw-bold p-0 m-0">ورشة عمل</p>
-                                        <p class="text-end text-secondary p-0 m-0">ورشة عمل حول أحدث التقنيات في عالم
-                                            البرمجة.</p>
+                                        <p class="text-dark fw-bold p-0 m-0" data-i18n="events.month.card1.title">ورشة
+                                            عمل</p>
+                                        <p class="text-dir-start text-secondary p-0 m-0"
+                                            data-i18n="events.month.card1.subtitle">
+                                            ورشة عمل حول أحدث التقنيات في عالم البرمجة.
+                                        </p>
                                         <div class="date py-3 m-0">
                                             <i class="bi bi-calendar3"></i>
-                                            <span>30 نوفمبر 2025</span>
+                                            <span data-date-iso="2025-11-30"></span>
                                         </div>
                                         <div class="card-buttons">
-                                            <a href="event.html" class="btn btn-primary">التفاصيل</a>
-                                            <button type="button" class="btn btn-outline-primary">أضف للتقويم</button>
+                                            <a href="event.html" class="btn btn-primary"
+                                                data-i18n="buttons.details">التفاصيل</a>
+                                            <button type="button" class="btn btn-outline-primary"
+                                                data-i18n="buttons.add_to_calendar">أضف للتقويم</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- Card 6 -->
+
+                            <!-- Card 2 -->
                             <div class="col-lg-4 col-md-6 mb-4">
                                 <div class="event-card">
                                     <img class="image-event-card" src="assets/img/events-images/event$-4.png"
-                                        alt="Event Image">
+                                        data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
                                     <div class="event-card-header">
-                                        <span class="tag">ثقافة</span>
-                                        <span class="city">دمشق</span>
+                                        <span class="tag" data-i18n="categories.culture">ثقافة</span>
+                                        <span class="city" data-i18n="cities.damascus">دمشق</span>
                                     </div>
                                     <div class="event-card-content">
-                                        <p class="text-dark fw-bold p-0 m-0">أمسية شعرية</p>
-                                        <p class="text-end text-secondary p-0 m-0">أمسية شعرية يشارك فيها عدد من الشعراء
-                                            السوريين.</p>
+                                        <p class="text-dark fw-bold p-0 m-0" data-i18n="events.month.card2.title">أمسية
+                                            شعرية
+                                        </p>
+                                        <p class="text-dir-start text-secondary p-0 m-0"
+                                            data-i18n="events.month.card2.subtitle">
+                                            أمسية شعرية يشارك فيها عدد من الشعراء السوريين.
+                                        </p>
                                         <div class="date py-3 m-0">
                                             <i class="bi bi-calendar3"></i>
-                                            <span>25 نوفمبر 2025</span>
+                                            <span data-date-iso="2025-11-25"></span>
                                         </div>
                                         <div class="card-buttons">
-                                            <a href="event.html" class="btn btn-primary">التفاصيل</a>
-                                            <button type="button" class="btn btn-outline-primary">أضف للتقويم</button>
+                                            <a href="event.html" class="btn btn-primary"
+                                                data-i18n="buttons.details">التفاصيل</a>
+                                            <button type="button" class="btn btn-outline-primary"
+                                                data-i18n="buttons.add_to_calendar">أضف للتقويم</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- Card 7 -->
+
+                            <!-- Card 3 -->
                             <div class="col-lg-4 col-md-6 mb-4">
                                 <div class="event-card">
                                     <img class="image-event-card" src="assets/img/events-images/event$-1.png"
-                                        alt="Event Image">
+                                        data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
                                     <div class="event-card-header">
-                                        <span class="tag">موسيقى</span>
-                                        <span class="city">دمشق</span>
+                                        <span class="tag" data-i18n="categories.music">موسيقى</span>
+                                        <span class="city" data-i18n="cities.damascus">دمشق</span>
                                     </div>
                                     <div class="event-card-content">
-                                        <p class="text-dark fw-bold p-0 m-0">أوركسترا السيمفوني السوري</p>
-                                        <p class="text-end text-secondary p-0 m-0">أمسية كلاسيكية وعروض حيّة على مسرح
-                                            الدراما.</p>
+                                        <p class="text-dark fw-bold p-0 m-0" data-i18n="events.month.card3.title">
+                                            أوركسترا
+                                            السيمفوني السوري</p>
+                                        <p class="text-dir-start text-secondary p-0 m-0"
+                                            data-i18n="events.month.card3.subtitle">
+                                            أمسية كلاسيكية وعروض حيّة على مسرح الدراما.
+                                        </p>
                                         <div class="date py-3 m-0">
                                             <i class="bi bi-calendar3"></i>
-                                            <span>28 نوفمبر 2025</span>
+                                            <span data-date-iso="2025-11-28"></span>
                                         </div>
                                         <div class="card-buttons">
-                                            <a href="event.html" class="btn btn-primary">التفاصيل</a>
-                                            <button type="button" class="btn btn-outline-primary">أضف للتقويم</button>
+                                            <a href="event.html" class="btn btn-primary"
+                                                data-i18n="buttons.details">التفاصيل</a>
+                                            <button type="button" class="btn btn-outline-primary"
+                                                data-i18n="buttons.add_to_calendar">أضف للتقويم</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
+
                 </div>
             </div>
         </section>
 
         <!-- Categories Section -->
-        <section class="categories-section">
+        <section class="categories-section" aria-labelledby="categories-title">
             <div class="categories-title">
-                <p class="text-dark fs-5 fw-bold font-family-Tajawal  m-0 px-3 py-2">تصنيفات سريعة</p>
-                <p class="text-end text-secondary fs-6 fw-normal font-family-Tajawal  m-0 px-3 py-2">اختر تصنيفًا لعرض
-                    نتائج مناسبة
-                    لاهتماماتك.</p>
+                <p id="categories-title" class="text-dark fs-5 fw-bold font-family-Tajawal m-0 px-3 py-2"
+                    data-i18n="categories_section.title">تصنيفات سريعة</p>
+
+                <p class="text-dir-start text-secondary fs-6 fw-normal font-family-Tajawal m-0 px-3 py-2"
+                    data-i18n="categories_section.subtitle">
+                    اختر تصنيفًا لعرض نتائج مناسبة لاهتماماتك.
+                </p>
             </div>
+
             <div class="categories-content">
-                <!-- Card 1 -->
+                <!-- Category 1 -->
                 <div class="category-card">
-                    <img src="assets/img/categories/Category01.png" alt="Category Image">
-                    <p>ثقافة وفنون</p>
+                    <img src="assets/img/categories/Category01.png" data-i18n-attr="alt:categories_list.culture_art.alt"
+                        alt="Category Image">
+                    <p data-i18n="categories_list.culture_art.name">ثقافة وفنون</p>
                 </div>
-                <!-- Card 2 -->
+
+                <!-- Category 2 -->
                 <div class="category-card">
-                    <img src="assets/img/categories/Category02.png" alt="Category Image">
-                    <p>موسيقى</p>
+                    <img src="assets/img/categories/Category02.png" data-i18n-attr="alt:categories_list.music.alt"
+                        alt="Category Image">
+                    <p data-i18n="categories_list.music.name">موسيقى</p>
                 </div>
-                <!-- Card 3 -->
+
+                <!-- Category 3 -->
                 <div class="category-card">
-                    <img src="assets/img/categories/Category03.png" alt="Category Image">
-                    <p>رياضة</p>
+                    <img src="assets/img/categories/Category03.png" data-i18n-attr="alt:categories_list.sport.alt"
+                        alt="Category Image">
+                    <p data-i18n="categories_list.sport.name">رياضة</p>
                 </div>
-                <!-- Card 4 -->
+
+                <!-- Category 4 -->
                 <div class="category-card">
-                    <img src="assets/img/categories/Category04.png" alt="Category Image">
-                    <p>تكنولوجيا</p>
+                    <img src="assets/img/categories/Category04.png" data-i18n-attr="alt:categories_list.tech.alt"
+                        alt="Category Image">
+                    <p data-i18n="categories_list.tech.name">تكنولوجيا</p>
                 </div>
-                <!-- Card 5 -->
+
+                <!-- Category 5 -->
                 <div class="category-card">
-                    <img src="assets/img/categories/Category05.png" alt="Category Image">
-                    <p>أعمال</p>
+                    <img src="assets/img/categories/Category05.png" data-i18n-attr="alt:categories_list.business.alt"
+                        alt="Category Image">
+                    <p data-i18n="categories_list.business.name">أعمال</p>
                 </div>
-                <!-- Card 6 -->
+
+                <!-- Category 6 -->
                 <div class="category-card">
-                    <img src="assets/img/categories/Category06.png" alt="Category Image">
-                    <p>طعام</p>
+                    <img src="assets/img/categories/Category06.png" data-i18n-attr="alt:categories_list.food.alt"
+                        alt="Category Image">
+                    <p data-i18n="categories_list.food.name">طعام</p>
                 </div>
-                <!-- Card 7 -->
+
+                <!-- Category 7 -->
                 <div class="category-card">
-                    <img src="assets/img/categories/Category07.png" alt="Category Image">
-                    <p>صحة</p>
+                    <img src="assets/img/categories/Category07.png" data-i18n-attr="alt:categories_list.health.alt"
+                        alt="Category Image">
+                    <p data-i18n="categories_list.health.name">صحة</p>
                 </div>
-                <!-- Card 8 -->
+
+                <!-- Category 8 -->
                 <div class="category-card">
-                    <img src="assets/img/categories/Category08.png" alt="Category Image">
-                    <p>تعليم</p>
+                    <img src="assets/img/categories/Category08.png" data-i18n-attr="alt:categories_list.education.alt"
+                        alt="Category Image">
+                    <p data-i18n="categories_list.education.name">تعليم</p>
                 </div>
             </div>
         </section>
+
 
 
         <!-- Cities Section -->
-        <section class="cities-section">
+        <section class="cities-section" aria-labelledby="cities-title">
             <div class="cities-title">
-                <p class="text-dark fs-5 fw-bold font-family-Tajawal  m-0 px-3 py-2">استكشاف المحافظات</p>
-                <p class="text-end text-secondary fs-6 fw-normal font-family-Tajawal  m-0 px-3 py-2">
+                <p id="cities-title" class="text-dark fs-5 fw-bold font-family-Tajawal m-0 px-3 py-2"
+                    data-i18n="cities_section.title">استكشاف المحافظات</p>
+
+                <p class="text-dir-start text-secondary fs-6 fw-normal font-family-Tajawal m-0 px-3 py-2"
+                    data-i18n="cities_section.subtitle">
                     اختَر محافظة لعرض الفعاليات القريبة منك.
                 </p>
             </div>
+
             <div class="cities-content">
                 <!-- Card 1 -->
                 <div class="city-card">
-                    <img src="assets/img/cities/city10.png" alt="Category Image">
-                    <p>دمشق</p>
+                    <img src="assets/img/cities/city10.png" data-i18n-attr="alt:cities_list.damascus.alt"
+                        alt="Category Image">
+                    <p data-i18n="cities.damascus">دمشق</p>
                 </div>
                 <!-- Card 2 -->
                 <div class="city-card">
-                    <img src="assets/img/cities/city09.png" alt="Category Image">
-                    <p>دير الزور</p>
+                    <img src="assets/img/cities/city09.png" data-i18n-attr="alt:cities_list.deir_ez_zor.alt"
+                        alt="Category Image">
+                    <p data-i18n="cities.deir_ez_zor">دير الزور</p>
                 </div>
                 <!-- Card 3 -->
                 <div class="city-card">
-                    <img src="assets/img/cities/city08.png" alt="Category Image">
-                    <p>حلب</p>
+                    <img src="assets/img/cities/city08.png" data-i18n-attr="alt:cities_list.aleppo.alt"
+                        alt="Category Image">
+                    <p data-i18n="cities.aleppo">حلب</p>
                 </div>
                 <!-- Card 4 -->
                 <div class="city-card">
-                    <img src="assets/img/cities/city07.png" alt="Category Image">
-                    <p>الرقة</p>
+                    <img src="assets/img/cities/city07.png" data-i18n-attr="alt:cities_list.raqqa.alt"
+                        alt="Category Image">
+                    <p data-i18n="cities.raqqa">الرقة</p>
                 </div>
                 <!-- Card 5 -->
                 <div class="city-card">
-                    <img src="assets/img/cities/city06.png" alt="Category Image">
-                    <p>حمص</p>
+                    <img src="assets/img/cities/city06.png" data-i18n-attr="alt:cities_list.homs.alt"
+                        alt="Category Image">
+                    <p data-i18n="cities.homs">حمص</p>
                 </div>
                 <!-- Card 6 -->
                 <div class="city-card">
-                    <img src="assets/img/cities/city05.png" alt="Category Image">
-                    <p>إدلب</p>
+                    <img src="assets/img/cities/city05.png" data-i18n-attr="alt:cities_list.idlib.alt"
+                        alt="Category Image">
+                    <p data-i18n="cities.idlib">إدلب</p>
                 </div>
                 <!-- Card 7 -->
                 <div class="city-card">
-                    <img src="assets/img/cities/city04.png" alt="Category Image">
-                    <p>اللاذقية</p>
+                    <img src="assets/img/cities/city04.png" data-i18n-attr="alt:cities_list.lattakia.alt"
+                        alt="Category Image">
+                    <p data-i18n="cities.lattakia">اللاذقية</p>
                 </div>
                 <!-- Card 8 -->
                 <div class="city-card">
-                    <img src="assets/img/cities/city03.png" alt="Category Image">
-                    <p>حماة</p>
+                    <img src="assets/img/cities/city03.png" data-i18n-attr="alt:cities_list.hama.alt"
+                        alt="Category Image">
+                    <p data-i18n="cities.hama">حماة</p>
                 </div>
                 <!-- Card 9 -->
                 <div class="city-card">
-                    <img src="assets/img/cities/city02.png" alt="Category Image">
-                    <p>الحسكة</p>
+                    <img src="assets/img/cities/city02.png" data-i18n-attr="alt:cities_list.hasakah.alt"
+                        alt="Category Image">
+                    <p data-i18n="cities.hasakah">الحسكة</p>
                 </div>
                 <!-- Card 10 -->
                 <div class="city-card">
-                    <img src="assets/img/cities/city01.png" alt="Category Image">
-                    <p>طرطوس</p>
+                    <img src="assets/img/cities/city01.png" data-i18n-attr="alt:cities_list.tartus.alt"
+                        alt="Category Image">
+                    <p data-i18n="cities.tartus">طرطوس</p>
                 </div>
             </div>
         </section>
 
 
+
         <!-- Latest Events Section-->
-        <section id="latest-events" class="index-tabs-container">
+        <section id="latest-events" class="index-tabs-container" aria-labelledby="latest-events-title">
             <div class="container">
                 <div class="section-title-two">
-                    <p class="text-dark fs-5 fw-bold font-family-Tajawal  m-0 px-3 py-2">أحدث الفعاليات</p>
+                    <p id="latest-events-title" class="text-dark fs-5 fw-bold font-family-Tajawal m-0 px-3 py-2"
+                        data-i18n="events.latest.title">أحدث الفعاليات</p>
                 </div>
+
                 <div class="events-content-Categories">
-                    <div class="index-tab-content active">
+                    <div class="index-tab-content active" role="tabpanel">
                         <div class="row">
+
                             <!-- Card 1 -->
                             <div class="col-lg-4 col-md-6 mb-4">
                                 <div class="event-card">
                                     <img class="image-event-card" src="assets/img/events-images/event$-1.png"
-                                        alt="Event Image">
+                                        data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
                                     <div class="event-card-header">
-                                        <span class="tag">موسيقى</span>
-                                        <span class="city">دمشق</span>
+                                        <span class="tag" data-i18n="categories.music">موسيقى</span>
+                                        <span class="city" data-i18n="cities.damascus">دمشق</span>
                                     </div>
                                     <div class="event-card-content">
-                                        <p class="text-dark fw-bold p-0 m-0">أوركسترا السيمفوني السوري</p>
-                                        <p class="text-end text-secondary p-0 m-0">أمسية كلاسيكية وعروض حيّة على مسرح
-                                            الدراما.</p>
+                                        <p class="text-dark fw-bold p-0 m-0" data-i18n="events.latest.card1.title">
+                                            أوركسترا
+                                            السيمفوني السوري</p>
+                                        <p class="text-dir-start text-secondary p-0 m-0"
+                                            data-i18n="events.latest.card1.subtitle">
+                                            أمسية كلاسيكية وعروض حيّة على مسرح الدراما.
+                                        </p>
                                         <div class="date py-3 m-0">
                                             <i class="bi bi-calendar3"></i>
-                                            <span>15 نوفمبر 2025</span>
+                                            <span data-date-iso="2025-11-15"></span>
                                         </div>
                                         <div class="card-buttons">
-                                            <a href="event.html" class="btn btn-primary">التفاصيل</a>
-                                            <button type="button" class="btn btn-outline-primary">أضف للتقويم</button>
+                                            <a href="event.html" class="btn btn-primary"
+                                                data-i18n="buttons.details">التفاصيل</a>
+                                            <button type="button" class="btn btn-outline-primary"
+                                                data-i18n="buttons.add_to_calendar">أضف للتقويم</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                             <!-- Card 2 -->
                             <div class="col-lg-4 col-md-6 mb-4">
                                 <div class="event-card">
                                     <img class="image-event-card" src="assets/img/events-images/event$-4.png"
-                                        alt="Event Image">
+                                        data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
                                     <div class="event-card-header">
-                                        <span class="tag">ثقافة</span>
-                                        <span class="city">دمشق</span>
+                                        <span class="tag" data-i18n="categories.culture">ثقافة</span>
+                                        <span class="city" data-i18n="cities.damascus">دمشق</span>
                                     </div>
                                     <div class="event-card-content">
-                                        <p class="text-dark fw-bold p-0 m-0">أمسية شعرية</p>
-                                        <p class="text-end text-secondary p-0 m-0">أمسية شعرية يشارك فيها عدد من الشعراء
-                                            السوريين.</p>
+                                        <p class="text-dark fw-bold p-0 m-0" data-i18n="events.latest.card2.title">أمسية
+                                            شعرية
+                                        </p>
+                                        <p class="text-dir-start text-secondary p-0 m-0"
+                                            data-i18n="events.latest.card2.subtitle">
+                                            أمسية شعرية يشارك فيها عدد من الشعراء السوريين.
+                                        </p>
                                         <div class="date py-3 m-0">
                                             <i class="bi bi-calendar3"></i>
-                                            <span>15 نوفمبر 2025</span>
+                                            <span data-date-iso="2025-11-15"></span>
                                         </div>
                                         <div class="card-buttons">
-                                            <a href="event.html" class="btn btn-primary">التفاصيل</a>
-                                            <button type="button" class="btn btn-outline-primary">أضف للتقويم</button>
+                                            <a href="event.html" class="btn btn-primary"
+                                                data-i18n="buttons.details">التفاصيل</a>
+                                            <button type="button" class="btn btn-outline-primary"
+                                                data-i18n="buttons.add_to_calendar">أضف للتقويم</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                             <!-- Card 3 -->
                             <div class="col-lg-4 col-md-6 mb-4">
                                 <div class="event-card">
                                     <img class="image-event-card" src="assets/img/events-images/event$-2.png"
-                                        alt="Event Image">
+                                        data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
                                     <div class="event-card-header">
-                                        <span class="tag">فن</span>
-                                        <span class="city">حلب</span>
+                                        <span class="tag" data-i18n="categories.art">فن</span>
+                                        <span class="city" data-i18n="cities.aleppo">حلب</span>
                                     </div>
                                     <div class="event-card-content">
-                                        <p class="text-dark fw-bold p-0 m-0">معرض فني</p>
-                                        <p class="text-end text-secondary p-0 m-0">معرض للفن التشكيلي يعرض أعمال فنانين
-                                            محليين.</p>
+                                        <p class="text-dark fw-bold p-0 m-0" data-i18n="events.latest.card3.title">معرض
+                                            فني</p>
+                                        <p class="text-dir-start text-secondary p-0 m-0"
+                                            data-i18n="events.latest.card3.subtitle">
+                                            معرض للفن التشكيلي يعرض أعمال فنانين محليين.
+                                        </p>
                                         <div class="date py-3 m-0">
                                             <i class="bi bi-calendar3"></i>
-                                            <span>15 نوفمبر 2025</span>
+                                            <span data-date-iso="2025-11-15"></span>
                                         </div>
                                         <div class="card-buttons">
-                                            <a href="event.html" class="btn btn-primary">التفاصيل</a>
-                                            <button type="button" class="btn btn-outline-primary">أضف للتقويم</button>
+                                            <a href="event.html" class="btn btn-primary"
+                                                data-i18n="buttons.details">التفاصيل</a>
+                                            <button type="button" class="btn btn-outline-primary"
+                                                data-i18n="buttons.add_to_calendar">أضف للتقويم</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+
+                        </div> <!-- /.row -->
+                    </div> <!-- /.index-tab-content -->
                 </div>
             </div>
         </section>
-    </main>
-    <!-- Footer Section -->
-    <footer class="footer">
 
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer" aria-labelledby="footer-title">
         <div class="footer-container container">
+            <h2 id="footer-title" class="visually-hidden" data-i18n="footer.a11y_title">تذييل الموقع</h2>
 
             <div class="row gy-4">
                 <div class="col-lg-4 col-md-12 footer-logo">
-                    <img src="assets/img/icons/Logo.svg" alt="EventCom Syria Logo" class="mb-2">
-                    <p class="fw-bold">اكتشف. خطّط. احضر!</p>
-                    <p>منصّة محدثة يوميًا لاكتشاف الفعاليات في جميع المحافظات.</p>
+                    <img src="assets/img/icons/Logo.svg" class="mb-2" data-i18n-attr="alt:footer.logo_alt"
+                        alt="EventCom Syria Logo">
+                    <p class="fw-bold" data-i18n="footer.slogan">اكتشف. خطّط. احضر!</p>
+                    <p data-i18n="footer.subtitle">منصّة محدثة يوميًا لاكتشاف الفعاليات في جميع المحافظات.</p>
                 </div>
+
                 <div class="col-lg-2 col-6">
-                    <h4 class="footer-heading">التصفّح</h4>
+                    <h4 class="footer-heading" data-i18n="footer.nav.title">التصفّح</h4>
                     <ul class="footer-links list-unstyled">
-                        <li><a href="events.html">الفعاليات</a></li>
-                        <li><a href="#">حسب المحافظة</a></li>
-                        <li><a href="#">حسب التصنيف</a></li>
-                        <li><a href="#">تقويم الفعاليات</a></li>
-                        <li><a href="about.html">من نحن</a></li>
+                        <li><a href="events.html" data-i18n="footer.nav.links.events">الفعاليات</a></li>
+                        <li><a href="#" data-i18n="footer.nav.links.by_governorate">حسب المحافظة</a></li>
+                        <li><a href="#" data-i18n="footer.nav.links.by_category">حسب التصنيف</a></li>
+                        <li><a href="#" data-i18n="footer.nav.links.calendar">تقويم الفعاليات</a></li>
+                        <li><a href="about.html" data-i18n="footer.nav.links.about">من نحن</a></li>
                     </ul>
                 </div>
+
                 <div class="col-lg-3 col-6">
-                    <h4 class="footer-heading">المساعدة والسياسات</h4>
+                    <h4 class="footer-heading" data-i18n="footer.help.title">المساعدة والسياسات</h4>
                     <ul class="footer-links list-unstyled">
-                        <li><a href="faq.html">الأسئلة الشائعة</a></li>
-                        <li><a href="#">الداعمين</a></li>
-                        <li><a href="privacy-policy.html">سياسة الخصوصية</a></li>
-                        <li><a href="terms-and-conditions.html">الشروط والأحكام</a></li>
+                        <li><a href="faq.html" data-i18n="footer.help.links.faq">الأسئلة الشائعة</a></li>
+                        <li><a href="#" data-i18n="footer.help.links.sponsors">الداعمين</a></li>
+                        <li><a href="privacy-policy.html" data-i18n="footer.help.links.privacy">سياسة الخصوصية</a></li>
+                        <li><a href="terms-and-conditions.html" data-i18n="footer.help.links.terms">الشروط والأحكام</a>
+                        </li>
                     </ul>
                 </div>
+
                 <div class="col-lg-3 col-md-12">
-                    <h4 class="footer-heading">التواصل معنا</h4>
+                    <h4 class="footer-heading" data-i18n="footer.contact.title">التواصل معنا</h4>
                     <div class="contact-info">
                         <div class="info-item">
                             <i class="bi bi-geo-alt ms-2"></i>
-                            <span>سوريا — مكتب دمشق (9:00ص–5:00م)</span>
+                            <span data-i18n="footer.contact.address">سوريا — مكتب دمشق (9:00ص–5:00م)</span>
                         </div>
                         <div class="info-item">
                             <i class="bi bi-envelope ms-2"></i>
@@ -655,20 +898,26 @@
             <div class="row pt-5">
                 <div class="col-12 text-center">
                     <div class="social-links mb-3">
-                        <a href="#"><i class="bi bi-facebook"></i></a>
-                        <a href="#"><i class="bi bi-linkedin"></i></a>
-                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
                     </div>
                     <div class="copyright">
-                        <p class="copyright-text">© 2025 دليل فعاليات سوريا — <strong>جميع الحقوق محفوظة</strong>.</p>
-                        <p class="disclaimer-text">المحتوى مسؤولية الجهات المنظمة. نحرص على دقّة المعلومات قدر الإمكان.
+                        <p class="copyright-text" data-i18n="footer.copyright">
+                            EventCom Syria © 2025
+                            <strong>
+                                جميع الحقوق محفوظة.
+                            </strong>
                         </p>
+                        <p class="disclaimer-text" data-i18n="footer.disclaimer">المحتوى مسؤولية الجهات المنظمة. نحرص
+                            على
+                            دقّة المعلومات قدر الإمكان.</p>
                     </div>
                 </div>
             </div>
-
         </div>
     </footer>
+
 
     <!-- Scroll to Top -->
     <a href="#" class="scroll-to-top"><img src="./assets/img/icons/arrow-up.svg" alt="arrow-up"></a>
@@ -678,6 +927,7 @@
         crossorigin="anonymous"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/index-tabs.js"></script>
+    <script src="assets/js/i18n.js"></script>
 </body>
 
 </html>

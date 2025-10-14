@@ -62,7 +62,31 @@
   --gray-200: #d1d1d1;
   --gray-100: #e7e7e7;
   --gray-50: #f6f6f6;
+
+  --marquee-speed: 15s;
+  --marquee-direction: normal;
 }
+
+html[dir="rtl"] {
+  --marquee-direction: reverse; /* يعكس الحركة بالعربي */
+}
+
+.marquee .marquee-content {
+  display: flex;
+  gap: clamp(2rem, 4vw, 4rem);
+  animation: marquee var(--marquee-speed) linear infinite;
+  animation-direction: var(--marquee-direction);
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  } /* أو حسب طول المحتوى لديك */
+}
+
 /* 3. Applying the variables */
 body {
   font-family: "Tajawal", sans-serif;
@@ -71,6 +95,10 @@ body {
   color: var(--gray-700);
   transition: background-color 0.3s, color 0.3s;
   overflow-x: hidden;
+}
+
+.text-dir-start {
+  text-align: start;
 }
 
 /* Nav */
@@ -127,7 +155,7 @@ body {
 
 .lang-flag {
   width: 20px;
-  margin-left: 8px;
+  margin-inline-start: 8px;
 }
 
 .theme-toggle {
@@ -339,7 +367,7 @@ body {
 
 .footer .contact-info .info-item i {
   font-size: 1.2rem;
-  margin-left: 10px;
+  margin-inline-start: 10px;
   color: var(--gray-500);
 }
 
@@ -354,10 +382,11 @@ body {
   justify-content: center;
   align-items: center;
   transition: background-color 0.3s;
-  position: relative;
+  position: fixed;
   z-index: 9;
-  bottom: 4%;
+  bottom: 20px;
   left: 2%;
+  inset-inline-start: 2%;
 }
 
 .footer .scroll-to-top:hover {

@@ -1,0 +1,194 @@
+{
+  "nav": {
+    "home": "Home",
+    "events": "Events",
+    "governorates": "Governorates",
+    "categories": "Categories",
+    "about": "About",
+    "contact": "Contact",
+    "brand_aria": "EventCom Syria"
+  },
+  "home": {
+    "hero": {
+      "tagline": "🎉 Discover. Plan. Attend!",
+      "title": "A simple platform to find the latest events across all Syrian governorates.",
+      "subtitle": "Music? Workshops? Family? All the options are right in front of you.",
+      "add_to_calendar": "Add to Calendar",
+      "share_event": "Share Event"
+    }
+  },
+  "carousel": {
+    "slide_1": "Slide 1",
+    "slide_2": "Slide 2",
+    "slide_3": "Slide 3",
+    "prev": "Previous",
+    "next": "Next",
+    "image_alt": "Event image"
+  },
+  "sponsors": {
+    "title": "Sponsors",
+    "logo_alt": "Logo"
+  },
+  "events": {
+    "by_date": {
+      "title": "Events by Date",
+      "tabs": {
+        "today": "Today",
+        "end_week": "This Weekend",
+        "this_month": "This Month"
+      }
+    },
+    "latest": {
+      "title": "Latest Events",
+      "card1": {
+        "title": "Syrian Symphony Orchestra",
+        "subtitle": "A classical evening with live performances at Drama Theater."
+      },
+      "card2": {
+        "title": "Poetry Night",
+        "subtitle": "An evening featuring performances by Syrian poets."
+      },
+      "card3": {
+        "title": "Art Exhibition",
+        "subtitle": "A fine arts exhibition featuring local artists."
+      }
+    },
+    "common": {
+      "image_alt": "Event image"
+    },
+    "today": {
+      "card1": {
+        "title": "Syrian Symphony Orchestra",
+        "subtitle": "A classical evening with live performances at Drama Theater."
+      },
+      "card2": {
+        "title": "Poetry Night",
+        "subtitle": "An evening featuring performances by Syrian poets."
+      },
+      "card3": {
+        "title": "Art Exhibition",
+        "subtitle": "A fine arts exhibition featuring local artists."
+      }
+    },
+    "end_week": {
+      "card1": {
+        "title": "Art Exhibition",
+        "subtitle": "A fine arts exhibition featuring local artists."
+      },
+      "card2": {
+        "title": "Football Match",
+        "subtitle": "A friendly match between two local teams at the municipal stadium."
+      },
+      "card3": {
+        "title": "Workshop",
+        "subtitle": "A workshop on the latest trends in programming."
+      }
+    },
+    "month": {
+      "card1": {
+        "title": "Workshop",
+        "subtitle": "A workshop on the latest trends in programming."
+      },
+      "card2": {
+        "title": "Poetry Night",
+        "subtitle": "An evening featuring performances by Syrian poets."
+      },
+      "card3": {
+        "title": "Syrian Symphony Orchestra",
+        "subtitle": "A classical evening with live performances at Drama Theater."
+      }
+    }
+  },
+  "buttons": {
+    "details": "Details",
+    "add_to_calendar": "Add to Calendar"
+  },
+  "categories": {
+    "music": "Music",
+    "culture": "Culture",
+    "art": "Art",
+    "sport": "Sport",
+    "tech": "Technology"
+  },
+  "cities": {
+    "damascus": "Damascus",
+    "deir_ez_zor": "Deir ez-Zor",
+    "aleppo": "Aleppo",
+    "raqqa": "Raqqa",
+    "homs": "Homs",
+    "idlib": "Idlib",
+    "lattakia": "Latakia",
+    "hama": "Hama",
+    "hasakah": "Al-Hasakah",
+    "tartus": "Tartus"
+  },
+  "categories_section": {
+    "title": "Quick Categories",
+    "subtitle": "Choose a category to view events matching your interests."
+  },
+  "categories_list": {
+    "culture_art": {
+      "name": "Culture & Arts",
+      "alt": "Culture and Arts Category"
+    },
+    "music": { "name": "Music", "alt": "Music Category" },
+    "sport": { "name": "Sports", "alt": "Sports Category" },
+    "tech": { "name": "Technology", "alt": "Technology Category" },
+    "business": { "name": "Business", "alt": "Business Category" },
+    "food": { "name": "Food", "alt": "Food Category" },
+    "health": { "name": "Health", "alt": "Health Category" },
+    "education": { "name": "Education", "alt": "Education Category" }
+  },
+  "cities_section": {
+    "title": "Explore Governorates",
+    "subtitle": "Pick a governorate to see nearby events."
+  },
+  "cities_list": {
+    "damascus": { "alt": "Damascus city image" },
+    "deir_ez_zor": { "alt": "Deir ez-Zor city image" },
+    "aleppo": { "alt": "Aleppo city image" },
+    "raqqa": { "alt": "Raqqa city image" },
+    "homs": { "alt": "Homs city image" },
+    "idlib": { "alt": "Idlib city image" },
+    "lattakia": { "alt": "Latakia city image" },
+    "hama": { "alt": "Hama city image" },
+    "hasakah": { "alt": "Al-Hasakah city image" },
+    "tartus": { "alt": "Tartus city image" }
+  },
+  "footer": {
+    "a11y_title": "Site footer",
+    "logo_alt": "EventCom Syria Logo",
+    "slogan": "Discover. Plan. Attend!",
+    "subtitle": "A daily-updated platform to discover events across all governorates.",
+    "nav": {
+      "title": "Browse",
+      "links": {
+        "events": "Events",
+        "by_governorate": "By Governorate",
+        "by_category": "By Category",
+        "calendar": "Events Calendar",
+        "about": "About"
+      }
+    },
+    "help": {
+      "title": "Help & Policies",
+      "links": {
+        "faq": "FAQ",
+        "sponsors": "Sponsors",
+        "privacy": "Privacy Policy",
+        "terms": "Terms & Conditions"
+      }
+    },
+    "contact": {
+      "title": "Contact Us",
+      "address": "Syria — Damascus Office (9:00–17:00)"
+    },
+    "copyright": "© 2025 EventCom Syria — All rights reserved.",
+    "disclaimer": "Content is provided by event organizers. We aim for accuracy wherever possible."
+  },
+  "_meta": {
+    "dir": "ltr",
+    "label": "English",
+    "flag": "assets/img/icons/US-flag.svg"
+  }
+}
