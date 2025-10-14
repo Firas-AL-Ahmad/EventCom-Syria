@@ -72,3 +72,14 @@
 .faq-section .accordion-item:has(.accordion-button:not(.collapsed)) {
   border-color: var(--primary-500);
 }
+
+/* LTR-specific styles for FAQ accordion */
+html[dir="ltr"] .faq-section .accordion-button {
+  flex-direction: row-reverse;
+  text-align: left;
+}
+
+html[dir="ltr"] .faq-question-number {
+  margin-left: 0;
+  margin-right: 1rem;
+}

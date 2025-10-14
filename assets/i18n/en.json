@@ -245,5 +245,49 @@
   "contact_section": {
     "title": "We’d love to hear from you",
     "description": "Whether you have a question, event suggestion, partnership idea, or feedback to improve the experience, we’ll review your message and respond as soon as possible."
+  },
+  "faq_section": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know about our platform and events.",
+    "q1": {
+      "question": "What is EventCom Syria?",
+      "answer": "EventCom Syria is a platform dedicated to collecting and displaying various events taking place across Syria. Our goal is to provide accurate, up-to-date information about upcoming events—from exhibitions and conferences to workshops and seminars."
+    },
+    "q2": {
+      "question": "How can I find a specific event?",
+      "answer": "Use the search bar on the homepage to find events by name, or browse by governorate or category using the dedicated menus. We also provide an event calendar to help you plan ahead."
+    },
+    "q3": {
+      "question": "Do I register for events through the platform?",
+      "answer": "Our platform acts as an event directory. We provide details and registration links, but the actual registration happens directly with the event organizers to ensure the best experience."
+    },
+    "q4": {
+      "question": "How can I add my own event?",
+      "answer": "Currently, our team updates the content. If you’re an organizer and wish to add your event, contact us via the “Contact Us” page with the details, and our team will review and publish it soon."
+    },
+    "q5": {
+      "question": "Do you sell tickets?",
+      "answer": "No. We don’t sell tickets directly. We provide links to organizers or official booking pages—look for the “Book/Tickets” button on each event page if available."
+    },
+    "q6": {
+      "question": "Are all events included on the platform?",
+      "answer": "We focus on public, open events. We may exclude private or incomplete listings that lack essential details."
+    },
+    "q7": {
+      "question": "How can I quickly find an event that suits me?",
+      "answer": "Use the filters by governorate, category, or date. You can also sort by 'Soonest' or 'Newest'."
+    },
+    "q8": {
+      "question": "Do you reject some events? Why?",
+      "answer": "We may decline to publish events that lack sufficient details or violate the platform’s policies. Reasons are provided when possible."
+    },
+    "q9": {
+      "question": "Are venues accessible for people with disabilities?",
+      "answer": "It depends on the venue. We display any accessibility information provided by organizers (ramps, elevators, seating)."
+    },
+    "q10": {
+      "question": "Are there any attendance guidelines?",
+      "answer": "Sometimes organizers share safety, photography, or entry rules. Check them under the 'Event Policies' section."
+    }
   }
 }
