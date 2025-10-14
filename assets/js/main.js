@@ -92,7 +92,12 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const x = e.pageX - categoriesContent.offsetLeft;
             const walk = (x - startX) * 2; //scroll-fast
-            categoriesContent.scrollLeft = scrollLeft - walk;
+            const dir = document.documentElement.getAttribute('dir') || 'ltr';
+            if (dir === 'rtl') {
+                categoriesContent.scrollLeft = scrollLeft + walk;
+            } else {
+                categoriesContent.scrollLeft = scrollLeft - walk;
+            }
         });
     }
 });

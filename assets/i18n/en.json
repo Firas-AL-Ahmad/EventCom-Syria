@@ -190,5 +190,60 @@
     "dir": "ltr",
     "label": "English",
     "flag": "assets/img/icons/US-flag.svg"
+  },
+  "about_hero": {
+    "logo_alt": "EventCom Syria Logo",
+    "title": "Where every governorate meets its story... and every event meets its audience!",
+    "description": "We are an independent platform that brings together cultural, artistic, sports, and educational events from all Syrian governorates, presented in an organized and searchable way by governorate, category, and date. Our goal is to make event discovery and attendance simple and accessible to everyone.",
+    "cta": "Explore All Events"
+  },
+  "features_section": {
+    "title": "What We Offer",
+    "card1": {
+      "title": "Clear Event Cards",
+      "description": "Concise title + time/location + category + short description + 'Add to Calendar'."
+    },
+    "card2": {
+      "title": "Multiple Viewing Options",
+      "description": "Quick list, compact calendar, and map view for locations."
+    },
+    "card3": {
+      "title": "Smart Search & Filters",
+      "description": "Filter by governorate, category, or date with clear result counts."
+    },
+    "card4": {
+      "title": "Submit an Event",
+      "description": "A simple form to add community events and publish them after light review."
+    },
+    "card5": {
+      "title": "Editor's Picks",
+      "description": "Highlighting special featured events each week."
+    }
+  },
+  "team_section": {
+    "title": "Our Team",
+    "subtitle": "Behind every event, there’s a team that makes the difference.",
+    "member1": {
+      "name": "Firas Al-Ahmad",
+      "role": "Student ID",
+      "id": "190479",
+      "alt": "Firas Al-Ahmad"
+    },
+    "member2": {
+      "name": "Firas Al-Ahmad",
+      "role": "Student ID",
+      "id": "190479",
+      "alt": "Firas Al-Ahmad"
+    },
+    "member3": {
+      "name": "Firas Al-Ahmad",
+      "role": "Student ID",
+      "id": "190479",
+      "alt": "Firas Al-Ahmad"
+    }
+  },
+  "contact_section": {
+    "title": "We’d love to hear from you",
+    "description": "Whether you have a question, event suggestion, partnership idea, or feedback to improve the experience, we’ll review your message and respond as soon as possible."
   }
 }
