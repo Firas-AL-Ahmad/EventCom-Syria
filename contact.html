@@ -32,8 +32,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html"
-                            data-i18n="nav.home">الرئيسية</a>
+                        <a class="nav-link" href="index.html" data-i18n="nav.home">الرئيسية</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="events.html" data-i18n="nav.events">الفعاليات</a>
@@ -87,44 +86,69 @@
         </div>
     </nav>
 
+    <!-- Contact Section -->
     <main class="contact-section">
         <div class="contact-container">
-            <h1>اتصل بنا</h1>
-            <p>للأسئلة، اقتراحات الفعاليات، الشراكات، أو أي ملاحظة لتحسين التجربة. سنراجع رسالتك ونردّ بأسرع وقت.</p>
-            <form class="contact-form">
-                <input type="text" class="form-control" placeholder="الاسم الكامل" required>
-                <input type="email" class="form-control" placeholder="البريد الإلكتروني" required>
-                <textarea class="form-control" rows="5" placeholder="موضوع الرسالة" required></textarea>
-                <!-- <div class="recaptcha-placeholder">
-                    <span>I'm not a robot (reCAPTCHA)</span>
-                </div> -->
-                <button type="submit" class="btn btn-primary">إرسال الرسالة</button>
+            <h1 data-i18n="contact_page.title">اتصل بنا</h1>
+
+            <p data-i18n="contact_page.description">
+                للأسئلة، اقتراحات الفعاليات، الشراكات، أو أي ملاحظة لتحسين التجربة. سنراجع رسالتك ونردّ بأسرع وقت.
+            </p>
+
+            <form class="contact-form" id="contactForm" novalidate>
+                <!-- Full Name -->
+                <input type="text" class="form-control"
+                    data-i18n-attr="placeholder:contact_page.form.full_name_ph;aria-label:contact_page.form.full_name_aria"
+                    name="fullName" required>
+                <div class="invalid-feedback" data-error-for="fullName"></div>
+
+                <!-- Email -->
+                <input type="email" class="form-control"
+                    data-i18n-attr="placeholder:contact_page.form.email_ph;aria-label:contact_page.form.email_aria"
+                    name="email" required>
+                <div class="invalid-feedback" data-error-for="email"></div>
+
+                <!-- Message Subject -->
+                <textarea class="form-control" rows="5"
+                    data-i18n-attr="placeholder:contact_page.form.message_subject_ph;aria-label:contact_page.form.message_subject_aria"
+                    name="subject" required></textarea>
+                <div class="invalid-feedback" data-error-for="subject"></div>
+
+                <button type="submit" class="btn btn-primary" data-i18n="contact_page.form.submit_btn">
+                    إرسال الرسالة
+                </button>
+
+                <!-- مكان رسالة النجاح -->
+                <p class="mt-3 d-none" id="contactSuccess"></p>
             </form>
-            <div id="map"></div>
+
+
+            <div id="map" aria-hidden="true"></div>
+
             <div class="social-icons">
-                <a href="#">
-                    <!-- <i class="bi bi-facebook"></i> -->
-                    <img src="./assets/img/icons/facebook.svg" alt="facebook">
+                <a href="#" aria-label="Facebook" data-i18n-attr="aria-label:contact_page.social.facebook_aria">
+                    <img src="./assets/img/icons/facebook.svg" data-i18n-attr="alt:contact_page.social.facebook_alt"
+                        alt="facebook">
                 </a>
-                <a href="#">
-                    <!-- <i class="bi bi-whatsapp"></i> -->
-                    <img src="./assets/img/icons/whatsapp.svg" alt="whatsapp">
+                <a href="#" aria-label="WhatsApp" data-i18n-attr="aria-label:contact_page.social.whatsapp_aria">
+                    <img src="./assets/img/icons/whatsapp.svg" data-i18n-attr="alt:contact_page.social.whatsapp_alt"
+                        alt="whatsapp">
                 </a>
-                <a href="#">
-                    <!-- <i class="bi bi-instagram"></i> -->
-                    <img src="./assets/img/icons/instegram.svg" alt="instegram">
+                <a href="#" aria-label="Instagram" data-i18n-attr="aria-label:contact_page.social.instagram_aria">
+                    <img src="./assets/img/icons/instegram.svg" data-i18n-attr="alt:contact_page.social.instagram_alt"
+                        alt="instagram">
                 </a>
-                <a href="#">
-                    <!-- <i class="bi bi-linkedin"></i> -->
-                    <img src="./assets/img/icons/linkedin.svg" alt="linkedin">
+                <a href="#" aria-label="LinkedIn" data-i18n-attr="aria-label:contact_page.social.linkedin_aria">
+                    <img src="./assets/img/icons/linkedin.svg" data-i18n-attr="alt:contact_page.social.linkedin_alt"
+                        alt="linkedin">
                 </a>
-                <a href="#">
-                    <!-- <i class="bi bi-twitter-x"></i> -->
-                    <img src="./assets/img/icons/x.svg" alt="x">
+                <a href="#" aria-label="X" data-i18n-attr="aria-label:contact_page.social.x_aria">
+                    <img src="./assets/img/icons/x.svg" data-i18n-attr="alt:contact_page.social.x_alt" alt="x">
                 </a>
             </div>
         </div>
     </main>
+
 
     <!-- Footer Section -->
     <footer class="footer" aria-labelledby="footer-title">
@@ -208,6 +232,7 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <script src="assets/js/i18n.js"></script>
+    <script src="assets/js/contactus-validate.js"></script>
     <script src="assets/js/main.js"></script>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script>

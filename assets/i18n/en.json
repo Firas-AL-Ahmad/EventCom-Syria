@@ -25,10 +25,7 @@
     "next": "Next",
     "image_alt": "Event image"
   },
-  "sponsors": {
-    "title": "Sponsors",
-    "logo_alt": "Logo"
-  },
+  "sponsors": { "title": "Sponsors", "logo_alt": "Logo" },
   "events": {
     "by_date": {
       "title": "Events by Date",
@@ -53,9 +50,7 @@
         "subtitle": "A fine arts exhibition featuring local artists."
       }
     },
-    "common": {
-      "image_alt": "Event image"
-    },
+    "common": { "image_alt": "Event image" },
     "today": {
       "card1": {
         "title": "Syrian Symphony Orchestra",
@@ -99,16 +94,41 @@
       }
     }
   },
-  "buttons": {
-    "details": "Details",
-    "add_to_calendar": "Add to Calendar"
+  "events_page": {
+    "hero": {
+      "title": "Syria Events.!",
+      "subtitle": "Browse events by governorate, category, and date."
+    },
+    "filters": {
+      "search": {
+        "label": "Search for an event",
+        "placeholder": "Type an event name or keyword…",
+        "aria": "Event search field"
+      },
+      "date": {
+        "label": "Date",
+        "placeholder": "Select a date",
+        "aria": "Date selector"
+      },
+      "category": {
+        "label": "Category",
+        "placeholder": "Select a category",
+        "aria": "Category selector"
+      }
+    },
+    "tabs": { "all": "All" }
   },
+  "buttons": { "details": "Details", "add_to_calendar": "Add to Calendar" },
   "categories": {
     "music": "Music",
     "culture": "Culture",
     "art": "Art",
     "sport": "Sport",
-    "tech": "Technology"
+    "tech": "Technology",
+    "business": "Business",
+    "food": "Food",
+    "health": "Health",
+    "education": "Education"
   },
   "cities": {
     "damascus": "Damascus",
@@ -183,13 +203,8 @@
       "title": "Contact Us",
       "address": "Syria — Damascus Office (9:00–17:00)"
     },
-    "copyright": "© 2025 EventCom Syria — All rights reserved.",
+    "copyright": "© 2025 Syria Events Guide — <strong>All rights reserved</strong>.",
     "disclaimer": "Content is provided by event organizers. We aim for accuracy wherever possible."
-  },
-  "_meta": {
-    "dir": "ltr",
-    "label": "English",
-    "flag": "assets/img/icons/US-flag.svg"
   },
   "about_hero": {
     "logo_alt": "EventCom Syria Logo",
@@ -226,18 +241,21 @@
     "member1": {
       "name": "Firas Al-Ahmad",
       "role": "Student ID",
+      "job_title": "Full Stack Developer",
       "id": "190479",
       "alt": "Firas Al-Ahmad"
     },
     "member2": {
       "name": "Firas Al-Ahmad",
       "role": "Student ID",
+      "job_title": "UI/UX Designer",
       "id": "190479",
       "alt": "Firas Al-Ahmad"
     },
     "member3": {
       "name": "Firas Al-Ahmad",
       "role": "Student ID",
+      "job_title": "Project Manager",
       "id": "190479",
       "alt": "Firas Al-Ahmad"
     }
@@ -251,43 +269,140 @@
     "subtitle": "Everything you need to know about our platform and events.",
     "q1": {
       "question": "What is EventCom Syria?",
-      "answer": "EventCom Syria is a platform dedicated to collecting and displaying various events taking place across Syria. Our goal is to provide accurate, up-to-date information about upcoming events—from exhibitions and conferences to workshops and seminars."
+      "answer": "EventCom Syria is a platform dedicated ..."
     },
     "q2": {
       "question": "How can I find a specific event?",
-      "answer": "Use the search bar on the homepage to find events by name, or browse by governorate or category using the dedicated menus. We also provide an event calendar to help you plan ahead."
+      "answer": "Use the search bar on the homepage ..."
     },
     "q3": {
       "question": "Do I register for events through the platform?",
-      "answer": "Our platform acts as an event directory. We provide details and registration links, but the actual registration happens directly with the event organizers to ensure the best experience."
+      "answer": "Our platform acts as an event directory ..."
     },
     "q4": {
       "question": "How can I add my own event?",
-      "answer": "Currently, our team updates the content. If you’re an organizer and wish to add your event, contact us via the “Contact Us” page with the details, and our team will review and publish it soon."
+      "answer": "Currently, our team updates the content ..."
     },
     "q5": {
       "question": "Do you sell tickets?",
-      "answer": "No. We don’t sell tickets directly. We provide links to organizers or official booking pages—look for the “Book/Tickets” button on each event page if available."
+      "answer": "No. We don’t sell tickets directly ..."
     },
     "q6": {
       "question": "Are all events included on the platform?",
-      "answer": "We focus on public, open events. We may exclude private or incomplete listings that lack essential details."
+      "answer": "We focus on public, open events ..."
     },
     "q7": {
       "question": "How can I quickly find an event that suits me?",
-      "answer": "Use the filters by governorate, category, or date. You can also sort by 'Soonest' or 'Newest'."
+      "answer": "Use the filters by governorate, category, or date ..."
     },
     "q8": {
       "question": "Do you reject some events? Why?",
-      "answer": "We may decline to publish events that lack sufficient details or violate the platform’s policies. Reasons are provided when possible."
+      "answer": "We may decline to publish events that lack sufficient details ..."
     },
     "q9": {
       "question": "Are venues accessible for people with disabilities?",
-      "answer": "It depends on the venue. We display any accessibility information provided by organizers (ramps, elevators, seating)."
+      "answer": "It depends on the venue ..."
     },
     "q10": {
       "question": "Are there any attendance guidelines?",
-      "answer": "Sometimes organizers share safety, photography, or entry rules. Check them under the 'Event Policies' section."
+      "answer": "Sometimes organizers share safety, photography, or entry rules ..."
     }
+  },
+  "event_page": {
+    "hero": {
+      "title": "Alwan Al-Sham Festival",
+      "subtitle": "A vibrant showcase with live performances, workshops, and art exhibits for all ages."
+    },
+    "notes": {
+      "title": "Notes",
+      "note1": "Please arrive 30 minutes early",
+      "note2": "The hall is equipped with accessible pathways and reserved seating"
+    },
+    "classification": {
+      "category_label": "Category:",
+      "gov_label": "Governorate:"
+    },
+    "gallery": {
+      "main_alt": "Main event image",
+      "thumb1_alt": "Thumbnail 1",
+      "thumb2_alt": "Thumbnail 2",
+      "thumb3_alt": "Thumbnail 3",
+      "thumb4_alt": "Thumbnail 4",
+      "thumb5_alt": "Thumbnail 5"
+    },
+    "about_section": {
+      "title": "Event Details",
+      "about_title": "About the Event",
+      "about_text": "Alwan Al-Sham Festival presents a full evening featuring live music, performances, and mini-exhibitions by young Syrian artists—set in a festive Damascene atmosphere.",
+      "audience_title": "Who is it for?",
+      "audience_text": "Suitable for everyone and families",
+      "includes_title": "What’s included?",
+      "includes_text": "Live shows, mini art exhibition, souvenir kiosks",
+      "services_title": "Services",
+      "services_text": "Numbered seating, accessible pathways, first-aid points",
+      "schedule_title": "Program Schedule:",
+      "s1": "Reception & welcome music (6:00–6:30 PM)",
+      "s2": "Opening & main performance (6:30–8:00 PM)",
+      "s3": "Break & art exhibit (8:00–8:30 PM)",
+      "s4": "Closing performances & audience salute (8:30–10:00 PM)",
+      "organizer_title": "Organizer",
+      "organizer_text": "Cultural Initiative — Alwan Al-Sham Team",
+      "contact_title": "Organizer Contact",
+      "contact_text": "info@alwan-sham.example"
+    },
+    "location": {
+      "address_title": "Address",
+      "address_text": "Cultural Initiative — Alwan Al-Sham Team",
+      "access_title": "Access",
+      "a1": "Nearby public transport (service/bus stop)",
+      "a2": "Limited parking — early arrival recommended",
+      "a3": "Accessible routes and elevator available",
+      "map_title": "Static Map by Image",
+      "map_desc": "Location of Dar Al-Assad for Culture and Arts in Damascus on the map."
+    }
+  },
+  "contact_page": {
+    "title": "Contact Us",
+    "description": "For questions, event suggestions, partnerships, or any feedback to improve the experience. We’ll review your message and respond as soon as possible.",
+    "form": {
+      "full_name_ph": "Full name",
+      "full_name_aria": "Enter your full name",
+      "email_ph": "Email address",
+      "email_aria": "Enter your email address",
+      "message_subject_ph": "Message subject",
+      "message_subject_aria": "Enter your message subject",
+      "recaptcha_label": "I'm not a robot (reCAPTCHA)",
+      "submit_btn": "Send Message"
+    },
+    "social": {
+      "facebook_alt": "Facebook",
+      "whatsapp_alt": "WhatsApp",
+      "instagram_alt": "Instagram",
+      "linkedin_alt": "LinkedIn",
+      "x_alt": "X",
+      "facebook_aria": "Our Facebook page",
+      "whatsapp_aria": "Contact via WhatsApp",
+      "instagram_aria": "Our Instagram account",
+      "linkedin_aria": "Our LinkedIn account",
+      "x_aria": "Our X account"
+    },
+    "validation": {
+      "full_name_required": "Full name is required.",
+      "email_required": "Email is required.",
+      "email_invalid": "Please enter a valid email address.",
+      "subject_required": "Message subject is required.",
+      "success_message": "Your message was sent successfully. We’ll get back to you soon."
+    }
+  },
+  "privacy": {
+    "...": "full privacy content split into keys in its dedicated page"
+  },
+  "terms_section": {
+    "...": "full terms content split into keys in its dedicated page"
+  },
+  "_meta": {
+    "dir": "ltr",
+    "label": "English",
+    "flag": "assets/img/icons/US-flag.svg"
   }
 }

@@ -31,8 +31,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html"
-                            data-i18n="nav.home">الرئيسية</a>
+                        <a class="nav-link" href="index.html" data-i18n="nav.home">الرئيسية</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="events.html" data-i18n="nav.events">الفعاليات</a>
@@ -86,121 +85,165 @@
         </div>
     </nav>
 
+    <!-- Event Hero Section -->
     <section class="event-hero-section">
         <div class="row">
             <div class="col-lg-6">
                 <div class="event-details">
-                    <h1 class="event-title">مهرجان ألوان الشام</h1>
-                    <p class="event-subtitle">تظاهرة فنية تجمع عروضًا حية وورشًا ومعارض فنية لجميع الأعمار.</p>
+                    <h1 class="event-title" data-i18n="event_page.hero.title">مهرجان ألوان الشام</h1>
+
+                    <p class="event-subtitle" data-i18n="event_page.hero.subtitle">
+                        تظاهرة فنية تجمع عروضًا حية وورشًا ومعارض فنية لجميع الأعمار.
+                    </p>
+
                     <div class="event-meta">
-                        <span><i class="bi bi-calendar-event"></i> 10 تشرين الأول 2025، 6:00-9:30 م</span>
+                        <span>
+                            <i class="bi bi-calendar-event" aria-hidden="true"></i>
+                            <!-- NEW: datetime range is auto-formatted per language -->
+                            <span class="event-datetime" data-datetime-start="2025-10-10T18:00"
+                                data-datetime-end="2025-10-10T21:30"></span>
+                        </span>
                     </div>
+
                     <div class="event-notes">
-                        <h5>ملاحظات</h5>
+                        <h5 data-i18n="event_page.notes.title">ملاحظات</h5>
                         <ul>
-                            <li>يُفضّل الحضور قبل 30 دقيقة</li>
-                            <li>القاعة مجهّزة بممرات وصول ومقاعد مخصصة</li>
+                            <li data-i18n="event_page.notes.note1">يُفضّل الحضور قبل 30 دقيقة</li>
+                            <li data-i18n="event_page.notes.note2">القاعة مجهّزة بممرات وصول ومقاعد مخصصة</li>
                         </ul>
                     </div>
+
                     <div class="event-classification">
-                        <p class="m-0 p-0"><strong>التصنيف:</strong> ثقافة</p>
-                        <p class="m-0 p-0"><strong>المحافظة:</strong> دمشق</p>
+                        <p class="m-0 p-0">
+                            <strong data-i18n="event_page.classification.category_label">التصنيف:</strong>
+                            <span data-i18n="categories.culture">ثقافة</span>
+                        </p>
+                        <p class="m-0 p-0">
+                            <strong data-i18n="event_page.classification.gov_label">المحافظة:</strong>
+                            <span data-i18n="cities.damascus">دمشق</span>
+                        </p>
                     </div>
+
                     <div class="event-actions">
-                        <a href="#" class="calendar-btn py-2 px-5 rounded-2">أضف للتقويم</a>
-                        <a href="#" class="share-btn py-2 px-5 rounded-2">شارك الحدث</a>
+                        <a href="#" class="calendar-btn py-2 px-5 rounded-2" data-i18n="buttons.add_to_calendar">أضف
+                            للتقويم</a>
+                        <a href="#" class="share-btn py-2 px-5 rounded-2" data-i18n="home.hero.share_event">شارك
+                            الحدث</a>
                     </div>
                 </div>
             </div>
+
             <div class="col-lg-6">
                 <div class="hero-gallery">
                     <div class="main-image mb-3">
                         <img src="assets/img/events-images/image.png" id="mainEventImage" class="img-fluid rounded"
-                            alt="Main Event Image">
+                            data-i18n-attr="alt:event_page.gallery.main_alt" alt="Main Event Image">
                     </div>
                     <div class="thumbnail-gallery d-flex justify-content-between">
                         <img src="assets/img/events-images/Frame 1686552792.png" class="img-thumbnail active"
-                            alt="Thumbnail 1">
+                            data-i18n-attr="alt:event_page.gallery.thumb1_alt" alt="Thumbnail 1">
                         <img src="assets/img/events-images/Frame 1686552793.png" class="img-thumbnail"
-                            alt="Thumbnail 2">
+                            data-i18n-attr="alt:event_page.gallery.thumb2_alt" alt="Thumbnail 2">
                         <img src="assets/img/events-images/Frame 1686552794.png" class="img-thumbnail"
-                            alt="Thumbnail 3">
+                            data-i18n-attr="alt:event_page.gallery.thumb3_alt" alt="Thumbnail 3">
                         <img src="assets/img/events-images/Frame 1686552796.png" class="img-thumbnail"
-                            alt="Thumbnail 4">
+                            data-i18n-attr="alt:event_page.gallery.thumb4_alt" alt="Thumbnail 4">
                         <img src="assets/img/events-images/Frame 1686552797.png" class="img-thumbnail"
-                            alt="Thumbnail 5">
+                            data-i18n-attr="alt:event_page.gallery.thumb5_alt" alt="Thumbnail 5">
                     </div>
                 </div>
             </div>
         </div>
+
         <div class="row about-event-section gy-5">
-            <h2 class="section-title">تفاصيل الفعالية</h2>
+            <h2 class="section-title" data-i18n="event_page.about_section.title">تفاصيل الفعالية</h2>
+
             <div class="col-lg-7">
                 <div class="about-event">
+
                     <div class="event-section">
-                        <h4>عن الفعالية</h4>
-                        <p>يقدّم مهرجان ألوان الشام أمسية متكاملة تجمع الموسيقى الحيّة والعروض الأدائية والمعارض
-                            المصغّرة لفنانين سوريين شباب، ضمن أجواء احتفالية تليق بدمشق.</p>
+                        <h4 data-i18n="event_page.about_section.about_title">عن الفعالية</h4>
+                        <p data-i18n="event_page.about_section.about_text">
+                            يقدّم مهرجان ألوان الشام أمسية متكاملة تجمع الموسيقى الحيّة والعروض الأدائية والمعارض
+                            المصغّرة...
+                        </p>
                     </div>
+
                     <div class="event-section">
-                        <h4>لمن؟</h4>
-                        <p>مناسب للجميع والعائلات</p>
+                        <h4 data-i18n="event_page.about_section.audience_title">لمن؟</h4>
+                        <p data-i18n="event_page.about_section.audience_text">مناسب للجميع والعائلات</p>
                     </div>
+
                     <div class="event-section">
-                        <h4>ماذا يشمل؟</h4>
-                        <p>عروض حيّة، معرض فنّي مصغّر، أكشاك تذكارية</p>
+                        <h4 data-i18n="event_page.about_section.includes_title">ماذا يشمل؟</h4>
+                        <p data-i18n="event_page.about_section.includes_text">عروض حيّة، معرض فنّي مصغّر، أكشاك تذكارية
+                        </p>
                     </div>
+
                     <div class="event-section">
-                        <h4>الخدمات</h4>
-                        <p>مقاعد مرقّمة، ممرات وصول، نقاط إسعاف أوّلي</p>
+                        <h4 data-i18n="event_page.about_section.services_title">الخدمات</h4>
+                        <p data-i18n="event_page.about_section.services_text">مقاعد مرقّمة، ممرات وصول، نقاط إسعاف أوّلي
+                        </p>
                     </div>
+
                     <div class="event-section">
-                        <h4>برنامج الفقرات:</h4>
+                        <h4 data-i18n="event_page.about_section.schedule_title">برنامج الفقرات:</h4>
                         <ul>
-                            <li>استقبال وموسيقى ترحيبية (6:00-6:30 م)</li>
-                            <li>افتتاح وعرض رئيسي (6:30-8:00 م)</li>
-                            <li>استراحة ومعرض فني (8:00-8:30 م)</li>
-                            <li>عروض ختامية وتحية الجمهور (8:30-10:00 م)</li>
+                            <li data-i18n="event_page.about_section.s1">استقبال وموسيقى ترحيبية (6:00-6:30 م)</li>
+                            <li data-i18n="event_page.about_section.s2">افتتاح وعرض رئيسي (6:30-8:00 م)</li>
+                            <li data-i18n="event_page.about_section.s3">استراحة ومعرض فني (8:00-8:30 م)</li>
+                            <li data-i18n="event_page.about_section.s4">عروض ختامية وتحية الجمهور (8:30-10:00 م)</li>
                         </ul>
                     </div>
+
                     <div class="event-section">
-                        <h4>الجهة المنظمة</h4>
-                        <p>مبادرة ثقافية — فريق ألوان الشام</p>
+                        <h4 data-i18n="event_page.about_section.organizer_title">الجهة المنظمة</h4>
+                        <p data-i18n="event_page.about_section.organizer_text">مبادرة ثقافية — فريق ألوان الشام</p>
                     </div>
+
                     <div class="event-section">
-                        <h4>تواصل المنظّم</h4>
-                        <p>info@alwan-sham.example</p>
+                        <h4 data-i18n="event_page.about_section.contact_title">تواصل المنظّم</h4>
+                        <p data-i18n="event_page.about_section.contact_text">info@alwan-sham.example</p>
                     </div>
+
                 </div>
             </div>
+
             <div class="col-lg-5">
                 <div class="location-details">
+
                     <div class="location-section">
-                        <h4>العنوان</h4>
-                        <p>مبادرة ثقافية — فريق ألوان الشام</p>
+                        <h4 data-i18n="event_page.location.address_title">العنوان</h4>
+                        <p data-i18n="event_page.location.address_text">مبادرة ثقافية — فريق ألوان الشام</p>
                     </div>
+
                     <div class="location-section">
-                        <h4>الوصول</h4>
+                        <h4 data-i18n="event_page.location.access_title">الوصول</h4>
                         <ul>
-                            <li>مواصلات عامة قريبة (موقف سرفيس/باص)</li>
-                            <li>مواقف محدودة للسيارات — الوصول مبكرًا مُستحسن</li>
-                            <li>مسارات وصول لذوي الإعاقة ومصعد متاح</li>
+                            <li data-i18n="event_page.location.a1">مواصلات عامة قريبة (موقف سرفيس/باص)</li>
+                            <li data-i18n="event_page.location.a2">مواقف محدودة للسيارات — الوصول مبكرًا مُستحسن</li>
+                            <li data-i18n="event_page.location.a3">مسارات وصول لذوي الإعاقة ومصعد متاح</li>
                         </ul>
                     </div>
+
                     <div class="location-section">
-                        <h4>خريطة ثابتة بصورة</h4>
-                        <p>موقع دار الأسد للثقافة والفنون في دمشق على الخريطة.</p>
+                        <h4 data-i18n="event_page.location.map_title">خريطة ثابتة بصورة</h4>
+                        <p data-i18n="event_page.location.map_desc">موقع دار الأسد للثقافة والفنون في دمشق على الخريطة.
+                        </p>
                     </div>
+
                     <div class="map-placeholder">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3326.572018247317!2d36.28214742450759!3d33.512510473364955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1518e0b4816d3d5f%3A0x80913fe6396f6b34!2z2KfZhNmF2LnZh9ivINin2YTYudin2YTZiiDZhNmE2YHZhtmI2YYg2KfZhNmF2LPYsdit2YrYqS4!5e0!3m2!1sar!2s!4v1760133313418!5m2!1sar!2s"
                             width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
+
                 </div>
             </div>
         </div>
     </section>
+
 
 
     <!-- Section: فعاليات ذات صلة -->
