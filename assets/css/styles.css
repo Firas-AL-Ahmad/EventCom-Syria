@@ -155,7 +155,7 @@ body {
 
 .lang-flag {
   width: 20px;
-  margin-inline-start: 8px;
+  margin: 8px;
 }
 
 .theme-toggle {
