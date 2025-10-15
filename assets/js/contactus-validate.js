@@ -1,7 +1,5 @@
-// assets/js/contact-validate.js
 (function () {
-  const $ = (sel, root = document) => root.querySelector(sel);
-  const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+    const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
   const t = (key, fb = "") =>
     window.__i18n && window.__i18n.t ? window.__i18n.t(key, fb) : fb;
 
@@ -25,6 +23,9 @@
     // بسيط وكافي للواجهة الأمامية
     return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value);
   }
+
+  // Expose for testing
+  window.__validateEmailFormat = validateEmailFormat;
 
   function validateForm(form) {
     let ok = true;

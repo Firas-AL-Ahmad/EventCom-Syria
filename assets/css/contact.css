@@ -119,7 +119,8 @@
   }
 
   #map {
-    height: 350px; /* Taller map for tablets */
+    height: 350px;
+    z-index:1; /* Taller map for tablets */
   }
 }
 

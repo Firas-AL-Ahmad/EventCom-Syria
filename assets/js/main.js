@@ -8,21 +8,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (currentTheme) {
         document.documentElement.setAttribute('data-theme', currentTheme);
-
-        if (currentTheme === 'dark') {
+        if (currentTheme === 'dark' && themeToggle) {
             themeToggle.checked = true;
         }
     }
 
-    themeToggle.addEventListener('change', function () {
-        if (this.checked) {
-            document.documentElement.setAttribute('data-theme', 'dark');
-            localStorage.setItem('theme', 'dark');
-        } else {
-            document.documentElement.setAttribute('data-theme', 'light');
-            localStorage.setItem('theme', 'light');
-        }
-    });
+    if (themeToggle) {
+        themeToggle.addEventListener('change', function () {
+            if (this.checked) {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+            }
+        });
+    }
 
     // Scroll to top button logic
     const scrollToTopBtn = document.querySelector('.scroll-to-top');
@@ -49,16 +50,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const mainImage = document.getElementById('mainEventImage');
     const thumbnails = document.querySelectorAll('.hero-gallery .thumbnail-gallery .img-thumbnail');
 
-    thumbnails.forEach(thumbnail => {
-        thumbnail.addEventListener('click', function () {
-            // Set the main image src to the clicked thumbnail's src
-            mainImage.src = this.src;
+    if (mainImage && thumbnails.length) {
+        thumbnails.forEach(thumbnail => {
+            thumbnail.addEventListener('click', function () {
+                // Set the main image src to the clicked thumbnail's src
+                mainImage.src = this.src;
 
-            // Update the active class
-            thumbnails.forEach(t => t.classList.remove('active'));
-            this.classList.add('active');
+                // Update the active class
+                thumbnails.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+            });
         });
-    });
+    }
 
     // Draggable categories section
     const categoriesContent = document.querySelector('.categories-content');
