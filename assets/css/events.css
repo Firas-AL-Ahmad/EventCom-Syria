@@ -65,46 +65,54 @@
 }
 
 /* Filtering and search section */
+
+/* LTR: أيقونة يسار، زر يمين */
+html[dir="ltr"] .input-group.dir-swap {
+  flex-direction: row;
+}
+html[dir="ltr"] .input-group.dir-swap .input-group-text {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+html[dir="ltr"] .input-group.dir-swap .btn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* RTL: أيقونة يمين، زر يسار */
+html[dir="rtl"] .input-group.dir-swap {
+  flex-direction: row-reverse;
+}
+html[dir="rtl"] .input-group.dir-swap .input-group-text {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+html[dir="rtl"] .input-group.dir-swap .btn {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* محاذاة قوائم الاختيار حسب الاتجاه */
+html[dir="rtl"] .dir-dropdown .dropdown-menu {
+  right: 0;
+  left: auto;
+  text-align: right;
+}
+html[dir="ltr"] .dir-dropdown .dropdown-menu {
+  left: 0;
+  right: auto;
+  text-align: left;
+}
+
+/* تحسين التباعد على الشاشات الصغيرة */
+@media (max-width: 576px) {
+  .filters .form-label {
+    margin-bottom: 0.5rem;
+  }
+}
+
 .filters {
   width: 100%;
-  align-items: end;
-}
-
-.filter-item {
-  text-align: right;
-  margin-bottom: 1rem;
-}
-
-.filter-item label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-  color: var(--gray-500);
-}
-
-.filter-item .input-group {
-  position: relative;
-}
-
-.filter-item .form-control,
-.filter-item .form-select {
-  border-radius: 16px;
-  border: 1px solid var(--gray-300);
-  padding: 1rem;
-  height: auto;
-  box-shadow: none;
-}
-
-.filter-item .input-group .bi-search {
-  position: absolute;
-  left: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: var(--gray-5);
-}
-
-.filter-item .form-control::placeholder {
-  color: #adb5bd;
 }
 
 .city-filters {
