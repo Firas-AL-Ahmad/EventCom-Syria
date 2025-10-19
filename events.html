@@ -114,14 +114,14 @@
                     <!-- Search -->
                     <div class="col-12 col-md-6 col-lg-4">
                         <label class="form-label" data-i18n="events_page.filters.search.label">ابحث عن فعالية</label>
-                        <div class="input-group dir-swap">
+                        <div class="search-bar input-group dir-swap">
                             <span class="input-group-text" aria-hidden="true">
                                 <i class="bi bi-search"></i>
                             </span>
                             <input type="text" class="form-control"
                                 data-i18n-attr="placeholder:events_page.filters.search.placeholder;aria-label:events_page.filters.search.aria"
                                 placeholder="ابحث بالاسم أو كلمة مفتاحية" aria-label="Search events">
-                            <button class="btn btn-primary d-none d-md-inline-flex"
+                            <button class="btn search-btn d-none d-md-inline-flex"
                                 data-i18n="events_page.filters.search.button"
                                 data-i18n-attr="aria-label:events_page.filters.search.button_aria"
                                 aria-label="Execute search">
@@ -129,7 +129,7 @@
                             </button>
                         </div>
                         <!-- زر بحث للشاشات الصغيرة -->
-                        <button class="btn btn-primary w-100 d-md-none mt-2"
+                        <button class="btn search-btn  w-100 d-md-none mt-3"
                             data-i18n="events_page.filters.search.button"
                             data-i18n-attr="aria-label:events_page.filters.search.button_aria">
                             بحث
@@ -139,9 +139,9 @@
                     <!-- Date -->
                     <div class="col-12 col-md-6 col-lg-4">
                         <label class="form-label" data-i18n="events_page.filters.date.label">التاريخ</label>
-                        <div class="dropdown w-100 dir-dropdown">
-                            <button class="btn btn-outline-primary dropdown-toggle w-100" type="button"
-                                id="dateDropdown" data-bs-toggle="dropdown" aria-expanded="false"
+                        <div class="dropdown-div dropdown w-100 dir-dropdown">
+                            <button class="btn dropdown-btn dropdown-toggle w-100" type="button" id="dateDropdown"
+                                data-bs-toggle="dropdown" aria-expanded="false"
                                 data-i18n="events_page.filters.date.placeholder">
                                 اختر التاريخ
                             </button>
@@ -161,8 +161,8 @@
                     <div class="col-12 col-md-6 col-lg-4">
                         <label class="form-label" data-i18n="events_page.filters.category.label">التصنيف</label>
                         <div class="dropdown w-100 dir-dropdown">
-                            <button class="btn btn-outline-primary dropdown-toggle w-100" type="button"
-                                id="categoryDropdown" data-bs-toggle="dropdown" aria-expanded="false"
+                            <button class="btn dropdown-btn dropdown-toggle w-100" type="button" id="categoryDropdown"
+                                data-bs-toggle="dropdown" aria-expanded="false"
                                 data-i18n="events_page.filters.category.placeholder">
                                 اختر التصنيف
                             </button>

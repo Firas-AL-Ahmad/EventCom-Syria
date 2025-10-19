@@ -6,7 +6,11 @@
   justify-content: center;
   min-height: 100vh;
   padding: 20px;
-  background: linear-gradient(to bottom right, var(--primary-50), var(--primary-100));
+  background: linear-gradient(
+    to bottom right,
+    var(--primary-50),
+    var(--primary-100)
+  );
 }
 
 .contact-container {
@@ -29,6 +33,10 @@
   margin-bottom: 30px;
   font-size: 1rem;
   line-height: 1.6;
+}
+
+.search-icon {
+  background-color: transparent !important;
 }
 
 .contact-form {
@@ -120,7 +128,7 @@
 
   #map {
     height: 350px;
-    z-index:1; /* Taller map for tablets */
+    z-index: 1; /* Taller map for tablets */
   }
 }
 

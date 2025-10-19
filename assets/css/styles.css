@@ -124,19 +124,14 @@ body {
 .navbar-nav .nav-link.active,
 .navbar-nav .nav-link:hover {
   color: var(--secondary-500);
+  font-weight: 600;
+  width: 100%;
 }
 
 .navbar .btn-primary {
-  border: 1px solid var(--primary-500);
   color: var(--primary-500);
   background-color: transparent;
   border-radius: 0.5rem;
-  padding: 0.375rem 1rem;
-}
-
-.navbar .btn-primary:hover {
-  background-color: var(--primary-500);
-  color: var(--white-color);
 }
 
 .navbar .dropdown-toggle {
