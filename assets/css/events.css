@@ -13,16 +13,38 @@
 .hero-events-section {
   display: flex;
   flex-direction: row;
-  justify-content: start;
-  align-items: end;
+  justify-content: space-between; /* Adjust alignment */
+  align-items: center; /* Vertically center content */
   padding-top: 132px;
   margin-bottom: 64px;
   gap: 32px;
   width: 100%;
 }
 
-.hero-events-section img {
+.hero-text-box {
+  flex: 1; /* Allow text box to grow */
+}
+
+.events-hero-title {
+  color: #2899e5;
+  font-size: 32px;
+  font-family: Tajawal;
+  font-weight: 700;
+  line-height: 41.6px;
+  word-wrap: break-word;
+}
+
+.events-hero-subtitle {
+  color: #262626;
+  font-size: 20px;
+  font-family: Tajawal;
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+.hero-events-section .line {
   width: 48%;
+  object-fit: contain; /* Ensure image scales properly */
 }
 .hero-text-box {
   display: flex;
@@ -469,6 +491,20 @@ html[dir="ltr"] .dir-dropdown .dropdown-menu {
 .event-card-footer .btn-calendar:hover {
   background-color: var(--primary-500);
   color: white;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  .hero-events-section {
+    flex-direction: column; /* Stack items vertically */
+    text-align: center; /* Center text for a better mobile view */
+    padding-top: 64px; /* Adjust padding for mobile */
+    margin-bottom: 32px;
+  }
+
+  .hero-events-section .line {
+    display: none; /* Hide the decorative line on small screens */
+  }
 }
 
 @media (max-width: 768px) {

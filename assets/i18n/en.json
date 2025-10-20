@@ -6,7 +6,8 @@
     "categories": "Categories",
     "about": "About",
     "contact": "Contact",
-    "brand_aria": "EventCom Syria"
+    "brand_aria": "EventCom Syria",
+    "toggler_aria": "Toggle navigation"
   },
   "home": {
     "hero": {
@@ -103,12 +104,17 @@
       "search": {
         "label": "Search for an event",
         "placeholder": "Type an event name or keyword…",
-        "aria": "Event search field"
+        "aria": "Event search field",
+        "button": "Search",
+        "button_aria": "Execute search"
       },
       "date": {
         "label": "Date",
         "placeholder": "Select a date",
-        "aria": "Date selector"
+        "aria": "Date selector",
+        "today": "Today",
+        "this_week": "This Week",
+        "this_month": "This Month"
       },
       "category": {
         "label": "Category",
@@ -117,6 +123,14 @@
       }
     },
     "tabs": { "all": "All" }
+  },
+  "sample_events": {
+    "t1": { "title": "Live Music Night", "subtitle": "An evening of selected live performances." },
+    "t2": { "title": "Contemporary Art Expo", "subtitle": "Works by local and emerging artists." },
+    "t3": { "title": "Friendly Football Match", "subtitle": "Exciting vibes for sports fans." },
+    "t4": { "title": "Poetry & Culture Night", "subtitle": "Readings and audience interaction." },
+    "t5": { "title": "Quick Coding Workshop", "subtitle": "Modern concepts and tools for beginners." },
+    "t6": { "title": "Summer Music Showcase", "subtitle": "A mix of classics for music lovers." }
   },
   "buttons": { "details": "Details", "add_to_calendar": "Add to Calendar" },
   "categories": {
@@ -180,6 +194,7 @@
     "logo_alt": "EventCom Syria Logo",
     "slogan": "Discover. Plan. Attend!",
     "subtitle": "A daily-updated platform to discover events across all governorates.",
+    "scroll_top_alt": "Scroll to top",
     "nav": {
       "title": "Browse",
       "links": {
