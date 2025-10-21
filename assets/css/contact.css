@@ -43,7 +43,7 @@
   width: 100%;
 }
 
-.contact-form .form-control {
+  .form-control {
   background-color: var(--white-color);
   border: 1px solid var(--gray-200);
   border-radius: 8px;
@@ -54,6 +54,10 @@
   transition: border-color 0.3s;
 }
 
+.form-control{
+
+  height: 56ox;
+}
 .contact-form .form-control:focus {
   border-color: var(--primary-500);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -71,6 +75,11 @@
   transition: background-color 0.3s;
 }
 
+.form-btn{
+
+  height: 56px;
+
+}
 .contact-form .btn-primary:hover {
   background-color: var(--primary-700);
   border-color: var(--primary-700);

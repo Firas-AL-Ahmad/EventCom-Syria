@@ -409,14 +409,14 @@
     "title": "اتصل بنا",
     "description": "للأسئلة، اقتراحات الفعاليات، الشراكات، أو أي ملاحظة لتحسين التجربة. سنراجع رسالتك ونردّ بأسرع وقت.",
     "form": {
-      "full_name_ph": "الاسم الكامل",
-      "full_name_aria": "أدخل اسمك الكامل",
-      "email_ph": "البريد الإلكتروني",
-      "email_aria": "أدخل بريدك الإلكتروني",
-      "message_subject_ph": "موضوع الرسالة",
-      "message_subject_aria": "أدخل موضوع رسالتك",
-      "recaptcha_label": "أنا لست روبوتًا (reCAPTCHA)",
-      "submit_btn": "إرسال الرسالة"
+      "full_name_label": "الاسم الكامل",
+      "email_label": "البريد الإلكتروني",
+      "message_label": "الرسالة",
+      "submit_btn": "إرسال الرسالة",
+      "char_counter": "{count}/{max}"
+    },
+    "alternate": {
+      "title": "طرق أخرى للتواصل معنا"
     },
     "social": {
       "facebook_alt": "فيسبوك",
@@ -434,8 +434,9 @@
       "full_name_required": "الاسم الكامل مطلوب.",
       "email_required": "البريد الإلكتروني مطلوب.",
       "email_invalid": "صيغة البريد الإلكتروني غير صحيحة.",
-      "subject_required": "موضوع الرسالة مطلوب.",
-      "success_message": "تم إرسال رسالتك بنجاح. سنعود إليك قريبًا."
+      "message_required": "الرسالة مطلوبة.",
+      "success_message": "تم إرسال رسالتك بنجاح. سنعود إليك قريبًا.",
+      "error_message": "حدث خطأ ما. يرجى المحاولة مرة أخرى لاحقًا."
     }
   },
   "privacy": {

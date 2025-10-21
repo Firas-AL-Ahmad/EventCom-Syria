@@ -412,14 +412,14 @@
     "title": "Contact Us",
     "description": "For questions, event suggestions, partnerships, or any feedback to improve the experience. We’ll review your message and respond as soon as possible.",
     "form": {
-      "full_name_ph": "Full name",
-      "full_name_aria": "Enter your full name",
-      "email_ph": "Email address",
-      "email_aria": "Enter your email address",
-      "message_subject_ph": "Message subject",
-      "message_subject_aria": "Enter your message subject",
-      "recaptcha_label": "I'm not a robot (reCAPTCHA)",
-      "submit_btn": "Send Message"
+      "full_name_label": "Full Name",
+      "email_label": "Email Address",
+      "message_label": "Message",
+      "submit_btn": "Send Message",
+      "char_counter": "{count}/{max}"
+    },
+    "alternate": {
+      "title": "Other ways to reach us"
     },
     "social": {
       "facebook_alt": "Facebook",
@@ -437,8 +437,9 @@
       "full_name_required": "Full name is required.",
       "email_required": "Email is required.",
       "email_invalid": "Please enter a valid email address.",
-      "subject_required": "Message subject is required.",
-      "success_message": "Your message was sent successfully. We’ll get back to you soon."
+      "message_required": "Message is required.",
+      "success_message": "Your message was sent successfully. We’ll get back to you soon.",
+      "error_message": "Something went wrong. Please try again later."
     }
   },
   "privacy": {

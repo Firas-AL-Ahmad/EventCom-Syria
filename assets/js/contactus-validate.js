@@ -1,124 +1,115 @@
-(function () {
-    const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
-  const t = (key, fb = "") =>
-    window.__i18n && window.__i18n.t ? window.__i18n.t(key, fb) : fb;
+document.addEventListener("DOMContentLoaded", () => {
+  const contactForm = document.getElementById("contactForm");
+  if (!contactForm) return;
 
-  function setError(input, key) {
-    input.classList.add("is-invalid");
-    const holder = document.querySelector(
-      `.invalid-feedback[data-error-for="${input.name}"]`
-    );
-    if (holder) holder.textContent = t(key);
-  }
+  const formAlerts = document.getElementById("form-alerts");
+  const emailField = document.getElementById("email");
+  const emailFeedback = document.getElementById("emailFeedback");
+  const messageField = document.getElementById("message");
+  const messageCounter = document.getElementById("message-counter");
+  const submitBtn = document.getElementById("submitBtn");
+  const formLoadTimestampField = document.getElementById("formLoadTimestamp");
 
-  function clearError(input) {
-    input.classList.remove("is-invalid");
-    const holder = document.querySelector(
-      `.invalid-feedback[data-error-for="${input.name}"]`
-    );
-    if (holder) holder.textContent = "";
-  }
+  // Set form load timestamp for spam protection
+  formLoadTimestampField.value = Date.now();
 
-  function validateEmailFormat(value) {
-    // بسيط وكافي للواجهة الأمامية
-    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value);
-  }
+  const t = (key, fallback = "") =>
+    window.__i18n && window.__i18n.t
+      ? window.__i18n.t(key, fallback)
+      : fallback;
 
-  // Expose for testing
-  window.__validateEmailFormat = validateEmailFormat;
+  const createAlert = (message, type = "success") => {
+    const wrapper = document.createElement("div");
+    const alertId = `alert-${Date.now()}`;
+    wrapper.innerHTML = [
+      `<div id="${alertId}" class="alert alert-${type} alert-dismissible" role="alert" tabindex="-1">`,
+      `   <div>${message}</div>`,
+      '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
+      "</div>",
+    ].join("");
+    const alertEl = wrapper.firstChild;
+    // Focus the new alert for screen readers
+    setTimeout(() => document.getElementById(alertId)?.focus(), 10);
+    return alertEl;
+  };
 
-  function validateForm(form) {
-    let ok = true;
+  // Update character counter for textarea
+  const updateMessageCounter = () => {
+    const maxLength = messageField.getAttribute("maxlength");
+    const currentLength = messageField.value.length;
+    const counterText = t("contact_page.form.char_counter", "{count}/{max}")
+      .replace("{count}", currentLength)
+      .replace("{max}", maxLength);
+    messageCounter.textContent = counterText;
+  };
 
-    const fullName = form.elements["fullName"];
-    const email = form.elements["email"];
-    const subject = form.elements["subject"];
+  messageField.addEventListener("input", updateMessageCounter);
+  updateMessageCounter(); // Initial call
 
-    // Full name
-    if (!fullName.value.trim()) {
-      setError(fullName, "contact_page.validation.full_name_required");
-      ok = false;
-    } else {
-      clearError(fullName);
+  // Dynamic email validation messages
+  emailField.addEventListener("input", () => {
+    if (emailField.validity.valueMissing) {
+      emailFeedback.textContent = t("contact_page.validation.email_required");
+    } else if (emailField.validity.typeMismatch) {
+      emailFeedback.textContent = t("contact_page.validation.email_invalid");
     }
-
-    // Email
-    if (!email.value.trim()) {
-      setError(email, "contact_page.validation.email_required");
-      ok = false;
-    } else if (!validateEmailFormat(email.value.trim())) {
-      setError(email, "contact_page.validation.email_invalid");
-      ok = false;
-    } else {
-      clearError(email);
-    }
-
-    // Subject / message
-    if (!subject.value.trim()) {
-      setError(subject, "contact_page.validation.subject_required");
-      ok = false;
-    } else {
-      clearError(subject);
-    }
-
-    return ok;
-  }
-
-  function bindLiveValidation(form) {
-    $$(".form-control", form).forEach((el) => {
-      el.addEventListener("input", () => {
-        if (el.classList.contains("is-invalid")) {
-          // جرّب التحقق الجزئي عند الكتابة
-          if (el.name === "email") {
-            if (el.value.trim() && validateEmailFormat(el.value.trim()))
-              clearError(el);
-          } else if (el.value.trim()) {
-            clearError(el);
-          }
-        }
-      });
-      el.addEventListener("blur", () => {
-        // تحقّق عند فقدان التركيز
-        if (el.name === "fullName" && !el.value.trim())
-          setError(el, "contact_page.validation.full_name_required");
-        if (el.name === "email") {
-          if (!el.value.trim())
-            setError(el, "contact_page.validation.email_required");
-          else if (!validateEmailFormat(el.value.trim()))
-            setError(el, "contact_page.validation.email_invalid");
-        }
-        if (el.name === "subject" && !el.value.trim())
-          setError(el, "contact_page.validation.subject_required");
-      });
-    });
-  }
-
-  document.addEventListener("DOMContentLoaded", () => {
-    const form = document.getElementById("contactForm");
-    if (!form) return;
-
-    bindLiveValidation(form);
-
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      const success = document.getElementById("contactSuccess");
-      if (success) {
-        success.classList.add("d-none");
-        success.textContent = "";
-      }
-
-      const ok = validateForm(form);
-      if (!ok) return;
-
-      // هنا تضع إرسالاً حقيقياً لاحقاً (fetch)، الآن فقط رسالة نجاح محلية
-      if (success) {
-        success.textContent = t(
-          "contact_page.validation.success_message",
-          "تم إرسال رسالتك بنجاح."
-        );
-        success.classList.remove("d-none");
-      }
-      form.reset();
-    });
   });
-})();
+
+  contactForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+
+    formAlerts.innerHTML = "";
+    const originalBtnContent = submitBtn.innerHTML;
+
+    // Spam protection checks
+    const honeypot = contactForm.querySelector('[name="website"]');
+    if (honeypot && honeypot.value) {
+      console.warn("Honeypot field filled. Submission blocked.");
+      return; // Silently fail
+    }
+    const formLoadTime = parseInt(formLoadTimestampField.value, 10);
+    if (Date.now() - formLoadTime < 2000) {
+      console.warn("Form submitted too quickly. Submission blocked.");
+      return; // Silently fail
+    }
+
+    try {
+      contactForm.classList.add("was-validated");
+      if (emailField.validity.valueMissing) {
+        emailFeedback.textContent = t("contact_page.validation.email_required");
+      }
+
+      if (!contactForm.checkValidity()) {
+        const firstInvalidField = contactForm.querySelector(":invalid");
+        firstInvalidField?.focus();
+        return;
+      }
+
+      // --- Form is valid, simulate submission ---
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = `
+                <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                <span class="visually-hidden">Loading...</span>
+            `;
+
+      // Simulate network delay
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+
+      console.log("Form is valid and ready to be sent.");
+      const successMessage = t("contact_page.validation.success_message");
+      formAlerts.appendChild(createAlert(successMessage, "success"));
+
+      contactForm.reset();
+      contactForm.classList.remove("was-validated");
+      updateMessageCounter(); // Reset counter text
+    } catch (error) {
+      console.error("An unexpected error occurred:", error);
+      const errorMessage = t("contact_page.validation.error_message");
+      formAlerts.appendChild(createAlert(errorMessage, "danger"));
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = originalBtnContent;
+    }
+  });
+});
