@@ -125,12 +125,30 @@
     "tabs": { "all": "All" }
   },
   "sample_events": {
-    "t1": { "title": "Live Music Night", "subtitle": "An evening of selected live performances." },
-    "t2": { "title": "Contemporary Art Expo", "subtitle": "Works by local and emerging artists." },
-    "t3": { "title": "Friendly Football Match", "subtitle": "Exciting vibes for sports fans." },
-    "t4": { "title": "Poetry & Culture Night", "subtitle": "Readings and audience interaction." },
-    "t5": { "title": "Quick Coding Workshop", "subtitle": "Modern concepts and tools for beginners." },
-    "t6": { "title": "Summer Music Showcase", "subtitle": "A mix of classics for music lovers." }
+    "t1": {
+      "title": "Live Music Night",
+      "subtitle": "An evening of selected live performances."
+    },
+    "t2": {
+      "title": "Contemporary Art Expo",
+      "subtitle": "Works by local and emerging artists."
+    },
+    "t3": {
+      "title": "Friendly Football Match",
+      "subtitle": "Exciting vibes for sports fans."
+    },
+    "t4": {
+      "title": "Poetry & Culture Night",
+      "subtitle": "Readings and audience interaction."
+    },
+    "t5": {
+      "title": "Quick Coding Workshop",
+      "subtitle": "Modern concepts and tools for beginners."
+    },
+    "t6": {
+      "title": "Summer Music Showcase",
+      "subtitle": "A mix of classics for music lovers."
+    }
   },
   "buttons": { "details": "Details", "add_to_calendar": "Add to Calendar" },
   "categories": {
@@ -261,18 +279,32 @@
       "alt": "Firas Al-Ahmad"
     },
     "member2": {
-      "name": "Firas Al-Ahmad",
+      "name": "Noujin Kahraman Abou",
       "role": "Student ID",
       "job_title": "UI/UX Designer",
-      "id": "190479",
-      "alt": "Firas Al-Ahmad"
+      "id": "235072",
+      "alt": "Noujin Kahraman Abou"
     },
     "member3": {
-      "name": "Firas Al-Ahmad",
+      "name": "Sidra Hussein",
       "role": "Student ID",
       "job_title": "Project Manager",
-      "id": "190479",
-      "alt": "Firas Al-Ahmad"
+      "id": "235072",
+      "alt": "Sidra Hussein"
+    },
+    "member4": {
+      "name": "Mohamad Masri",
+      "role": "Student ID",
+      "job_title": "Backend Developer",
+      "id": "255443",
+      "alt": "Mohamad Masri"
+    },
+    "member5": {
+      "name": "Nahla Mahmoud Bdeir",
+      "role": "Student ID",
+      "job_title": "Content & Partnerships Coordinator",
+      "id": "305124",
+      "alt": "Nahla Mahmoud Bdeir"
     }
   },
   "contact_section": {
@@ -419,5 +451,23 @@
     "dir": "ltr",
     "label": "English",
     "flag": "assets/img/icons/US-flag.svg"
+  },
+  "about_mv": {
+    "section_title": "Platform Mission & Vision",
+    "section_subtitle": "Why we exist, and where we’re going.",
+    "mission": {
+      "title": "Our Mission",
+      "text": "We bring cultural, artistic, sports, and educational events from all Syrian governorates into one place. With easy search and filtering, every event meets the right audience quickly and clearly.",
+      "p1": "Simplify discovery by governorate/category/date.",
+      "p2": "Clear cards with time/location and useful links.",
+      "p3": "Easy “Add to Calendar” and event sharing."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "text": "To be the go-to guide for events in Syria—supporting culture, community initiatives, and a modern, accessible experience that connects organizers with audiences.",
+      "p1": "Enrich the cultural scene and increase attendance.",
+      "p2": "Build a community of organizers, volunteers, and fans.",
+      "p3": "Multilingual, accessible-by-design experience."
+    }
   }
 }

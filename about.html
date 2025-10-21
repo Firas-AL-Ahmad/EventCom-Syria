@@ -89,7 +89,7 @@
     <main>
 
         <!-- Hero About Section -->
-        <section class="about-hero" aria-labelledby="about-hero-title">
+        <section class="about-hero" aria-labelledby="about-hero-title" role="region">
             <div class="container hero-container">
                 <img src="assets/img/icons/V-Logo.svg" class="logo" loading="lazy" alt="EventCom Syria Logo"
                     data-i18n-attr="alt:about_hero.logo_alt" />
@@ -113,20 +113,20 @@
 
 
         <!-- Features Section -->
-        <section class="features-section" aria-labelledby="features-title">
+        <section class="features-section" aria-labelledby="features-title" role="region">
             <div class="features-header">
-                <p id="features-title" class="text-center text-dark fs-5 fw-bold font-family-Tajawal m-0 px-3 py-2"
+                <h2 id="features-title" class="text-center text-dark fs-5 fw-bold font-family-Tajawal m-0 px-3 py-2"
                     data-i18n="features_section.title">
                     ماذا نقدّم؟
-                </p>
+                </h2>
             </div>
 
             <div class="container">
                 <div class="features-div row g-4">
 
                     <!-- Feature 1 -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="feature-card">
+                    <div class="col-12 col-sm-6 col-lg-4 mb-4">
+                        <div class="feature-card h-100 d-flex flex-column" tabindex="0">
                             <div class="feature-icon"><i class="bi bi-card-text"></i></div>
                             <h3 class="feature-title" data-i18n="features_section.card1.title">بطاقات فعالية واضحة</h3>
                             <p class="feature-description" data-i18n="features_section.card1.description">
@@ -136,8 +136,8 @@
                     </div>
 
                     <!-- Feature 2 -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="feature-card">
+                    <div class="col-12 col-sm-6 col-lg-4 mb-4">
+                        <div class="feature-card h-100 d-flex flex-column" tabindex="0">
                             <div class="feature-icon"><i class="bi bi-grid"></i></div>
                             <h3 class="feature-title" data-i18n="features_section.card2.title">طرق عرض متنوعة</h3>
                             <p class="feature-description" data-i18n="features_section.card2.description">
@@ -147,8 +147,8 @@
                     </div>
 
                     <!-- Feature 3 -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="feature-card">
+                    <div class="col-12 col-sm-6 col-lg-4 mb-4">
+                        <div class="feature-card h-100 d-flex flex-column" tabindex="0">
                             <div class="feature-icon"><i class="bi bi-search"></i></div>
                             <h3 class="feature-title" data-i18n="features_section.card3.title">بحث وفلترة ذكية</h3>
                             <p class="feature-description" data-i18n="features_section.card3.description">
@@ -158,8 +158,8 @@
                     </div>
 
                     <!-- Feature 4 -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="feature-card">
+                    <div class="col-12 col-sm-6 col-lg-4 mb-4">
+                        <div class="feature-card h-100 d-flex flex-column" tabindex="0">
                             <div class="feature-icon"><i class="bi bi-share"></i></div>
                             <h3 class="feature-title" data-i18n="features_section.card4.title">إرسال فعالية</h3>
                             <p class="feature-description" data-i18n="features_section.card4.description">
@@ -169,8 +169,8 @@
                     </div>
 
                     <!-- Feature 5 -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="feature-card">
+                    <div class="col-12 col-sm-6 col-lg-4 mb-4">
+                        <div class="feature-card h-100 d-flex flex-column" tabindex="0">
                             <div class="feature-icon"><i class="bi bi-cursor"></i></div>
                             <h3 class="feature-title" data-i18n="features_section.card5.title">اختيارات مُحرّر</h3>
                             <p class="feature-description" data-i18n="features_section.card5.description">
@@ -183,21 +183,89 @@
             </div>
         </section>
 
+        <!-- Mission & Vision Section -->
+        <section class="mv-section py-5" aria-labelledby="mv-title" role="region">
+            <div class="container">
+                <div class="text-center mb-4">
+                    <h2 id="mv-title" class="mv-title" data-i18n="about_mv.section_title">هدف المنصّة ورؤيتها</h2>
+                    <p class="mv-subtitle text-secondary mb-0" data-i18n="about_mv.section_subtitle">
+                        لماذا نوجد؟ وإلى أين نتجه؟
+                    </p>
+                </div>
+
+                <div class="row g-4 justify-content-center">
+
+                    <!-- Mission -->
+                    <div class="col-12 col-md-6">
+                        <div class="card h-100 shadow-sm border-0 mv-card">
+                            <div class="card-body p-4 d-flex flex-column gap-3">
+                                <div class="d-flex align-items-center gap-3">
+                                    <span
+                                        class="mv-icon rounded-circle d-inline-flex align-items-center justify-content-center">
+                                        <i class="bi bi-bullseye"></i>
+                                    </span>
+                                    <h3 class="h5 fw-bold mb-0" data-i18n="about_mv.mission.title">هدف المنصّة</h3>
+                                </div>
+                                <p class="mb-0 text-body" data-i18n="about_mv.mission.text">
+                                    نجمع الفعاليات الثقافية والفنية والرياضية والتعليمية من كل المحافظات السورية في مكان
+                                    واحد،
+                                    ونقدّمها بطريقة سهلة البحث والفلترة، لتصل كل فعالية إلى جمهورها المناسب بسرعة ووضوح.
+                                </p>
+                                <ul class="mv-points list-unstyled mb-0">
+                                    <li data-i18n="about_mv.mission.p1">تبسيط الاكتشاف حسب المحافظة/التصنيف/التاريخ.
+                                    </li>
+                                    <li data-i18n="about_mv.mission.p2">عرض بطاقات واضحة مع وقت/مكان وروابط مفيدة.</li>
+                                    <li data-i18n="about_mv.mission.p3">إتاحة “أضف للتقويم” ومشاركة الحدث بسهولة.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vision -->
+                    <div class="col-12 col-md-6">
+                        <div class="card h-100 shadow-sm border-0 mv-card">
+                            <div class="card-body p-4 d-flex flex-column gap-3">
+                                <div class="d-flex align-items-center gap-3">
+                                    <span
+                                        class="mv-icon rounded-circle d-inline-flex align-items-center justify-content-center">
+                                        <i class="bi bi-stars"></i>
+                                    </span>
+                                    <h3 class="h5 fw-bold mb-0" data-i18n="about_mv.vision.title">رؤيتنا</h3>
+                                </div>
+                                <p class="mb-0 text-body" data-i18n="about_mv.vision.text">
+                                    أن تكون المنصّة المرجع الأول لفعاليات سوريا، تدعم الحركة الثقافية والمبادرات
+                                    المجتمعية،
+                                    وتربط المنظمين بالجمهور عبر تجربة حديثة وسهلة ومتاحة للجميع.
+                                </p>
+                                <ul class="mv-points list-unstyled mb-0">
+                                    <li data-i18n="about_mv.vision.p1">إثراء المشهد الثقافي ورفع الحضور والمشاركة.</li>
+                                    <li data-i18n="about_mv.vision.p2">بناء مجتمع منظمين ومتطوعين ومهتمين.</li>
+                                    <li data-i18n="about_mv.vision.p3">تجربة متعددة اللغات مع إمكانية الوصول للجميع.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
         <!-- Team Section -->
-        <section class="team-section" aria-labelledby="team-title">
+        <section class="team-section" aria-labelledby="team-title" role="region">
             <div class="container">
                 <div class="team-header text-center">
                     <h2 id="team-title" class="team-title" data-i18n="team_section.title">فريق العمل</h2>
                     <p class="team-subtitle" data-i18n="team_section.subtitle">وراء كل فعالية فريق يصنع الفارق.</p>
                 </div>
 
-                <div class="row justify-content-center">
+                <div class="row justify-content-center g-5">
                     <!-- Team Member 1 -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="team-card">
-                            <img src="assets/img/team/Firas AL-Ahmad.jpg" alt="Firas Al-Ahmad" class="team-member-img"
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="team-card h-100 d-flex flex-column mt-4" tabindex="0">
+                            <img src="assets/img/team/Firas AL-Ahmad.png" alt="Firas Al-Ahmad" class="team-member-img"
                                 data-i18n-attr="alt:team_section.member1.alt" />
-                            <h3 class="team-member-name" data-i18n="team_section.member1.name">Firas Al-Ahmad</h3>
+                            <h3 class="team-member-name" data-i18n="team_section.member1.name">فراس</h3>
                             <p class="team-member-job" data-i18n="team_section.member1.job_title">Full Stack Developer
                             </p>
                             <p class="team-member-role" data-i18n="team_section.member1.role">الرقم الجامعي</p>
@@ -206,28 +274,51 @@
                     </div>
 
                     <!-- Team Member 2 -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="team-card">
-                            <img src="assets/img/team/Firas AL-Ahmad.jpg" alt="Firas Al-Ahmad" class="team-member-img"
-                                data-i18n-attr="alt:team_section.member2.alt" />
-                            <h3 class="team-member-name" data-i18n="team_section.member2.name">Firas Al-Ahmad</h3>
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="team-card h-100 d-flex flex-column mt-4" tabindex="0">
+                            <img src="assets/img/team/Noujin Kahraman Abou.png" alt="Noujin Kahraman Abou"
+                                class="team-member-img" data-i18n-attr="alt:team_section.member2.alt" />
+                            <h3 class="team-member-name" data-i18n="team_section.member2.name">Noujin Kahraman Abou</h3>
                             <p class="team-member-job" data-i18n="team_section.member2.job_title">UI/UX Designer</p>
                             <p class="team-member-role" data-i18n="team_section.member2.role">الرقم الجامعي</p>
-                            <p class="team-member-id" data-i18n="team_section.member2.id">190479</p>
+                            <p class="team-member-id" data-i18n="team_section.member2.id">235072</p>
                         </div>
                     </div>
 
                     <!-- Team Member 3 -->
-                    <div class="col-lg-4 col-md-6">
-                        <div class="team-card">
-                            <img src="assets/img/team/Firas AL-Ahmad.jpg" alt="Firas Al-Ahmad" class="team-member-img"
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="team-card h-100 d-flex flex-column mt-4" tabindex="0">
+                            <img src="assets/img/team/Sidra Hussein.png" alt="Sidra Hussein" class="team-member-img"
                                 data-i18n-attr="alt:team_section.member3.alt" />
-                            <h3 class="team-member-name" data-i18n="team_section.member3.name">Firas Al-Ahmad</h3>
+                            <h3 class="team-member-name" data-i18n="team_section.member3.name">Sidra Hussein</h3>
                             <p class="team-member-job" data-i18n="team_section.member3.job_title">Project Manager</p>
                             <p class="team-member-role" data-i18n="team_section.member3.role">الرقم الجامعي</p>
-                            <p class="team-member-id" data-i18n="team_section.member3.id">190479</p>
+                            <p class="team-member-id" data-i18n="team_section.member3.id">235072</p>
                         </div>
                     </div>
+
+                    <!-- Team Member 4 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="team-card h-100 d-flex flex-column mt-4" tabindex="0">
+                            <img src="assets/img/team/Mohamad-Masri.png" alt="Mohamad Masri" class="team-member-img"
+                                data-i18n-attr="alt:team_section.member4.alt" />
+                            <h3 class="team-member-name" data-i18n="team_section.member4.name">محمد مصري</h3>
+                            <p class="team-member-job" data-i18n="team_section.member4.job_title">Backend Developer</p>
+                            <p class="team-member-role" data-i18n="team_section.member4.role">الرقم الجامعي</p>
+                            <p class="team-member-id" data-i18n="team_section.member4.id">255443</p>
+                        </div>
+                    </div>
+                    <!-- Team Member 5 -->
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <div class="team-card h-100 d-flex flex-column mt-4" tabindex="0">
+                            <img src="assets/img/team/Nahla-Mahmoud-Bdeir.png" alt="Nahla Mahmoud Bdeir" class="team-member-img"
+                                data-i18n-attr="alt:team_section.member5.alt" />
+                            <h3 class="team-member-name" data-i18n="team_section.member5.name">نهلة محمود بدير</h3>
+                            <p class="team-member-job" data-i18n="team_section.member5.job_title">منسّقة المحتوى والشراكات</p>
+                            <p class="team-member-role" data-i18n="team_section.member5.role">الرقم الجامعي</p>
+                            <p class="team-member-id" data-i18n="team_section.member5.id">305124</p>
+                        </div>
+                    </
                 </div>
             </div>
         </section>
