@@ -32,7 +32,7 @@
 
 .event-details .event-notes ul {
   list-style: none;
-  padding-right: 0;
+  padding-inline-start: 0;
 }
 
 .event-details .event-notes ul li::before {
@@ -157,7 +157,7 @@
 
 .about-event ul,
 .location-details ul {
-  padding-right: 1.2rem;
+  padding-inline-start: 1.2rem;
   list-style: none;
 }
 
@@ -168,7 +168,7 @@
   font-weight: bold;
   display: inline-block;
   width: 1em;
-  margin-left: -1em;
+  margin-inline-end: -1em;
 }
 
 .event-section,
@@ -203,7 +203,7 @@
   }
 
   .event-details {
-    text-align: right;
+    text-align: start;
   }
 
   .event-details .event-title {

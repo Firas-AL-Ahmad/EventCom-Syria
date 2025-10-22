@@ -101,6 +101,10 @@ body {
   text-align: start;
 }
 
+[dir="rtl"] .icon-mirror {
+  transform: scaleX(-1);
+}
+
 /* Nav */
 .navbar {
   background-color: var(--white-color);
@@ -208,7 +212,7 @@ body {
 
 .slider .circle {
   top: calc(var(--circle-inset) * -1);
-  left: 0;
+  inset-inline-start: 0;
   width: var(--circle-diameter);
   height: var(--circle-diameter);
   position: absolute;
@@ -253,7 +257,7 @@ body {
 /* actions */
 
 .ui-switch input:checked + .slider .circle {
-  left: calc(100% - var(--circle-diameter));
+  inset-inline-start: calc(100% - var(--circle-diameter));
   background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjAiIHdpZHRoPSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj4KICAgIDxwYXRoIGZpbGw9IiNmZmYiCiAgICAgICAgZD0iTTQuMiAyLjVsLS43IDEuOC0xLjguNyAxLjguNy43IDEuOC42LTEuOEw2LjcgNWwtMS45LS43LS42LTEuOHptMTUgOC4zYTYuNyA2LjcgMCAxMS02LjYtNi42IDUuOCA1LjggMCAwMDYuNiA2LjZ6IiAvPgo8L3N2Zz4=");
   background-color: rgb(0, 56, 146);
 }
@@ -271,7 +275,7 @@ body {
 .scroll-to-top {
   position: fixed;
   bottom: 20px;
-  left: 20px;
+  inset-inline-start: 20px;
   width: 50px;
   height: 50px;
   background-color: var(--secondary-500);
@@ -380,7 +384,6 @@ body {
   position: fixed;
   z-index: 9;
   bottom: 20px;
-  left: 2%;
   inset-inline-start: 2%;
 }
 

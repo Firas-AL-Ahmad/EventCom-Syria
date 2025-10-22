@@ -150,7 +150,11 @@
       "subtitle": "A mix of classics for music lovers."
     }
   },
-  "buttons": { "details": "Details", "add_to_calendar": "Add to Calendar" },
+  "buttons": {
+    "details": "Details",
+    "add_to_calendar": "Add to Calendar",
+    "share_event": "Share Event"
+  },
   "categories": {
     "music": "Music",
     "culture": "Culture",
@@ -237,7 +241,8 @@
       "address": "Syria — Damascus Office (9:00–17:00)"
     },
     "copyright": "© 2025 Syria Events Guide — <strong>All rights reserved</strong>.",
-    "disclaimer": "Content is provided by event organizers. We aim for accuracy wherever possible."
+    "disclaimer": "Content is provided by event organizers. We aim for accuracy wherever possible.",
+    "scroll_top_aria": "Scroll to top"
   },
   "about_hero": {
     "logo_alt": "EventCom Syria Logo",
@@ -356,6 +361,9 @@
     }
   },
   "event_page": {
+    "meta": {
+      "title": "Event Details - EventCom Syria"
+    },
     "hero": {
       "title": "Alwan Al-Sham Festival",
       "subtitle": "A vibrant showcase with live performances, workshops, and art exhibits for all ages."
@@ -407,6 +415,17 @@
       "map_title": "Static Map by Image",
       "map_desc": "Location of Dar Al-Assad for Culture and Arts in Damascus on the map."
     }
+  },
+  "related_events": {
+    "title": "Related Events"
+  },
+  "lang_switcher": {
+    "current_lang_alt": "Current language flag",
+    "current_lang_label": "English",
+    "ar_alt": "Arabic language flag",
+    "ar_text": "العربية",
+    "en_alt": "English language flag",
+    "en_text": "English"
   },
   "contact_page": {
     "title": "Contact Us",

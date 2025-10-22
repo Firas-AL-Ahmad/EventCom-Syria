@@ -14,7 +14,9 @@
   // Helpers
   const $all = (sel, root = document) => Array.from(root.querySelectorAll(sel));
   const setDir = (dir) => {
-    document.documentElement.setAttribute("dir", dir || "rtl");
+    const html = document.documentElement;
+    html.setAttribute("dir", dir || "rtl");
+    html.setAttribute("lang", currentLang);
     document.body.classList.toggle("rtl", dir === "rtl");
     document.body.classList.toggle("ltr", dir === "ltr");
   };
@@ -75,59 +77,62 @@
   function applyDates() {
     const locale = currentLang === "ar" ? "ar-SY" : "en-US";
     const opts = { day: "numeric", month: "long", year: "numeric" };
+    const formatter = new Intl.DateTimeFormat(locale, opts);
     $all("time[data-date-iso]").forEach((el) => {
       const iso = el.getAttribute("data-date-iso");
       if (!iso) return;
-      const d = new Date(iso);
-      if (isNaN(d.getTime())) return;
-      el.textContent = new Intl.DateTimeFormat(locale, opts).format(d);
+      try {
+        const d = new Date(iso);
+        if (!isNaN(d.getTime())) {
+          el.textContent = formatter.format(d);
+        }
+      } catch (e) {
+        console.error("Invalid date:", iso, e);
+      }
     });
   }
 
   // NEW: Format range <span data-datetime-start="ISO" data-datetime-end="ISO">
   function applyDateTimes() {
-    const isArabic = currentLang === "ar";
-    const localeDate = isArabic ? "ar-SY" : "en-US";
-    const localeTime = isArabic ? "ar-SY" : "en-US";
+    const locale = currentLang === "ar" ? "ar-SY" : "en-US";
+    const timeOpts = { hour: "numeric", minute: "2-digit", hourCycle: "h23" };
+    const dateOpts = { day: "numeric", month: "long", year: "numeric" };
 
-    const dateFmt = new Intl.DateTimeFormat(localeDate, {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
-    const timeFmt = new Intl.DateTimeFormat(localeTime, {
-      hour: "numeric",
-      minute: "2-digit",
+    const timeFmt = new Intl.DateTimeFormat(locale, timeOpts);
+    const dateFmt = new Intl.DateTimeFormat(locale, dateOpts);
+    const dateTimeFmt = new Intl.DateTimeFormat(locale, {
+      ...dateOpts,
+      ...timeOpts,
     });
 
-    $all("[data-datetime-start]").forEach((el) => {
+    $all(".event-datetime[data-datetime-start]").forEach((el) => {
       const startISO = el.getAttribute("data-datetime-start");
       const endISO = el.getAttribute("data-datetime-end");
       if (!startISO) return;
 
-      const ds = new Date(startISO);
-      const de = endISO ? new Date(endISO) : null;
-      if (isNaN(ds.getTime())) return;
-      if (de && isNaN(de.getTime())) return;
+      try {
+        const ds = new Date(startISO);
+        const de = endISO ? new Date(endISO) : null;
+        if (isNaN(ds.getTime()) || (de && isNaN(de.getTime()))) return;
 
-      const datePart = dateFmt.format(ds);
-      const startPart = timeFmt.format(ds);
-      const endPart = de ? timeFmt.format(de) : null;
-
-      // Joiner with locale punctuation
-      let text;
-      if (endPart) {
-        // ar: "10 أكتوبر 2025، 6:00–9:30 م"
-        // en: "October 10, 2025, 6:00–9:30 PM"
-        const comma = isArabic ? "، " : ", ";
-        const dash = "–";
-        text = `${datePart}${comma}${startPart}${dash}${endPart}`;
-      } else {
-        const comma = isArabic ? "، " : ", ";
-        text = `${datePart}${comma}${startPart}`;
+        let formatted;
+        if (de) {
+          const sameDay = ds.toDateString() === de.toDateString();
+          if (sameDay) {
+            const timeRange = `${timeFmt.format(ds)}–${timeFmt.format(de)}`;
+            formatted = `${timeRange} • ${dateFmt.format(ds)}`;
+          } else {
+            formatted = `${dateTimeFmt.format(ds)} – ${dateTimeFmt.format(
+              de
+            )}`;
+          }
+        } else {
+          formatted = dateTimeFmt.format(ds);
+        }
+        el.textContent = formatted;
+      } catch (e) {
+        console.error("Error formatting date range:", startISO, endISO, e);
       }
-
-      el.textContent = text;
     });
   }
 
@@ -144,12 +149,32 @@
     });
   }
 
+  function applyMapLocale() {
+    const iframe = document.getElementById("google-maps-iframe");
+    if (!iframe) return;
+
+    try {
+      const url = new URL(iframe.src);
+      const params = new URLSearchParams(url.search);
+      params.set("hl", currentLang);
+      url.search = params.toString();
+      
+      // Only update src if it has changed to avoid reloads
+      if (iframe.src !== url.toString()) {
+        iframe.src = url.toString();
+      }
+    } catch (e) {
+      console.error("Failed to update map locale:", e);
+    }
+  }
+
   function applyI18n() {
     applyText();
     applyAttrs();
     applyDates();
     applyDateTimes();
     applyDirAwareUtilities();
+    applyMapLocale();
   }
 
   function bindSwitcher() {
