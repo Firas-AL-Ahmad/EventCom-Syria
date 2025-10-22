@@ -64,7 +64,7 @@
 }
 
 .events-header {
-  text-align: center;
+  text-align: start;
   margin-bottom: 2rem;
   position: relative;
 }
@@ -88,46 +88,35 @@
 
 /* Filtering and search section */
 
-/* LTR: أيقونة يسار، زر يمين */
-html[dir="ltr"] .input-group.dir-swap {
+.input-group.dir-swap {
   flex-direction: row;
 }
-html[dir="ltr"] .input-group.dir-swap .input-group-text {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
+.input-group.dir-swap .input-group-text {
+  border-end-end-radius: 0;
+  border-start-end-radius: 0;
 }
-html[dir="ltr"] .input-group.dir-swap .btn {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
+.input-group.dir-swap .btn {
+  border-end-start-radius: 0;
+  border-start-start-radius: 0;
 }
 
 .input-group {
   height: 48px;
 }
 
-/* RTL: أيقونة يمين، زر يسار */
 html[dir="rtl"] .input-group.dir-swap {
   flex-direction: row-reverse;
 }
-html[dir="rtl"] .input-group.dir-swap .input-group-text {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
-html[dir="rtl"] .input-group.dir-swap .btn {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
 
-/* محاذاة قوائم الاختيار حسب الاتجاه */
+/* Dropdown alignment */
+.dir-dropdown .dropdown-menu {
+  inset-inline-start: 0;
+  text-align: start;
+}
 html[dir="rtl"] .dir-dropdown .dropdown-menu {
   inset-inline-end: 0;
   inset-inline-start: auto;
   text-align: end;
-}
-html[dir="ltr"] .dir-dropdown .dropdown-menu {
-  inset-inline-start: 0;
-  inset-inline-end: auto;
-  text-align: start;
 }
 
 /* تحسين التباعد على الشاشات الصغيرة */
@@ -450,7 +439,7 @@ html[dir="ltr"] .dir-dropdown .dropdown-menu {
 .event-card-footer .date {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: end;
   color: #6c757d;
   font-size: 0.9rem;
   font-weight: 500;
@@ -501,7 +490,7 @@ html[dir="ltr"] .dir-dropdown .dropdown-menu {
 @media (max-width: 768px) {
   .hero-events-section {
     flex-direction: column; /* Stack items vertically */
-    text-align: center; /* Center text for a better mobile view */
+    text-align: start; /* Center text for a better mobile view */
     padding-top: 64px; /* Adjust padding for mobile */
     margin-bottom: 32px;
   }

@@ -54,19 +54,24 @@
                     <div class="dropdown">
                         <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="langDropdown"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            <img id="current-lang-flag" src="assets/img/icons/AR-flag.svg" alt=""
+                            <img id="current-lang-flag" src="assets/img/icons/AR-flag.svg"
+                                data-i18n-attr="alt:lang_switcher.current_lang_alt" alt="Current language flag"
                                 class="lang-flag me-1">
-                            <span id="current-lang-label">العربية</span>
+                            <span id="current-lang-label" data-i18n="lang_switcher.current_lang_label">العربية</span>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
                             <li>
                                 <button class="dropdown-item d-flex align-items-center" data-lang="ar">
-                                    <img src="assets/img/icons/AR-flag.svg" alt="العربية" class="lang-flag me-2">العربية
+                                    <img src="assets/img/icons/AR-flag.svg" data-i18n-attr="alt:lang_switcher.ar_alt"
+                                        alt="Arabic language flag" class="lang-flag me-2"><span
+                                        data-i18n="lang_switcher.ar_text">العربية</span>
                                 </button>
                             </li>
                             <li>
                                 <button class="dropdown-item d-flex align-items-center" data-lang="en">
-                                    <img src="assets/img/icons/US-flag.svg" alt="English" class="lang-flag me-2">English
+                                    <img src="assets/img/icons/US-flag.svg" data-i18n-attr="alt:lang_switcher.en_alt"
+                                        alt="English language flag" class="lang-flag me-2"><span
+                                        data-i18n="lang_switcher.en_text">English</span>
                                 </button>
                             </li>
                         </ul>
@@ -103,7 +108,7 @@
         </div>
 
         <!-- Filters -->
-        <div class="filters">
+        <div class="filters" role="search">
             <div class="container">
                 <div class="row g-3 justify-content-center align-items-end">
 
@@ -137,7 +142,7 @@
                                 data-i18n="events_page.filters.date.placeholder">
                                 اختر التاريخ
                             </button>
-                            <ul class="dropdown-menu w-100" aria-labelledby="dateDropdown">
+                            <ul class="dropdown-menu w-100" aria-labelledby="dateDropdown" role="list">
                                 <li><a class="dropdown-item" href="#" data-i18n="events_page.filters.date.today"></a>
                                 </li>
                                 <li><a class="dropdown-item" href="#"
@@ -157,7 +162,7 @@
                                 data-i18n="events_page.filters.category.placeholder">
                                 اختر التصنيف
                             </button>
-                            <ul class="dropdown-menu w-100" aria-labelledby="categoryDropdown">
+                            <ul class="dropdown-menu w-100" aria-labelledby="categoryDropdown" role="list">
                                 <li><a class="dropdown-item" href="#" data-i18n="categories.music">موسيقى</a></li>
                                 <li><a class="dropdown-item" href="#" data-i18n="categories.art">فن</a></li>
                                 <li><a class="dropdown-item" href="#" data-i18n="categories.sport">رياضة</a></li>
@@ -171,18 +176,29 @@
         </div>
 
         <!-- Tabs -->
-        <div class="events-tabs-container">
-            <button class="events-tab-link active" data-tab-target="#all" data-i18n="events_page.tabs.all">الكل</button>
-            <button class="events-tab-link" data-tab-target="#damascus" data-i18n="cities.damascus"></button>
-            <button class="events-tab-link" data-tab-target="#aleppo" data-i18n="cities.aleppo"></button>
-            <button class="events-tab-link" data-tab-target="#homs" data-i18n="cities.homs"></button>
-            <button class="events-tab-link" data-tab-target="#hama" data-i18n="cities.hama"></button>
-            <button class="events-tab-link" data-tab-target="#idlib" data-i18n="cities.idlib"></button>
-            <button class="events-tab-link" data-tab-target="#lattakia" data-i18n="cities.lattakia"></button>
-            <button class="events-tab-link" data-tab-target="#tartus" data-i18n="cities.tartus"></button>
-            <button class="events-tab-link" data-tab-target="#raqqa" data-i18n="cities.raqqa"></button>
-            <button class="events-tab-link" data-tab-target="#deir_ez_zor" data-i18n="cities.deir_ez_zor"></button>
-            <button class="events-tab-link" data-tab-target="#hasakah" data-i18n="cities.hasakah"></button>
+        <div class="events-tabs-container" role="tablist">
+            <button class="events-tab-link active" data-tab-target="#all" data-i18n="events_page.tabs.all" role="tab"
+                aria-controls="all">الكل</button>
+            <button class="events-tab-link" data-tab-target="#damascus" data-i18n="cities.damascus" role="tab"
+                aria-controls="damascus"></button>
+            <button class="events-tab-link" data-tab-target="#aleppo" data-i18n="cities.aleppo" role="tab"
+                aria-controls="aleppo"></button>
+            <button class="events-tab-link" data-tab-target="#homs" data-i18n="cities.homs" role="tab"
+                aria-controls="homs"></button>
+            <button class="events-tab-link" data-tab-target="#hama" data-i18n="cities.hama" role="tab"
+                aria-controls="hama"></button>
+            <button class="events-tab-link" data-tab-target="#idlib" data-i18n="cities.idlib" role="tab"
+                aria-controls="idlib"></button>
+            <button class="events-tab-link" data-tab-target="#lattakia" data-i18n="cities.lattakia" role="tab"
+                aria-controls="lattakia"></button>
+            <button class="events-tab-link" data-tab-target="#tartus" data-i18n="cities.tartus" role="tab"
+                aria-controls="tartus"></button>
+            <button class="events-tab-link" data-tab-target="#raqqa" data-i18n="cities.raqqa" role="tab"
+                aria-controls="raqqa"></button>
+            <button class="events-tab-link" data-tab-target="#deir_ez_zor" data-i18n="cities.deir_ez_zor" role="tab"
+                aria-controls="deir_ez_zor"></button>
+            <button class="events-tab-link" data-tab-target="#hasakah" data-i18n="cities.hasakah" role="tab"
+                aria-controls="hasakah"></button>
         </div>
     </div>
 
@@ -191,7 +207,7 @@
     <div class="events-content">
 
         <!-- Tab: All -->
-        <div id="all" class="events-tab-content active">
+        <div id="all" class="events-tab-content active" role="tabpanel">
             <div class="row">
 
                 <!-- Card 1 -->
@@ -211,7 +227,7 @@
                             </p>
                             <div class="date py-3 m-0">
                                 <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2025-11-15"></time>
+                                <time data-date-iso="2025-11-15" aria-live="polite"></time>
                             </div>
                             <div class="card-buttons">
                                 <a href="event.html" class="btn btn-primary" data-i18n="buttons.details">التفاصيل</a>
@@ -238,7 +254,7 @@
                             </p>
                             <div class="date py-3 m-0">
                                 <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2025-11-20"></time>
+                                <time data-date-iso="2025-11-20" aria-live="polite"></time>
                             </div>
                             <div class="card-buttons">
                                 <a href="event.html" class="btn btn-primary" data-i18n="buttons.details">التفاصيل</a>
@@ -266,7 +282,7 @@
                             </p>
                             <div class="date py-3 m-0">
                                 <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2025-11-22"></time>
+                                <time data-date-iso="2025-11-22" aria-live="polite"></time>
                             </div>
                             <div class="card-buttons">
                                 <a href="event.html" class="btn btn-primary" data-i18n="buttons.details">التفاصيل</a>
@@ -293,7 +309,7 @@
                             </p>
                             <div class="date py-3 m-0">
                                 <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2025-11-25"></time>
+                                <time data-date-iso="2025-11-25" aria-live="polite"></time>
                             </div>
                             <div class="card-buttons">
                                 <a href="event.html" class="btn btn-primary" data-i18n="buttons.details">التفاصيل</a>
@@ -320,7 +336,7 @@
                             </p>
                             <div class="date py-3 m-0">
                                 <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2025-11-30"></time>
+                                <time data-date-iso="2025-11-30" aria-live="polite"></time>
                             </div>
                             <div class="card-buttons">
                                 <a href="event.html" class="btn btn-primary" data-i18n="buttons.details">التفاصيل</a>
@@ -348,7 +364,7 @@
                             </p>
                             <div class="date py-3 m-0">
                                 <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2025-11-22"></time>
+                                <time data-date-iso="2025-11-22" aria-live="polite"></time>
                             </div>
                             <div class="card-buttons">
                                 <a href="event.html" class="btn btn-primary" data-i18n="buttons.details">التفاصيل</a>
@@ -363,7 +379,7 @@
         </div>
 
         <!-- Tab: Damascus -->
-        <div id="damascus" class="events-tab-content">
+        <div id="damascus" class="events-tab-content" role="tabpanel">
             <div class="row">
                 <!-- Card 1 -->
                 <div class="col-lg-4 col-md-6 mb-4">
@@ -501,7 +517,7 @@
         </div>
 
         <!-- Tab: Aleppo -->
-        <div id="aleppo" class="events-tab-content">
+        <div id="aleppo" class="events-tab-content" role="tabpanel">
             <div class="row">
                 <!-- Card 1 -->
                 <div class="col-lg-4 col-md-6 mb-4">
@@ -639,7 +655,7 @@
         </div>
 
         <!-- Tab: Homs -->
-        <div id="homs" class="events-tab-content">
+        <div id="homs" class="events-tab-content" role="tabpanel">
             <div class="row">
                 <!-- Card 1 -->
                 <div class="col-lg-4 col-md-6 mb-4">
@@ -777,7 +793,7 @@
         </div>
 
         <!-- Tab: Hama -->
-        <div id="hama" class="events-tab-content">
+        <div id="hama" class="events-tab-content" role="tabpanel">
             <div class="row">
                 <!-- Card 1 -->
                 <div class="col-lg-4 col-md-6 mb-4">
@@ -915,7 +931,7 @@
         </div>
 
         <!-- Tab: Idlib -->
-        <div id="idlib" class="events-tab-content">
+        <div id="idlib" class="events-tab-content" role="tabpanel">
             <div class="row">
                 <!-- Card 1 -->
                 <div class="col-lg-4 col-md-6 mb-4">
@@ -1053,7 +1069,7 @@
         </div>
 
         <!-- Tab: Lattakia -->
-        <div id="lattakia" class="events-tab-content">
+        <div id="lattakia" class="events-tab-content" role="tabpanel">
             <div class="row">
                 <!-- Card 1 -->
                 <div class="col-lg-4 col-md-6 mb-4">
@@ -1191,7 +1207,7 @@
         </div>
 
         <!-- Tab: Tartus -->
-        <div id="tartus" class="events-tab-content">
+        <div id="tartus" class="events-tab-content" role="tabpanel">
             <div class="row">
                 <!-- Card 1 -->
                 <div class="col-lg-4 col-md-6 mb-4">
@@ -1329,7 +1345,7 @@
         </div>
 
         <!-- Tab: Raqqa -->
-        <div id="raqqa" class="events-tab-content">
+        <div id="raqqa" class="events-tab-content" role="tabpanel">
             <div class="row">
                 <!-- Card 1 -->
                 <div class="col-lg-4 col-md-6 mb-4">
@@ -1467,7 +1483,7 @@
         </div>
 
         <!-- Tab: Deir ez-Zor -->
-        <div id="deir_ez_zor" class="events-tab-content">
+        <div id="deir_ez_zor" class="events-tab-content" role="tabpanel">
             <div class="row">
                 <!-- Card 1 -->
                 <div class="col-lg-4 col-md-6 mb-4">
@@ -1605,7 +1621,7 @@
         </div>
 
         <!-- Tab: Al-Hasakah -->
-        <div id="hasakah" class="events-tab-content">
+        <div id="hasakah" class="events-tab-content" role="tabpanel">
             <div class="row">
                 <!-- Card 1 -->
                 <div class="col-lg-4 col-md-6 mb-4">
@@ -1761,7 +1777,7 @@
 
                 <div class="col-lg-2 col-6">
                     <h4 class="footer-heading" data-i18n="footer.nav.title">التصفّح</h4>
-                    <ul class="footer-links list-unstyled">
+                    <ul class="footer-links list-unstyled" role="list">
                         <li><a href="events.html" data-i18n="footer.nav.links.events">الفعاليات</a></li>
                         <li><a href="#" data-i18n="footer.nav.links.by_governorate">حسب المحافظة</a></li>
                         <li><a href="#" data-i18n="footer.nav.links.by_category">حسب التصنيف</a></li>
@@ -1772,7 +1788,7 @@
 
                 <div class="col-lg-3 col-6">
                     <h4 class="footer-heading" data-i18n="footer.help.title">المساعدة والسياسات</h4>
-                    <ul class="footer-links list-unstyled">
+                    <ul class="footer-links list-unstyled" role="list">
                         <li><a href="faq.html" data-i18n="footer.help.links.faq">الأسئلة الشائعة</a></li>
                         <li><a href="#" data-i18n="footer.help.links.sponsors">الداعمين</a></li>
                         <li><a href="privacy-policy.html" data-i18n="footer.help.links.privacy">سياسة الخصوصية</a></li>
@@ -1790,7 +1806,7 @@
                         </div>
                         <div class="info-item">
                             <i class="bi bi-envelope ms-2"></i>
-                            <span>support@eventcomsyria.com</span>
+                            <span class="force-ltr">support@eventcomsyria.com</span>
                         </div>
                     </div>
                 </div>
@@ -1809,9 +1825,10 @@
                             aria-label="Instagram"><i class="bi bi-instagram"></i></a>
                     </div>
                     <div class="copyright">
-                        <p class="copyright-text" data-i18n="footer.copyright">
-                            EventCom Syria © 2025
-                            <strong>
+                        <p class="copyright-text">
+                            <span data-i18n="footer.copyright_prefix">EventCom Syria ©</span>
+                            <span data-i18n-number>2025</span>
+                            <strong data-i18n="footer.copyright_suffix">
                                 جميع الحقوق محفوظة.
                             </strong>
                         </p>

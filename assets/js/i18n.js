@@ -168,6 +168,18 @@
     }
   }
 
+  // NEW: Format numbers with data-i18n-number attribute
+  function applyNumbers() {
+    const locale = currentLang === "ar" ? "ar-SY" : "en-US";
+    const formatter = new Intl.NumberFormat(locale, { useGrouping: false });
+    $all("[data-i18n-number]").forEach((el) => {
+      const num = parseFloat(el.textContent);
+      if (!isNaN(num)) {
+        el.textContent = formatter.format(num);
+      }
+    });
+  }
+
   function applyI18n() {
     applyText();
     applyAttrs();
@@ -175,6 +187,7 @@
     applyDateTimes();
     applyDirAwareUtilities();
     applyMapLocale();
+    applyNumbers();
   }
 
   function bindSwitcher() {
