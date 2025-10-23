@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="contact_page.meta_title">Contact Us - EventCom Syria</title>
+    <title data-i18n="page_titles.contact">Contact Us - EventCom Syria</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
@@ -52,19 +52,26 @@
                     <div class="dropdown">
                         <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="langDropdown"
                             data-bs-toggle="dropdown" aria-expanded="false">
-                            <img id="current-lang-flag" src="assets/img/icons/AR-flag.svg" alt=""
+                            <img id="current-lang-flag" src="assets/img/icons/SY-flag.svg"
+                                data-i18n-attr="alt:lang_switcher.current_lang_alt" alt="Current language flag"
                                 class="lang-flag me-1">
-                            <span id="current-lang-label">العربية</span>
+                            <span id="current-lang-label" data-i18n="lang_switcher.current_lang_label">العربية</span>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
                             <li>
                                 <button class="dropdown-item d-flex align-items-center" data-lang="ar">
-                                    <img src="assets/img/icons/AR-flag.svg" alt="" class="lang-flag me-2">العربية
+                                    <img src="assets/img/icons/SY-flag.svg"
+                                        data-i18n-attr="alt:lang_switcher.ar_alt" alt="Arabic language flag"
+                                        class="lang-flag me-2"><span
+                                        data-i18n="lang_switcher.ar_text">العربية</span>
                                 </button>
                             </li>
                             <li>
                                 <button class="dropdown-item d-flex align-items-center" data-lang="en">
-                                    <img src="assets/img/icons/US-flag.svg" alt="" class="lang-flag me-2">English
+                                    <img src="assets/img/icons/US-flag.svg"
+                                        data-i18n-attr="alt:lang_switcher.en_alt" alt="English language flag"
+                                        class="lang-flag me-2"><span
+                                        data-i18n="lang_switcher.en_text">English</span>
                                 </button>
                             </li>
                         </ul>
@@ -142,7 +149,8 @@
 
                             <!-- Honeypot: Visually hidden spam protection field -->
                             <div class="visually-hidden">
-                                <label for="website-field">Do not fill this field</label>
+                                <label for="website-field" data-i18n="contact_page.form.honeypot_label">Do not fill this
+                                    field</label>
                                 <input type="text" id="website-field" name="website" tabindex="-1" autocomplete="off">
                             </div>
 
@@ -258,9 +266,12 @@
             <div class="row pt-5">
                 <div class="col-12 text-center">
                     <div class="social-links mb-3">
-                        <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-                        <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                        <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" data-i18n-attr="aria-label:footer.social.facebook_aria"
+                            aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+                        <a href="#" data-i18n-attr="aria-label:footer.social.linkedin_aria"
+                            aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" data-i18n-attr="aria-label:footer.social.instagram_aria"
+                            aria-label="Instagram"><i class="bi bi-instagram"></i></a>
                     </div>
                     <div class="copyright">
                         <p class="copyright-text" data-i18n="footer.copyright">
@@ -275,7 +286,8 @@
     </footer>
 
     <!-- Scroll to Top -->
-    <a href="#" class="scroll-to-top"><img src="./assets/img/icons/arrow-up.svg" alt="arrow-up"></a>
+    <a href="#" class="scroll-to-top"><img src="./assets/img/icons/arrow-up.svg"
+            data-i18n-attr="alt:footer.scroll_top_alt" alt="arrow-up"></a>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

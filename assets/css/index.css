@@ -38,6 +38,16 @@
   width: 50%;
 }
 
+@media (max-width: 992px) {
+  .hero-section .row {
+    flex-direction: column;
+  }
+
+  .hero-right-column {
+    width: 100%;
+  }
+}
+
 /*===========================
     clients-01 css 
 ===========================*/
@@ -195,7 +205,7 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   text-align: center;
-  flex: 0 0 172px;
+  flex: 1 0 172px;
 }
 
 .category-card img {
@@ -239,7 +249,7 @@
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   text-align: center;
-  flex: 0 0 172px;
+  flex: 1 0 172px;
 }
 
 .city-card img {

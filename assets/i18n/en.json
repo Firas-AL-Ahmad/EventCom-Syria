@@ -9,6 +9,11 @@
     "brand_aria": "EventCom Syria",
     "toggler_aria": "Toggle navigation"
   },
+  "page_titles": {
+    "home": "Home - EventCom Syria",
+    "about": "About Us - EventCom Syria",
+    "contact": "Contact Us - EventCom Syria"
+  },
   "home": {
     "hero": {
       "tagline": "🎉 Discover. Plan. Attend!",
@@ -24,9 +29,15 @@
     "slide_3": "Slide 3",
     "prev": "Previous",
     "next": "Next",
-    "image_alt": "Event image"
+    "image_alt": "Event image",
+    "prev_alt": "Previous slide",
+    "next_alt": "Next slide"
   },
-  "sponsors": { "title": "Sponsors", "logo_alt": "Logo" },
+  "sponsors": {
+    "title": "Sponsors",
+    "logo_alt": "Logo",
+    "marquee_aria": "Sponsors marquee"
+  },
   "events": {
     "by_date": {
       "title": "Events by Date",
@@ -243,7 +254,12 @@
     },
     "copyright": "© 2025 Syria Events Guide — <strong>All rights reserved</strong>.",
     "disclaimer": "Content is provided by event organizers. We aim for accuracy wherever possible.",
-    "scroll_top_aria": "Scroll to top"
+    "scroll_top_aria": "Scroll to top",
+    "social": {
+      "facebook_aria": "Our Facebook page",
+      "linkedin_aria": "Our LinkedIn account",
+      "instagram_aria": "Our Instagram account"
+    }
   },
   "about_hero": {
     "logo_alt": "EventCom Syria Logo",
@@ -436,7 +452,8 @@
       "email_label": "Email Address",
       "message_label": "Message",
       "submit_btn": "Send Message",
-      "char_counter": "{count}/{max}"
+      "char_counter": "{count}/{max}",
+      "honeypot_label": "Do not fill this field"
     },
     "alternate": {
       "title": "Other ways to reach us"
@@ -452,6 +469,10 @@
       "instagram_aria": "Our Instagram account",
       "linkedin_aria": "Our LinkedIn account",
       "x_aria": "Our X account"
+    },
+    "map": {
+      "label": "Map of the office location in Damascus",
+      "fallback": "Please enable JavaScript to view the interactive map."
     },
     "validation": {
       "full_name_required": "Full name is required.",
