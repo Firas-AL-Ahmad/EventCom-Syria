@@ -154,3 +154,80 @@ function ecFormatISO(iso, locale) {
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
 })();
+
+// === Hero Carousel Autoplay (index.html) ===
+(function initHeroCarousel() {
+  var el = document.getElementById("carouselExampleIndicators");
+  if (!el || !window.bootstrap) return;
+
+  // احترام تفضيل المستخدم لتقليل الحركة
+  var reduceMotion =
+    window.matchMedia &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // في حال تقليل الحركة: لا تشغيل تلقائي
+  var opts = {
+    interval: reduceMotion ? false : 2000,
+    ride: reduceMotion ? false : "carousel",
+    pause: "hover",
+    wrap: true,
+    touch: true,
+  };
+
+  var inst = bootstrap.Carousel.getInstance(el);
+  if (!inst) {
+    inst = new bootstrap.Carousel(el, opts);
+  } else {
+    inst.pause();
+    // تحديث الإعدادات إن وُجدت نسخة سابقة
+    inst._config.interval = opts.interval;
+    inst._config.pause = opts.pause;
+    if (!reduceMotion) inst.cycle();
+  }
+})();
+
+// === Swap navbar logo based on theme ===
+(function setupThemeAwareLogo() {
+  var html = document.documentElement;
+  var img = document.getElementById("site-logo");
+  if (!img) return;
+
+  var lightSrc = img.getAttribute("data-logo-light");
+  var darkSrc = img.getAttribute("data-logo-dark");
+
+  function currentTheme() {
+    return (html.getAttribute("data-theme") || "light").toLowerCase();
+  }
+
+  function applyLogo() {
+    var t = currentTheme();
+    img.src = (t === "dark" ? darkSrc : lightSrc) || img.src;
+  }
+
+  // 1) عند التحميل
+  applyLogo();
+
+  // 2) لو عندك سويتش ثيم في الصفحة
+  var themeSwitch = document.getElementById("themeSwitch");
+  if (themeSwitch) {
+    themeSwitch.addEventListener("change", applyLogo);
+  }
+
+  // 3) راقب أي تغيير على data-theme (لو تغيّر من سكربت آخر)
+  try {
+    var mo = new MutationObserver(function (muts) {
+      for (var i = 0; i < muts.length; i++) {
+        if (
+          muts[i].type === "attributes" &&
+          muts[i].attributeName === "data-theme"
+        ) {
+          applyLogo();
+          break;
+        }
+      }
+    });
+    mo.observe(html, { attributes: true });
+  } catch (e) {
+    /* no-op */
+  }
+})();
