@@ -38,6 +38,29 @@
   width: 50%;
 }
 
+/* Extra small devices (phones, 576px and down) */
+@media (max-width: 576px) {
+  .hero-section .row {
+    flex-direction: column;
+  }
+
+  .hero-right-column {
+    width: 100%;
+  }
+}
+
+/* Small devices (landscape phones, 768px and down) */
+@media (max-width: 768px) {
+  .hero-section .row {
+    flex-direction: column;
+  }
+
+  .hero-right-column {
+    width: 100%;
+  }
+}
+
+/* Medium devices (tablets, 992px and down) */
 @media (max-width: 992px) {
   .hero-section .row {
     flex-direction: column;

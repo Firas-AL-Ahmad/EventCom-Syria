@@ -1,12 +1,17 @@
+/* ====== About Hero ====== */
 .about-hero {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start; /* Changed from 'start' to 'flex-start' for correctness */
+  justify-content: flex-start;
   min-height: 80vh;
   text-align: center;
-  background: linear-gradient(180deg, #e2f0fc 0%, #ffffff 100%);
-  padding-top: 146px; /* Moved from hero-container for better consistency */
+  background: linear-gradient(
+    180deg,
+    var(--primary-50) 0%,
+    var(--white-color) 100%
+  );
+  padding-top: 146px; /* يتماشى مع الهيدر الثابت */
 }
 
 .hero-container {
@@ -16,18 +21,17 @@
   justify-content: center;
   gap: 16px;
   width: 100%;
-  width: 100%;
 }
 
 .about-hero .logo {
   width: 100%;
-  max-width: 232px; /* Use max-width for responsiveness */
+  max-width: 232px;
   height: auto;
 }
 
 .about-hero h1 {
   font-family: "Tajawal", sans-serif;
-  font-size: 2rem; /* Responsive font size */
+  font-size: 2rem;
   font-weight: 700;
   color: var(--gray-900);
   margin: 0;
@@ -35,45 +39,27 @@
 
 .about-hero p {
   font-family: "Tajawal", sans-serif;
-  font-size: 1.25rem; /* Responsive font size */
+  font-size: 1.25rem;
   font-weight: 400;
   color: var(--gray-700);
   margin: 0;
 }
 
-.about-hero .btn-explore {
-  background-color: var(--secondary-500);
-  color: var(--white-color);
-  padding: 0.75rem 2rem;
-  border-radius: 0.5rem;
-  font-weight: bold;
-  text-decoration: none;
-  transition: background-color 0.3s, box-shadow 0.3s;
-  margin-top: 1rem; /* Added margin for spacing */
-}
+/* زر CTA يستخدم btn-brand من النظام العام، لذلك لا نضيف ستايل خاص هنا */
 
-.about-hero .btn-explore:hover {
-  background-color: var(--secondary-700);
-}
-
-.about-hero .btn-explore:focus {
-  outline: none;
-  box-shadow: 0 0 0 4px var(--secondary-100);
-}
-
-/* Media query for smaller screens */
+/* شاشات أصغر */
 @media (max-width: 768px) {
   .about-hero h1 {
     font-size: 1.75rem;
   }
-
   .about-hero p {
     font-size: 1.1rem;
   }
 }
 
+/* ====== Features Section ====== */
 .features-section {
-  background-color: #fff;
+  background-color: var(--white-color);
   padding: 80px 0;
   display: flex;
   flex-direction: column;
@@ -88,9 +74,6 @@
   align-items: center;
 }
 
-.line-element {
-  width: 24rem;
-}
 .features-div {
   display: flex;
   flex-direction: row;
@@ -98,7 +81,9 @@
   flex-wrap: wrap;
   width: 100%;
 }
-.features-header p {
+
+.features-header p,
+.text-strong {
   font-size: 2.5rem;
   font-weight: 700;
   color: var(--primary-900);
@@ -154,7 +139,7 @@
   color: var(--gray-700);
 }
 
-/* Mission & Vision polish (keeps Bootstrap look, uses your tokens) */
+/* ====== Mission & Vision ====== */
 .mv-title {
   color: var(--primary-900);
   font-weight: 800;
@@ -165,7 +150,11 @@
 
 .mv-card {
   border-radius: 1rem;
-  background: linear-gradient(180deg, var(--primary-50) 0%, #fff 100%);
+  background: linear-gradient(
+    180deg,
+    var(--primary-50) 0%,
+    var(--white-color) 100%
+  );
   transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 .mv-card:hover,
@@ -184,14 +173,14 @@
 
 .mv-points li {
   position: relative;
-  padding-inline-start: 1.25rem; /* RTL/LTR-safe */
+  padding-inline-start: 1.25rem;
   color: var(--gray-700);
   margin-top: 0.35rem;
 }
 .mv-points li::before {
   content: "";
   position: absolute;
-  inset-inline-start: 0; /* flips with dir */
+  inset-inline-start: 0;
   top: 0.6rem;
   width: 0.5rem;
   height: 0.5rem;
@@ -199,14 +188,15 @@
   background: var(--primary-500);
 }
 
+/* ====== Team Section ====== */
 .team-section {
-  padding: 120px 0; /* Increased top padding */
+  padding: 120px 0;
   background-color: var(--primary-50);
 }
 
 .team-header {
   text-align: center;
-  margin-bottom: 80px; /* Increased margin */
+  margin-bottom: 80px;
 }
 
 .team-title {
@@ -243,12 +233,12 @@
 }
 
 .team-member-img {
-  width: 124px; /* Larger image */
-  height: 124px; /* Larger image */
+  width: 124px;
+  height: 124px;
   border-radius: 50%;
   object-fit: cover;
   position: absolute;
-  top: -70px; /* Position image outside the card */
+  top: -70px;
   left: 50%;
   transform: translateX(-50%);
   border: 5px solid var(--white-color);
@@ -256,7 +246,7 @@
 }
 
 .team-member-name {
-  font-size: 1.75rem; /* Larger font size */
+  font-size: 1.75rem;
   font-weight: 700;
   color: var(--primary-900);
 }
@@ -264,16 +254,16 @@
 .team-member-role {
   color: var(--gray-500);
   margin-bottom: 0.5rem;
-  font-size: 1.1rem; /* Larger font size */
+  font-size: 1.1rem;
 }
 
 .team-member-id {
   font-weight: 700;
   color: var(--primary-700);
-  font-size: 1.25rem; /* Larger font size */
+  font-size: 1.25rem;
 }
 
-/* Contact Us Section */
+/* ====== Contact Us CTA (اختياري لاحقًا) ====== */
 .contact-us-section {
   background-image: url(../img/BG/Contant-us-section.svg);
   background-size: cover;
@@ -284,18 +274,15 @@
   padding: 64px 0;
   width: 100vw;
 }
-
 .contact-us-section h2 {
   font-size: 2.5rem;
   font-weight: 700;
 }
-
 .contact-us-section p {
   font-size: 1.25rem;
   max-width: 600px;
   margin: 0 auto 2rem;
 }
-
 .contact-us-section .btn-contact {
   background-color: var(--secondary-500);
   color: var(--white-color);
@@ -305,12 +292,11 @@
   text-decoration: none;
   transition: background-color 0.3s;
 }
-
 .contact-us-section .btn-contact:hover {
   background-color: var(--secondary-700);
 }
 
-/* Section spacing (fallbacks if tokens not present) */
+/* ====== مسافات مرنة ====== */
 .about-hero {
   padding: clamp(32px, 6vw, 72px) 0;
 }

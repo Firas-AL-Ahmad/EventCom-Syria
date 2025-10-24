@@ -1,37 +1,63 @@
+/* assets/css/privacy-policy.css */
+
+/* مسافات متوافقة مع الهيدر الثابت + ثيم موحّد */
 .privacy-policy-content {
-    padding: 12% 6%;
+  padding: 12% 6%;
 }
 
 .privacy-policy-card {
-    background-color: var(--white-color);
-    border-radius: 1rem;
-    padding: 2rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: var(--white-color);
+  border-radius: 1rem;
+  padding: 2rem;
+  border: 1px solid var(--gray-100);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
 .privacy-policy-card h1 {
-    font-family: 'Cairo', sans-serif;
-    font-weight: 700;
-    color: var(--gray-900);
-    margin-bottom: 0.5rem;
+  font-family: "Cairo", sans-serif;
+  font-weight: 700;
+  color: var(--gray-900);
+  margin-bottom: 0.5rem;
 }
 
 .privacy-policy-card .effective-date {
-    font-family: 'Inter', sans-serif;
-    color: var(--gray-500);
-    margin-bottom: 2rem;
+  font-family: "Inter", sans-serif;
+  color: var(--gray-500);
+  margin-bottom: 2rem;
 }
 
 .privacy-policy-card h2 {
-    font-family: 'Tajawal', sans-serif;
-    font-weight: 500;
-    color: var(--gray-700);
-    margin-top: 2rem;
-    margin-bottom: 1rem;
+  font-family: "Tajawal", sans-serif;
+  font-weight: 600;
+  color: var(--primary-900);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--gray-100);
+  padding-bottom: 0.5rem;
 }
 
-.privacy-policy-card p {
-    font-family: 'Tajawal', sans-serif;
-    color: var(--gray-500);
-    line-height: 1.8;
+.privacy-policy-card p,
+.privacy-policy-card li {
+  font-family: "Tajawal", sans-serif;
+  color: var(--gray-700);
+  line-height: 1.9;
+  margin: 0.35rem 0;
+}
+
+.privacy-policy-card ul {
+  padding-inline-start: 1.25rem;
+}
+
+.privacy-policy-card ul li::marker {
+  color: var(--primary-500);
+}
+
+/* تحسين استجابة بسيطة للموبايل الصغير */
+@media (max-width: 576px) {
+  .privacy-policy-content {
+    padding: 24% 4%;
+  }
+  .privacy-policy-card {
+    padding: 1.25rem;
+  }
 }

@@ -301,14 +301,14 @@
       "alt": "Firas Al-Ahmad"
     },
     "member2": {
-      "name": "Noujin Kahraman Abou",
+      "name": "Noujin Abou",
       "role": "Student ID",
       "job_title": "UI/UX Designer",
-      "id": "235072",
-      "alt": "Noujin Kahraman Abou"
+      "id": "285948",
+      "alt": "Noujin Abou"
     },
     "member3": {
-      "name": "Sidra Hussein",
+      "name": "Sedra Hussain",
       "role": "Student ID",
       "job_title": "Project Manager",
       "id": "235072",
@@ -322,10 +322,10 @@
       "alt": "Mohamad Masri"
     },
     "member5": {
-      "name": "Nahla Mahmoud Bdeir",
+      "name": "Nahla Mahmoud",
       "role": "Student ID",
       "job_title": "Content & Partnerships Coordinator",
-      "id": "305124",
+      "id": "305125",
       "alt": "Nahla Mahmoud Bdeir"
     }
   },

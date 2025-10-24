@@ -23,10 +23,12 @@
 
 .hero-text-box {
   flex: 1; /* Allow text box to grow */
+  display: flex;
+  flex-direction: column;
 }
 
 .events-hero-title {
-  color: #2899e5;
+  color: var(--primary-500);
   font-size: 32px;
   font-family: Tajawal;
   font-weight: 700;
@@ -35,7 +37,7 @@
 }
 
 .events-hero-subtitle {
-  color: #262626;
+  color: var(--gray-700);
   font-size: 20px;
   font-family: Tajawal;
   font-weight: 400;
@@ -45,10 +47,6 @@
 .hero-events-section .line {
   width: 48%;
   object-fit: contain; /* Ensure image scales properly */
-}
-.hero-text-box {
-  display: flex;
-  flex-direction: column;
 }
 
 /* Header section */
@@ -119,10 +117,25 @@ html[dir="rtl"] .dir-dropdown .dropdown-menu {
   text-align: end;
 }
 
-/* تحسين التباعد على الشاشات الصغيرة */
+/* Responsive styles for smaller screens */
+/* Extra small devices (phones, 576px and down) */
 @media (max-width: 576px) {
   .filters .form-label {
     margin-bottom: 0.5rem;
+  }
+
+  .hero-events-section {
+    text-align: center;
+  }
+
+  .events-tabs-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .events-tabs-container::-webkit-scrollbar {
+    display: none;
   }
 }
 
@@ -139,6 +152,7 @@ html[dir="rtl"] .dir-dropdown .dropdown-menu {
   background-color: var(--primary-500);
   color: var(--white-color);
   align-items: center;
+  border: 1px solid var(--primary-500);
 }
 .search-btn:hover {
   background-color: var(--primary-700);
@@ -146,11 +160,13 @@ html[dir="rtl"] .dir-dropdown .dropdown-menu {
   align-items: center;
 }
 
+/* لم نعد نستخدم .btn-primary هنا */
 .dropdown-btn {
   background-color: var(--white-color);
   height: 48px;
+  border: 1px solid var(--gray-200);
+  color: var(--gray-700);
 }
-
 .dropdown-btn:hover {
   background-color: var(--primary-100);
   border: 1px solid var(--primary-500);
@@ -261,7 +277,7 @@ html[dir="rtl"] .dir-dropdown .dropdown-menu {
   color: var(--gray-900);
 }
 
-.event-card-content .text-secondary {
+.event-card-content .u-muted {
   font-size: 0.9rem;
   color: var(--gray-500);
   flex-grow: 1;
@@ -294,7 +310,7 @@ html[dir="rtl"] .dir-dropdown .dropdown-menu {
 }
 
 .event-card-footer .date {
-  color: #555;
+  color: var(--gray-500);
   font-size: 0.9rem;
 }
 
@@ -325,20 +341,21 @@ html[dir="rtl"] .dir-dropdown .dropdown-menu {
 }
 
 .events-content {
-  background-color: #f7f9fc;
+  background-color: var(--background-color);
   padding: 2% 8%;
 }
 
 .events-content-Categories {
-  background-color: #f7f9fc;
+  background-color: var(--background-color);
   padding: 2% 0%;
 }
+
 .events-tab-link {
   padding: 1rem 1.5rem;
   cursor: pointer;
   border: none;
   background-color: transparent;
-  color: #6c757d;
+  color: var(--gray-500);
   font-size: 1rem;
   font-weight: 500;
   position: relative;
@@ -375,11 +392,11 @@ html[dir="rtl"] .dir-dropdown .dropdown-menu {
   justify-content: center;
 }
 
-/* Responsive styles for smaller screens */
+/* Small devices (landscape phones, 768px and down) */
 @media (max-width: 768px) {
   .hero-events-section {
     flex-direction: column; /* Stack items vertically */
-    text-align: start; /* Center text for a better mobile view */
+    text-align: center; /* Center text for a better mobile view */
     padding-top: 64px; /* Adjust padding for mobile */
     margin-bottom: 32px;
   }
@@ -387,9 +404,7 @@ html[dir="rtl"] .dir-dropdown .dropdown-menu {
   .hero-events-section .line {
     display: none; /* Hide the decorative line on small screens */
   }
-}
 
-@media (max-width: 768px) {
   .event-card-content {
     padding: 0.75rem;
   }
@@ -398,13 +413,14 @@ html[dir="rtl"] .dir-dropdown .dropdown-menu {
     font-size: 1rem;
   }
 
-  .event-card-content .text-secondary {
+  .event-card-content .u-muted {
     font-size: 0.8rem;
   }
 
   .card-buttons {
     flex-direction: column;
   }
+
   .events-tabs-container {
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
@@ -432,6 +448,8 @@ html[dir="rtl"] .dir-dropdown .dropdown-menu {
 .filters .search-bar .form-control {
   border: none;
   box-shadow: none; /* Remove default Bootstrap focus shadow */
+  background-color: var(--white-color);
+  color: var(--gray-900);
 }
 
 .filters .search-bar .input-group-text {
@@ -440,19 +458,8 @@ html[dir="rtl"] .dir-dropdown .dropdown-menu {
   color: var(--gray-500);
 }
 
-.filters .search-bar .btn-primary {
-  background-color: var(--primary-500);
-  border-color: var(--primary-500);
-  transition: background-color 0.3s ease, border-color 0.3s ease;
-}
-
-.filters .search-bar .btn-primary:hover {
-  background-color: var(--primary-600);
-  border-color: var(--primary-600);
-}
-
-/* Style for the mobile search button */
-.filters .btn-primary.d-md-none {
+/* إزالة أي مرجعية لـ .btn-primary (Bootstrap) */
+.filters .btn.d-md-none {
   border-radius: 0.75rem;
   padding: 0.75rem;
   font-weight: 600;

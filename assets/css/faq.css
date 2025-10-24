@@ -1,13 +1,18 @@
 /* assets/css/faq.css */
+
+/* مسافات علوية متوازنة مع الهيدر الثابت */
 .faq-content {
   padding: 12% 6%;
 }
+
+/* تنسيق عناصر الأكورديون */
 .faq-section .accordion-item {
   border: 1px solid var(--gray-100);
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   transition: border-color 0.3s ease, background-color 0.3s ease;
+  background-color: var(--white-color);
 }
 
 .faq-section .accordion-item:hover {
@@ -43,12 +48,14 @@
   font-size: 1.2rem;
   margin-inline-start: 1rem;
 }
+
 .accordion {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 16px;
 }
+
 .faq-section .accordion-button::after {
   font-family: "bootstrap-icons";
   content: "\F282"; /* bi-chevron-down */
@@ -60,7 +67,7 @@
 }
 
 .faq-section .accordion-button:not(.collapsed)::after {
-  transform: rotate(-180deg); /* Rotates to point up */
+  transform: rotate(-180deg);
 }
 
 .faq-section .accordion-body {
@@ -73,7 +80,14 @@
   border-color: var(--primary-500);
 }
 
-/* LTR-specific styles for FAQ accordion */
+/* دعم LTR */
 html[dir="ltr"] .faq-section .accordion-button {
   flex-direction: row-reverse;
+}
+
+/* تحسينات استجابة بسيطة */
+@media (max-width: 576px) {
+  .faq-content {
+    padding: 24% 4%;
+  }
 }

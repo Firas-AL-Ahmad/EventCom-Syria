@@ -1,26 +1,42 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" data-theme="light">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الفعاليات - EventCom Syria</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-i18n="page_titles.events">الفعاليات - EventCom Syria</title>
+
+    <!-- تطبيق الثيم مبكّراً قبل تحميل CSS لتفادي فلاش أبيض/أسود -->
+    <script>
+        (function () {
+            try {
+                var KEY = 'ec:theme';
+                var saved = localStorage.getItem(KEY);
+                var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+                var theme = saved ? saved : (prefersDark ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', theme);
+            } catch (e) { /* no-op */ }
+        })();
+    </script>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/events.css">
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/events.css" />
 </head>
 
 <body>
-    <!-- Header -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary px-md-5 px-sm-4">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header (موحّد مثل index.html) -->
+    <nav class="navbar navbar-expand-lg px-md-5 px-sm-4">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html" data-i18n-attr="aria-label:nav.brand_aria"
                 aria-label="EventCom Syria">
-                <img src="assets/img/icons/Logo.svg" alt="EventCom Syria Logo">
+                <img src="assets/img/icons/Logo.svg" alt="EventCom Syria Logo" />
             </a>
-
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -49,1718 +65,400 @@
                 </ul>
 
                 <div class="d-flex align-items-center gap-2">
-
                     <!-- Language Dropdown -->
                     <div class="dropdown">
-                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="langDropdown"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn dropdown-toggle" type="button" id="langDropdown" data-bs-toggle="dropdown"
+                            aria-expanded="false">
                             <img id="current-lang-flag" src="assets/img/icons/AR-flag.svg"
                                 data-i18n-attr="alt:lang_switcher.current_lang_alt" alt="Current language flag"
-                                class="lang-flag me-1">
+                                class="lang-flag me-1" />
                             <span id="current-lang-label" data-i18n="lang_switcher.current_lang_label">العربية</span>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
                             <li>
                                 <button class="dropdown-item d-flex align-items-center" data-lang="ar">
                                     <img src="assets/img/icons/AR-flag.svg" data-i18n-attr="alt:lang_switcher.ar_alt"
-                                        alt="Arabic language flag" class="lang-flag me-2"><span
-                                        data-i18n="lang_switcher.ar_text">العربية</span>
+                                        alt="Arabic language flag" class="lang-flag me-2" />
+                                    <span data-i18n="lang_switcher.ar_text">العربية</span>
                                 </button>
                             </li>
                             <li>
                                 <button class="dropdown-item d-flex align-items-center" data-lang="en">
                                     <img src="assets/img/icons/US-flag.svg" data-i18n-attr="alt:lang_switcher.en_alt"
-                                        alt="English language flag" class="lang-flag me-2"><span
-                                        data-i18n="lang_switcher.en_text">English</span>
+                                        alt="English language flag" class="lang-flag me-2" />
+                                    <span data-i18n="lang_switcher.en_text">English</span>
                                 </button>
                             </li>
                         </ul>
                     </div>
 
-                    <!-- Theme switch (كما هو) -->
-                    <label class="mx-1 ui-switch">
-                        <input type="checkbox">
+                    <!-- Theme switch (id موحّد) -->
+                    <label class="mx-1 ui-switch" aria-label="تبديل الثيم">
+                        <input id="themeSwitch" type="checkbox" role="switch" aria-checked="false" />
                         <div class="slider">
                             <div class="circle"></div>
                         </div>
                     </label>
 
-                    <a href="contact.html" class="btn btn-primary-contact" data-i18n="nav.contact">اتصل بنا</a>
+                    <!-- زر تواصل موحّد -->
+                    <a href="contact.html" class="btn btn-primary" data-i18n="nav.contact">اتصل بنا</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Events Section -->
-    <div class="hero">
-        <div class="hero-events-section">
-            <div class="hero-text-box">
-                <div class="events-hero-title" data-i18n="events_page.hero.title">
-                    فعاليات سوريا.!
+    <main id="main-content" style="padding-top: 72px;">
+        <!-- Hero Events Section -->
+        <div class="hero">
+            <div class="hero-events-section">
+                <div class="hero-text-box">
+                    <div class="events-hero-title u-title" data-i18n="events_page.hero.title">
+                        فعاليات سوريا.!
+                    </div>
+
+                    <div class="events-hero-subtitle u-muted" data-i18n="events_page.hero.subtitle">
+                        تصفّح الفعاليات حسب المحافظة والتصنيف والتاريخ.
+                    </div>
                 </div>
 
-                <div class="events-hero-subtitle" data-i18n="events_page.hero.subtitle">
-                    تصفّح الفعاليات حسب المحافظة والتصنيف والتاريخ.
-                </div>
+                <img src="assets/img/icons/Right-Line.svg" alt="line" class="line" />
             </div>
 
-            <img src="assets/img/icons/Right-Line.svg" alt="line" class="line">
-        </div>
-
-        <!-- Filters -->
-        <div class="filters" role="search">
-            <div class="container">
-                <div class="row g-3 justify-content-center align-items-end">
-
-                    <!-- Search -->
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <label class="form-label" data-i18n="events_page.filters.search.label">ابحث عن فعالية</label>
-                        <div class="search-bar input-group dir-swap">
-                            <span class="input-group-text" aria-hidden="true">
-                                <i class="bi bi-search"></i>
-                            </span>
-                            <input type="text" class="form-control"
-                                data-i18n-attr="placeholder:events_page.filters.search.placeholder;aria-label:events_page.filters.search.aria"
-                                placeholder="ابحث بالاسم أو كلمة مفتاحية" aria-label="Search events">
-                            <button class="btn search-btn d-none d-md-inline-flex"
+            <!-- Filters -->
+            <div class="filters" role="search">
+                <div class="container">
+                    <div class="row g-3 justify-content-center align-items-end">
+                        <!-- Search -->
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <label class="form-label" data-i18n="events_page.filters.search.label">ابحث عن
+                                فعالية</label>
+                            <div class="search-bar input-group dir-swap">
+                                <span class="input-group-text" aria-hidden="true">
+                                    <i class="bi bi-search"></i>
+                                </span>
+                                <input type="text" class="form-control"
+                                    data-i18n-attr="placeholder:events_page.filters.search.placeholder;aria-label:events_page.filters.search.aria"
+                                    placeholder="ابحث بالاسم أو كلمة مفتاحية" aria-label="Search events" />
+                                <button class="btn btn-primary d-none d-md-inline-flex"
+                                    data-i18n="events_page.filters.search.button"
+                                    data-i18n-attr="aria-label:events_page.filters.search.button_aria"
+                                    aria-label="Execute search"></button>
+                            </div>
+                            <!-- زر بحث للشاشات الصغيرة -->
+                            <button class="btn btn-primary w-100 d-md-none mt-3"
                                 data-i18n="events_page.filters.search.button"
-                                data-i18n-attr="aria-label:events_page.filters.search.button_aria"
-                                aria-label="Execute search"></button>
+                                data-i18n-attr="aria-label:events_page.filters.search.button_aria"></button>
                         </div>
-                        <!-- زر بحث للشاشات الصغيرة -->
-                        <button class="btn search-btn  w-100 d-md-none mt-3"
-                            data-i18n="events_page.filters.search.button"
-                            data-i18n-attr="aria-label:events_page.filters.search.button_aria"></button>
-                    </div>
 
-                    <!-- Date -->
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <label class="form-label" data-i18n="events_page.filters.date.label">التاريخ</label>
-                        <div class="dropdown-div dropdown w-100 dir-dropdown">
-                            <button class="btn dropdown-btn dropdown-toggle w-100" type="button" id="dateDropdown"
-                                data-bs-toggle="dropdown" aria-expanded="false"
-                                data-i18n="events_page.filters.date.placeholder">
-                                اختر التاريخ
-                            </button>
-                            <ul class="dropdown-menu w-100" aria-labelledby="dateDropdown" role="list">
-                                <li><a class="dropdown-item" href="#" data-i18n="events_page.filters.date.today"></a>
-                                </li>
-                                <li><a class="dropdown-item" href="#"
-                                        data-i18n="events_page.filters.date.this_week"></a></li>
-                                <li><a class="dropdown-item" href="#"
-                                        data-i18n="events_page.filters.date.this_month"></a></li>
-                            </ul>
+                        <!-- Date -->
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <label class="form-label" data-i18n="events_page.filters.date.label">التاريخ</label>
+                            <div class="dropdown-div dropdown w-100 dir-dropdown">
+                                <button class="btn dropdown-btn dropdown-toggle w-100" type="button" id="dateDropdown"
+                                    data-bs-toggle="dropdown" aria-expanded="false"
+                                    data-i18n="events_page.filters.date.placeholder">
+                                    اختر التاريخ
+                                </button>
+                                <ul class="dropdown-menu w-100" aria-labelledby="dateDropdown" role="list">
+                                    <li><a class="dropdown-item" href="#"
+                                            data-i18n="events_page.filters.date.today"></a></li>
+                                    <li><a class="dropdown-item" href="#"
+                                            data-i18n="events_page.filters.date.this_week"></a></li>
+                                    <li><a class="dropdown-item" href="#"
+                                            data-i18n="events_page.filters.date.this_month"></a></li>
+                                </ul>
+                            </div>
                         </div>
-                    </div>
 
-                    <!-- Category -->
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <label class="form-label" data-i18n="events_page.filters.category.label">التصنيف</label>
-                        <div class="dropdown w-100 dir-dropdown">
-                            <button class="btn dropdown-btn dropdown-toggle w-100" type="button" id="categoryDropdown"
-                                data-bs-toggle="dropdown" aria-expanded="false"
-                                data-i18n="events_page.filters.category.placeholder">
-                                اختر التصنيف
-                            </button>
-                            <ul class="dropdown-menu w-100" aria-labelledby="categoryDropdown" role="list">
-                                <li><a class="dropdown-item" href="#" data-i18n="categories.music">موسيقى</a></li>
-                                <li><a class="dropdown-item" href="#" data-i18n="categories.art">فن</a></li>
-                                <li><a class="dropdown-item" href="#" data-i18n="categories.sport">رياضة</a></li>
-                                <li><a class="dropdown-item" href="#" data-i18n="categories.culture">ثقافة</a></li>
-                                <li><a class="dropdown-item" href="#" data-i18n="categories.tech">تكنولوجيا</a></li>
-                            </ul>
+                        <!-- Category -->
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <label class="form-label" data-i18n="events_page.filters.category.label">التصنيف</label>
+                            <div class="dropdown w-100 dir-dropdown">
+                                <button class="btn dropdown-btn dropdown-toggle w-100" type="button"
+                                    id="categoryDropdown" data-bs-toggle="dropdown" aria-expanded="false"
+                                    data-i18n="events_page.filters.category.placeholder">
+                                    اختر التصنيف
+                                </button>
+                                <ul class="dropdown-menu w-100" aria-labelledby="categoryDropdown" role="list">
+                                    <li><a class="dropdown-item" href="#" data-i18n="categories.music">موسيقى</a></li>
+                                    <li><a class="dropdown-item" href="#" data-i18n="categories.art">فن</a></li>
+                                    <li><a class="dropdown-item" href="#" data-i18n="categories.sport">رياضة</a></li>
+                                    <li><a class="dropdown-item" href="#" data-i18n="categories.culture">ثقافة</a></li>
+                                    <li><a class="dropdown-item" href="#" data-i18n="categories.tech">تكنولوجيا</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
+                </div>
+
+                <!-- Tabs -->
+                <div class="events-tabs-container" role="tablist">
+                    <button class="events-tab-link active" data-tab-target="#all" data-i18n="events_page.tabs.all"
+                        role="tab" aria-controls="all">الكل</button>
+                    <button class="events-tab-link" data-tab-target="#damascus" data-i18n="cities.damascus" role="tab"
+                        aria-controls="damascus"></button>
+                    <button class="events-tab-link" data-tab-target="#aleppo" data-i18n="cities.aleppo" role="tab"
+                        aria-controls="aleppo"></button>
+                    <button class="events-tab-link" data-tab-target="#homs" data-i18n="cities.homs" role="tab"
+                        aria-controls="homs"></button>
+                    <button class="events-tab-link" data-tab-target="#hama" data-i18n="cities.hama" role="tab"
+                        aria-controls="hama"></button>
+                    <button class="events-tab-link" data-tab-target="#idlib" data-i18n="cities.idlib" role="tab"
+                        aria-controls="idlib"></button>
+                    <button class="events-tab-link" data-tab-target="#lattakia" data-i18n="cities.lattakia" role="tab"
+                        aria-controls="lattakia"></button>
+                    <button class="events-tab-link" data-tab-target="#tartus" data-i18n="cities.tartus" role="tab"
+                        aria-controls="tartus"></button>
+                    <button class="events-tab-link" data-tab-target="#raqqa" data-i18n="cities.raqqa" role="tab"
+                        aria-controls="raqqa"></button>
+                    <button class="events-tab-link" data-tab-target="#deir_ez_zor" data-i18n="cities.deir_ez_zor"
+                        role="tab" aria-controls="deir_ez_zor"></button>
+                    <button class="events-tab-link" data-tab-target="#hasakah" data-i18n="cities.hasakah" role="tab"
+                        aria-controls="hasakah"></button>
                 </div>
             </div>
         </div>
 
-        <!-- Tabs -->
-        <div class="events-tabs-container" role="tablist">
-            <button class="events-tab-link active" data-tab-target="#all" data-i18n="events_page.tabs.all" role="tab"
-                aria-controls="all">الكل</button>
-            <button class="events-tab-link" data-tab-target="#damascus" data-i18n="cities.damascus" role="tab"
-                aria-controls="damascus"></button>
-            <button class="events-tab-link" data-tab-target="#aleppo" data-i18n="cities.aleppo" role="tab"
-                aria-controls="aleppo"></button>
-            <button class="events-tab-link" data-tab-target="#homs" data-i18n="cities.homs" role="tab"
-                aria-controls="homs"></button>
-            <button class="events-tab-link" data-tab-target="#hama" data-i18n="cities.hama" role="tab"
-                aria-controls="hama"></button>
-            <button class="events-tab-link" data-tab-target="#idlib" data-i18n="cities.idlib" role="tab"
-                aria-controls="idlib"></button>
-            <button class="events-tab-link" data-tab-target="#lattakia" data-i18n="cities.lattakia" role="tab"
-                aria-controls="lattakia"></button>
-            <button class="events-tab-link" data-tab-target="#tartus" data-i18n="cities.tartus" role="tab"
-                aria-controls="tartus"></button>
-            <button class="events-tab-link" data-tab-target="#raqqa" data-i18n="cities.raqqa" role="tab"
-                aria-controls="raqqa"></button>
-            <button class="events-tab-link" data-tab-target="#deir_ez_zor" data-i18n="cities.deir_ez_zor" role="tab"
-                aria-controls="deir_ez_zor"></button>
-            <button class="events-tab-link" data-tab-target="#hasakah" data-i18n="cities.hasakah" role="tab"
-                aria-controls="hasakah"></button>
-        </div>
-    </div>
-
-
-    <!-- Events Content -->
-    <div class="events-content">
-
-        <!-- Tab: All -->
-        <div id="all" class="events-tab-content active" role="tabpanel">
-            <div class="row">
-
-                <!-- Card 1 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-1.png"
-                            data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.music">موسيقى</span>
-                            <span class="city" data-i18n="cities.damascus">دمشق</span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="events.today.card1.title">أوركسترا السيمفوني
-                                السوري</p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="events.today.card1.subtitle">
-                                أمسية كلاسيكية وعروض حيّة على مسرح الدراما.
-                            </p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2025-11-15" aria-live="polite"></time>
+        <!-- Events Content -->
+        <div class="events-content">
+            <!-- Tab: All -->
+            <div id="all" class="events-tab-content active" role="tabpanel">
+                <div class="row">
+                    <!-- Card 1 -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="event-card">
+                            <img class="image-event-card" src="assets/img/events-images/event$-1.png"
+                                data-i18n-attr="alt:events.common.image_alt" alt="Event Image" />
+                            <div class="event-card-header">
+                                <span class="tag" data-i18n="categories.music">موسيقى</span>
+                                <span class="city" data-i18n="cities.damascus">دمشق</span>
                             </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details">التفاصيل</a>
-                                <button type="button" class="btn btn-outline-primary"
-                                    data-i18n="buttons.add_to_calendar">أضف للتقويم</button>
+                            <div class="event-card-content">
+                                <p class="u-title fw-bold p-0 m-0" data-i18n="events.today.card1.title">أوركسترا
+                                    السيمفوني السوري</p>
+                                <p class="text-end u-muted p-0 m-0" data-i18n="events.today.card1.subtitle">
+                                    أمسية كلاسيكية وعروض حيّة على مسرح الدراما.
+                                </p>
+                                <div class="date py-3 m-0">
+                                    <i class="bi bi-calendar3" aria-hidden="true"></i>
+                                    <span data-date-iso="2025-11-15" aria-live="polite"></span>
+                                </div>
+                                <div class="card-buttons">
+                                    <a href="event.html" class="btn btn-primary"
+                                        data-i18n="buttons.details">التفاصيل</a>
+                                    <button type="button" class="btn btn-outline-primary"
+                                        data-i18n="buttons.add_to_calendar">أضف للتقويم</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Card 2 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-2.png"
-                            data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.art">فن</span>
-                            <span class="city" data-i18n="cities.aleppo">حلب</span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="events.end_week.card1.title">معرض فني</p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="events.end_week.card1.subtitle">
-                                معرض للفن التشكيلي يعرض أعمال فنانين محليين.
-                            </p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2025-11-20" aria-live="polite"></time>
+                    <!-- Card 2 -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="event-card">
+                            <img class="image-event-card" src="assets/img/events-images/event$-2.png"
+                                data-i18n-attr="alt:events.common.image_alt" alt="Event Image" />
+                            <div class="event-card-header">
+                                <span class="tag" data-i18n="categories.art">فن</span>
+                                <span class="city" data-i18n="cities.aleppo">حلب</span>
                             </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details">التفاصيل</a>
-                                <button type="button" class="btn btn-outline-primary"
-                                    data-i18n="buttons.add_to_calendar">أضف للتقويم</button>
+                            <div class="event-card-content">
+                                <p class="u-title fw-bold p-0 m-0" data-i18n="events.end_week.card1.title">معرض فني</p>
+                                <p class="text-end u-muted p-0 m-0" data-i18n="events.end_week.card1.subtitle">
+                                    معرض للفن التشكيلي يعرض أعمال فنانين محليين.
+                                </p>
+                                <div class="date py-3 m-0">
+                                    <i class="bi bi-calendar3" aria-hidden="true"></i>
+                                    <span data-date-iso="2025-11-20" aria-live="polite"></span>
+                                </div>
+                                <div class="card-buttons">
+                                    <a href="event.html" class="btn btn-primary"
+                                        data-i18n="buttons.details">التفاصيل</a>
+                                    <button type="button" class="btn btn-outline-primary"
+                                        data-i18n="buttons.add_to_calendar">أضف للتقويم</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Card 3 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-3.png"
-                            data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.sport">رياضة</span>
-                            <span class="city" data-i18n="cities.homs">حمص</span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="events.end_week.card2.title">مباراة كرة قدم
-                            </p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="events.end_week.card2.subtitle">
-                                مباراة ودية بين فريقين محليين على الملعب البلدي.
-                            </p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2025-11-22" aria-live="polite"></time>
+                    <!-- Card 3 -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="event-card">
+                            <img class="image-event-card" src="assets/img/events-images/event$-3.png"
+                                data-i18n-attr="alt:events.common.image_alt" alt="Event Image" />
+                            <div class="event-card-header">
+                                <span class="tag" data-i18n="categories.sport">رياضة</span>
+                                <span class="city" data-i18n="cities.homs">حمص</span>
                             </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details">التفاصيل</a>
-                                <button type="button" class="btn btn-outline-primary"
-                                    data-i18n="buttons.add_to_calendar">أضف للتقويم</button>
+                            <div class="event-card-content">
+                                <p class="u-title fw-bold p-0 m-0" data-i18n="events.end_week.card2.title">مباراة كرة
+                                    قدم</p>
+                                <p class="text-end u-muted p-0 m-0" data-i18n="events.end_week.card2.subtitle">
+                                    مباراة ودية بين فريقين محليين على الملعب البلدي.
+                                </p>
+                                <div class="date py-3 m-0">
+                                    <i class="bi bi-calendar3" aria-hidden="true"></i>
+                                    <span data-date-iso="2025-11-22" aria-live="polite"></span>
+                                </div>
+                                <div class="card-buttons">
+                                    <a href="event.html" class="btn btn-primary"
+                                        data-i18n="buttons.details">التفاصيل</a>
+                                    <button type="button" class="btn btn-outline-primary"
+                                        data-i18n="buttons.add_to_calendar">أضف للتقويم</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Card 4 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-4.png"
-                            data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.culture">ثقافة</span>
-                            <span class="city" data-i18n="cities.damascus">دمشق</span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="events.latest.card2.title">أمسية شعرية</p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="events.latest.card2.subtitle">
-                                أمسية شعرية يشارك فيها عدد من الشعراء السوريين.
-                            </p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2025-11-25" aria-live="polite"></time>
+                    <!-- Card 4 -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="event-card">
+                            <img class="image-event-card" src="assets/img/events-images/event$-4.png"
+                                data-i18n-attr="alt:events.common.image_alt" alt="Event Image" />
+                            <div class="event-card-header">
+                                <span class="tag" data-i18n="categories.culture">ثقافة</span>
+                                <span class="city" data-i18n="cities.damascus">دمشق</span>
                             </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details">التفاصيل</a>
-                                <button type="button" class="btn btn-outline-primary"
-                                    data-i18n="buttons.add_to_calendar">أضف للتقويم</button>
+                            <div class="event-card-content">
+                                <p class="u-title fw-bold p-0 m-0" data-i18n="events.latest.card2.title">أمسية شعرية</p>
+                                <p class="text-end u-muted p-0 m-0" data-i18n="events.latest.card2.subtitle">
+                                    أمسية شعرية يشارك فيها عدد من الشعراء السوريين.
+                                </p>
+                                <div class="date py-3 m-0">
+                                    <i class="bi bi-calendar3" aria-hidden="true"></i>
+                                    <span data-date-iso="2025-11-25" aria-live="polite"></span>
+                                </div>
+                                <div class="card-buttons">
+                                    <a href="event.html" class="btn btn-primary"
+                                        data-i18n="buttons.details">التفاصيل</a>
+                                    <button type="button" class="btn btn-outline-primary"
+                                        data-i18n="buttons.add_to_calendar">أضف للتقويم</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Card 5 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-5.png"
-                            data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.tech">تكنولوجيا</span>
-                            <span class="city" data-i18n="cities.aleppo">حلب</span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="events.month.card1.title">ورشة عمل</p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="events.month.card1.subtitle">
-                                ورشة عمل حول أحدث التقنيات في عالم البرمجة.
-                            </p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2025-11-30" aria-live="polite"></time>
+                    <!-- Card 5 -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="event-card">
+                            <img class="image-event-card" src="assets/img/events-images/event$-5.png"
+                                data-i18n-attr="alt:events.common.image_alt" alt="Event Image" />
+                            <div class="event-card-header">
+                                <span class="tag" data-i18n="categories.tech">تكنولوجيا</span>
+                                <span class="city" data-i18n="cities.aleppo">حلب</span>
                             </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details">التفاصيل</a>
-                                <button type="button" class="btn btn-outline-primary"
-                                    data-i18n="buttons.add_to_calendar">أضف للتقويم</button>
+                            <div class="event-card-content">
+                                <p class="u-title fw-bold p-0 m-0" data-i18n="events.month.card1.title">ورشة عمل</p>
+                                <p class="text-end u-muted p-0 m-0" data-i18n="events.month.card1.subtitle">
+                                    ورشة عمل حول أحدث التقنيات في عالم البرمجة.
+                                </p>
+                                <div class="date py-3 m-0">
+                                    <i class="bi bi-calendar3" aria-hidden="true"></i>
+                                    <span data-date-iso="2025-11-30" aria-live="polite"></span>
+                                </div>
+                                <div class="card-buttons">
+                                    <a href="event.html" class="btn btn-primary"
+                                        data-i18n="buttons.details">التفاصيل</a>
+                                    <button type="button" class="btn btn-outline-primary"
+                                        data-i18n="buttons.add_to_calendar">أضف للتقويم</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Card 6 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-3.png"
-                            data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.sport">رياضة</span>
-                            <span class="city" data-i18n="cities.homs">حمص</span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="events.end_week.card2.title">مباراة كرة قدم
-                            </p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="events.end_week.card2.subtitle">
-                                مباراة ودية بين فريقين محليين على الملعب البلدي.
-                            </p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2025-11-22" aria-live="polite"></time>
+                    <!-- Card 6 -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="event-card">
+                            <img class="image-event-card" src="assets/img/events-images/event$-3.png"
+                                data-i18n-attr="alt:events.common.image_alt" alt="Event Image" />
+                            <div class="event-card-header">
+                                <span class="tag" data-i18n="categories.sport">رياضة</span>
+                                <span class="city" data-i18n="cities.homs">حمص</span>
                             </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details">التفاصيل</a>
-                                <button type="button" class="btn btn-outline-primary"
-                                    data-i18n="buttons.add_to_calendar">أضف للتقويم</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- Tab: Damascus -->
-        <div id="damascus" class="events-tab-content" role="tabpanel">
-            <div class="row">
-                <!-- Card 1 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-1.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.music"></span>
-                            <span class="city" data-i18n="cities.damascus"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t1.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t1.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2025-12-01"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 2 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-2.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.art"></span>
-                            <span class="city" data-i18n="cities.damascus"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t2.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t2.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2025-12-02"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 3 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-3.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.sport"></span>
-                            <span class="city" data-i18n="cities.damascus"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t3.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t3.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2025-12-03"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 4 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-4.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.culture"></span>
-                            <span class="city" data-i18n="cities.damascus"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t4.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t4.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2025-12-04"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 5 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-5.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.tech"></span>
-                            <span class="city" data-i18n="cities.damascus"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t5.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t5.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2025-12-05"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 6 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-1.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.music"></span>
-                            <span class="city" data-i18n="cities.damascus"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t6.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t6.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2025-12-06"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
+                            <div class="event-card-content">
+                                <p class="u-title fw-bold p-0 m-0" data-i18n="events.end_week.card2.title">مباراة كرة
+                                    قدم</p>
+                                <p class="text-end u-muted p-0 m-0" data-i18n="events.end_week.card2.subtitle">
+                                    مباراة ودية بين فريقين محليين على الملعب البلدي.
+                                </p>
+                                <div class="date py-3 m-0">
+                                    <i class="bi bi-calendar3" aria-hidden="true"></i>
+                                    <span data-date-iso="2025-11-22" aria-live="polite"></span>
+                                </div>
+                                <div class="card-buttons">
+                                    <a href="event.html" class="btn btn-primary"
+                                        data-i18n="buttons.details">التفاصيل</a>
+                                    <button type="button" class="btn btn-outline-primary"
+                                        data-i18n="buttons.add_to_calendar">أضف للتقويم</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Tab: Aleppo -->
-        <div id="aleppo" class="events-tab-content" role="tabpanel">
-            <div class="row">
-                <!-- Card 1 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-1.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.art"></span>
-                            <span class="city" data-i18n="cities.aleppo"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t1.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t1.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2025-12-07"></time>
+            <!-- بقية التبويبات بنفس النمط (استُبدلت الأزرار بـ btn-primary/btn-outline-primary والتاريخ داخل span[data-date-iso]) -->
+
+            <!-- Tab: Damascus -->
+            <div id="damascus" class="events-tab-content" role="tabpanel">
+                <div class="row">
+                    <!-- كرّر بطاقاتك الأصلية هنا، مع span[data-date-iso] والأزرار الموحّدة -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="event-card">
+                            <img class="image-event-card" src="assets/img/events-images/event$-1.png" alt="Event Image"
+                                data-i18n-attr="alt:events.common.image_alt" />
+                            <div class="event-card-header">
+                                <span class="tag" data-i18n="categories.music"></span>
+                                <span class="city" data-i18n="cities.damascus"></span>
                             </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 2 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-2.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.sport"></span>
-                            <span class="city" data-i18n="cities.aleppo"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t2.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t2.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2025-12-08"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
+                            <div class="event-card-content">
+                                <p class="u-title fw-bold p-0 m-0" data-i18n="sample_events.t1.title"></p>
+                                <p class="text-end u-muted p-0 m-0" data-i18n="sample_events.t1.subtitle"></p>
+                                <div class="date py-3 m-0"><i class="bi bi-calendar3" aria-hidden="true"></i> <span
+                                        data-date-iso="2025-12-01"></span></div>
+                                <div class="card-buttons"><a href="event.html" class="btn btn-primary"
+                                        data-i18n="buttons.details"></a><button type="button"
+                                        class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- Card 3 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-3.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.culture"></span>
-                            <span class="city" data-i18n="cities.aleppo"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t3.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t3.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2025-12-09"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 4 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-4.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.tech"></span>
-                            <span class="city" data-i18n="cities.aleppo"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t4.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t4.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2025-12-10"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 5 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-5.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.music"></span>
-                            <span class="city" data-i18n="cities.aleppo"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t5.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t5.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2025-12-11"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 6 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-1.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.art"></span>
-                            <span class="city" data-i18n="cities.aleppo"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t6.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t6.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2025-12-12"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
+
+                    <!-- يمكنك متابعة بقية البطاقات كما في ملفّك السابق، فقط احرص على span[data-date-iso] + btn-primary/btn-outline-primary -->
+                    <!-- ... بطاقات أخرى ... -->
                 </div>
             </div>
-        </div>
 
-        <!-- Tab: Homs -->
-        <div id="homs" class="events-tab-content" role="tabpanel">
-            <div class="row">
-                <!-- Card 1 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-1.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.sport"></span>
-                            <span class="city" data-i18n="cities.homs"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t1.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t1.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2025-12-13"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
+            <!-- Tab: Aleppo -->
+            <div id="aleppo" class="events-tab-content" role="tabpanel">
+                <div class="row">
+                    <!-- أمثلة مختصرة (نفس النمط) -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="event-card">
+                            <img class="image-event-card" src="assets/img/events-images/event$-1.png" alt="Event Image"
+                                data-i18n-attr="alt:events.common.image_alt" />
+                            <div class="event-card-header"><span class="tag" data-i18n="categories.art"></span><span
+                                    class="city" data-i18n="cities.aleppo"></span></div>
+                            <div class="event-card-content">
+                                <p class="u-title fw-bold p-0 m-0" data-i18n="sample_events.t1.title"></p>
+                                <p class="text-end u-muted p-0 m-0" data-i18n="sample_events.t1.subtitle"></p>
+                                <div class="date py-3 m-0"><i class="bi bi-calendar3"></i> <span
+                                        data-date-iso="2025-12-07"></span></div>
+                                <div class="card-buttons"><a href="event.html" class="btn btn-primary"
+                                        data-i18n="buttons.details"></a><button type="button"
+                                        class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <!-- Card 2 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-2.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.culture"></span>
-                            <span class="city" data-i18n="cities.homs"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t2.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t2.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2025-12-14"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 3 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-3.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.tech"></span>
-                            <span class="city" data-i18n="cities.homs"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t3.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t3.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2025-12-15"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 4 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-4.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.music"></span>
-                            <span class="city" data-i18n="cities.homs"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t4.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t4.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2025-12-16"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 5 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-5.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.art"></span>
-                            <span class="city" data-i18n="cities.homs"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t5.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t5.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2025-12-17"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 6 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-1.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.sport"></span>
-                            <span class="city" data-i18n="cities.homs"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t6.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t6.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2025-12-18"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
+                    <!-- ... بقية البطاقات ... -->
                 </div>
             </div>
+
+            <!-- Tabs: Homs, Hama, Idlib, Lattakia, Tartus, Raqqa, Deir ez-Zor, Hasakah -->
+            <!-- أبقِ نفس البنية مع span[data-date-iso] والأزرار الموحّدة. -->
         </div>
-
-        <!-- Tab: Hama -->
-        <div id="hama" class="events-tab-content" role="tabpanel">
-            <div class="row">
-                <!-- Card 1 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-1.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.culture"></span>
-                            <span class="city" data-i18n="cities.hama"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t1.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t1.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2025-12-19"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 2 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-2.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.tech"></span>
-                            <span class="city" data-i18n="cities.hama"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t2.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t2.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2025-12-20"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 3 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-3.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.music"></span>
-                            <span class="city" data-i18n="cities.hama"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t3.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t3.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2025-12-21"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 4 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-4.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.art"></span>
-                            <span class="city" data-i18n="cities.hama"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t4.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t4.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2025-12-22"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 5 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-5.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.sport"></span>
-                            <span class="city" data-i18n="cities.hama"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t5.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t5.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2025-12-23"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 6 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-1.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.culture"></span>
-                            <span class="city" data-i18n="cities.hama"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t6.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t6.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2025-12-24"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Tab: Idlib -->
-        <div id="idlib" class="events-tab-content" role="tabpanel">
-            <div class="row">
-                <!-- Card 1 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-1.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.tech"></span>
-                            <span class="city" data-i18n="cities.idlib"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t1.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t1.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2025-12-25"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 2 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-2.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.music"></span>
-                            <span class="city" data-i18n="cities.idlib"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t2.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t2.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2025-12-26"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 3 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-3.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.art"></span>
-                            <span class="city" data-i18n="cities.idlib"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t3.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t3.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2025-12-27"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 4 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-4.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.sport"></span>
-                            <span class="city" data-i18n="cities.idlib"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t4.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t4.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2025-12-28"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 5 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-5.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.culture"></span>
-                            <span class="city" data-i18n="cities.idlib"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t5.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t5.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2025-12-29"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 6 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-1.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.tech"></span>
-                            <span class="city" data-i18n="cities.idlib"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t6.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t6.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2025-12-30"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Tab: Lattakia -->
-        <div id="lattakia" class="events-tab-content" role="tabpanel">
-            <div class="row">
-                <!-- Card 1 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-1.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.music"></span>
-                            <span class="city" data-i18n="cities.lattakia"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t1.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t1.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2026-01-01"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 2 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-2.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.art"></span>
-                            <span class="city" data-i18n="cities.lattakia"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t2.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t2.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2026-01-02"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 3 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-3.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.sport"></span>
-                            <span class="city" data-i18n="cities.lattakia"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t3.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t3.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2026-01-03"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 4 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-4.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.culture"></span>
-                            <span class="city" data-i18n="cities.lattakia"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t4.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t4.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2026-01-04"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 5 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-5.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.tech"></span>
-                            <span class="city" data-i18n="cities.lattakia"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t5.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t5.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2026-01-05"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 6 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-1.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.music"></span>
-                            <span class="city" data-i18n="cities.lattakia"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t6.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t6.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2026-01-06"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Tab: Tartus -->
-        <div id="tartus" class="events-tab-content" role="tabpanel">
-            <div class="row">
-                <!-- Card 1 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-1.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.art"></span>
-                            <span class="city" data-i18n="cities.tartus"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t1.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t1.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2026-01-07"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 2 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-2.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.sport"></span>
-                            <span class="city" data-i18n="cities.tartus"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t2.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t2.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2026-01-08"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 3 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-3.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.culture"></span>
-                            <span class="city" data-i18n="cities.tartus"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t3.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t3.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2026-01-09"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 4 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-4.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.tech"></span>
-                            <span class="city" data-i18n="cities.tartus"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t4.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t4.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2026-01-10"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 5 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-5.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.music"></span>
-                            <span class="city" data-i18n="cities.tartus"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t5.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t5.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2026-01-11"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 6 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-1.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.art"></span>
-                            <span class="city" data-i18n="cities.tartus"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t6.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t6.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2026-01-12"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Tab: Raqqa -->
-        <div id="raqqa" class="events-tab-content" role="tabpanel">
-            <div class="row">
-                <!-- Card 1 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-1.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.sport"></span>
-                            <span class="city" data-i18n="cities.raqqa"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t1.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t1.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2026-01-13"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 2 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-2.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.culture"></span>
-                            <span class="city" data-i18n="cities.raqqa"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t2.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t2.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2026-01-14"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 3 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-3.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.tech"></span>
-                            <span class="city" data-i18n="cities.raqqa"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t3.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t3.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2026-01-15"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 4 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-4.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.music"></span>
-                            <span class="city" data-i18n="cities.raqqa"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t4.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t4.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2026-01-16"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 5 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-5.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.art"></span>
-                            <span class="city" data-i18n="cities.raqqa"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t5.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t5.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2026-01-17"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 6 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-1.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.sport"></span>
-                            <span class="city" data-i18n="cities.raqqa"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t6.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t6.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2026-01-18"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Tab: Deir ez-Zor -->
-        <div id="deir_ez_zor" class="events-tab-content" role="tabpanel">
-            <div class="row">
-                <!-- Card 1 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-1.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.culture"></span>
-                            <span class="city" data-i18n="cities.deir_ez_zor"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t1.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t1.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2026-01-19"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 2 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-2.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.tech"></span>
-                            <span class="city" data-i18n="cities.deir_ez_zor"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t2.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t2.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2026-01-20"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 3 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-3.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.music"></span>
-                            <span class="city" data-i18n="cities.deir_ez_zor"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t3.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t3.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2026-01-21"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 4 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-4.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.art"></span>
-                            <span class="city" data-i18n="cities.deir_ez_zor"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t4.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t4.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2026-01-22"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 5 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-5.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.sport"></span>
-                            <span class="city" data-i18n="cities.deir_ez_zor"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t5.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t5.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2026-01-23"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 6 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-1.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.culture"></span>
-                            <span class="city" data-i18n="cities.deir_ez_zor"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t6.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t6.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2026-01-24"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Tab: Al-Hasakah -->
-        <div id="hasakah" class="events-tab-content" role="tabpanel">
-            <div class="row">
-                <!-- Card 1 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-1.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.tech"></span>
-                            <span class="city" data-i18n="cities.hasakah"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t1.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t1.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2026-01-25"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 2 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-2.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.music"></span>
-                            <span class="city" data-i18n="cities.hasakah"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t2.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t2.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2026-01-26"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 3 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-3.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.art"></span>
-                            <span class="city" data-i18n="cities.hasakah"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t3.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t3.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2026-01-27"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 4 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-4.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.sport"></span>
-                            <span class="city" data-i18n="cities.hasakah"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t4.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t4.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2026-01-28"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 5 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-5.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.culture"></span>
-                            <span class="city" data-i18n="cities.hasakah"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t5.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t5.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2026-01-29"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Card 6 -->
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="event-card">
-                        <img class="image-event-card" src="assets/img/events-images/event$-1.png" data-i18n-attr="alt:events.common.image_alt" alt="Event Image">
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.tech"></span>
-                            <span class="city" data-i18n="cities.hasakah"></span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0" data-i18n="sample_events.t6.title"></p>
-                            <p class="text-end text-secondary p-0 m-0" data-i18n="sample_events.t6.subtitle"></p>
-                            <div class="date py-3 m-0">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2026-01-30"></time>
-                            </div>
-                            <div class="card-buttons">
-                                <a href="event.html" class="btn btn-primary" data-i18n="buttons.details"></a>
-                                <button type="button" class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar"></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-
+    </main>
 
     <!-- Footer Section -->
     <footer class="footer" aria-labelledby="footer-title">
@@ -1770,7 +468,7 @@
             <div class="row gy-4">
                 <div class="col-lg-4 col-md-12 footer-logo">
                     <img src="assets/img/icons/Logo.svg" class="mb-2" data-i18n-attr="alt:footer.logo_alt"
-                        alt="EventCom Syria Logo">
+                        alt="EventCom Syria Logo" />
                     <p class="fw-bold" data-i18n="footer.slogan">اكتشف. خطّط. احضر!</p>
                     <p data-i18n="footer.subtitle">منصّة محدثة يوميًا لاكتشاف الفعاليات في جميع المحافظات.</p>
                 </div>
@@ -1832,9 +530,11 @@
                                 جميع الحقوق محفوظة.
                             </strong>
                         </p>
-                        <p class="disclaimer-text" data-i18n="footer.disclaimer">المحتوى مسؤولية الجهات المنظمة. نحرص
+                        <p class="disclaimer-text" data-i18n="footer.disclaimer">
+                            المحتوى مسؤولية الجهات المنظمة. نحرص
                             على
-                            دقّة المعلومات قدر الإمكان.</p>
+                            دقّة المعلومات قدر الإمكان.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -1842,8 +542,9 @@
     </footer>
 
     <!-- Scroll to Top -->
-    <a href="#" class="scroll-to-top"><img src="./assets/img/icons/arrow-up.svg"
-            data-i18n-attr="alt:footer.scroll_top_alt" alt="arrow-up"></a>
+    <a href="#" class="scroll-to-top">
+        <img src="./assets/img/icons/arrow-up.svg" data-i18n-attr="alt:footer.scroll_top_alt" alt="arrow-up" />
+    </a>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"

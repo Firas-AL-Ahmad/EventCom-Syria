@@ -20,15 +20,14 @@
   text-align: center;
 }
 
-.contact-container h1 {
-  /* Fluid Typography: Scales from 2rem to 3rem */
+.contact-header h1 {
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 700;
   margin-bottom: 15px;
   color: var(--primary-900);
 }
 
-.contact-container p {
+.contact-header p {
   color: var(--gray-700);
   margin-bottom: 30px;
   font-size: 1rem;
@@ -43,7 +42,7 @@
   width: 100%;
 }
 
-  .form-control {
+.form-control {
   background-color: var(--white-color);
   border: 1px solid var(--gray-200);
   border-radius: 8px;
@@ -51,40 +50,32 @@
   margin-bottom: 20px;
   text-align: right;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-  transition: border-color 0.3s;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  height: 56px; /* تم تصحيح 56ox إلى 56px */
 }
 
-.form-control{
-
-  height: 56ox;
+textarea.form-control {
+  height: auto;
 }
+
 .contact-form .form-control:focus {
   border-color: var(--primary-500);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
-.contact-form .btn-primary {
-  background-color: var(--primary-500);
-  border-color: var(--primary-500);
-  color: var(--white-color);
+.form-btn {
+  height: 56px;
+}
+
+/* استخدام زر العلامة التجارية الموحّد */
+.contact-form .btn-brand {
   border-radius: 8px;
   padding: 16px;
-  max-height: 54px;
   font-weight: bold;
   width: auto;
-  transition: background-color 0.3s;
 }
 
-.form-btn{
-
-  height: 56px;
-
-}
-.contact-form .btn-primary:hover {
-  background-color: var(--primary-700);
-  border-color: var(--primary-700);
-}
-
+/* reCAPTCHA placeholder (إن وجدت لاحقًا) */
 .recaptcha-placeholder {
   display: flex;
   align-items: center;
@@ -131,13 +122,13 @@
     padding: 96px;
   }
 
-  .contact-container p {
+  .contact-header p {
     font-size: 1.1rem;
   }
 
   #map {
-    height: 350px;
-    z-index: 1; /* Taller map for tablets */
+    height: 350px; /* Taller map for tablets */
+    z-index: 1;
   }
 }
 
@@ -154,4 +145,10 @@
   .social-icons a {
     margin: 0 15px;
   }
+}
+
+/* إضافات بسيطة */
+.force-ltr {
+  direction: ltr;
+  unicode-bidi: plaintext;
 }

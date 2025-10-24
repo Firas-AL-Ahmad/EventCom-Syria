@@ -1,31 +1,48 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl" data-theme="light">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title data-i18n="event_page.meta.title">تفاصيل الفعالية - EventCom Syria</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-i18n="page_titles.event">تفاصيل الفعالية - EventCom Syria</title>
+
+    <!-- تهيئة الثيم مبكّرًا لتجنّب فلاش أبيض/أسود -->
+    <script>
+        (function () {
+            try {
+                var KEY = "ec:theme";
+                var saved = localStorage.getItem(KEY);
+                var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+                var theme = saved ? saved : (prefersDark ? "dark" : "light");
+                document.documentElement.setAttribute("data-theme", theme);
+            } catch (e) { }
+        })();
+    </script>
+
+    <meta name="color-scheme" content="light dark" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/event.css">
-    <link rel="stylesheet" href="assets/css/events.css">
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+
+    <!-- الأساس الموحد + تنسيقات صفحة الحدث -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/event.css" />
 </head>
 
 <body>
-    <!-- Header -->
-    <nav class="navbar navbar-expand-lg bg-body-tertiary px-md-5 px-sm-4">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Header (موحّد مثل index.html) -->
+    <nav class="navbar navbar-expand-lg px-md-5 px-sm-4">
         <div class="container-fluid">
             <a class="navbar-brand" href="index.html" data-i18n-attr="aria-label:nav.brand_aria"
                 aria-label="EventCom Syria">
-                <img src="assets/img/icons/Logo.svg" alt="EventCom Syria Logo">
+                <img src="assets/img/icons/Logo.svg" alt="EventCom Syria Logo" />
             </a>
-
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                data-i18n-attr="aria-label:nav.toggler_aria" aria-label="Toggle navigation">
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
@@ -49,418 +66,293 @@
                 </ul>
 
                 <div class="d-flex align-items-center gap-2">
-
                     <!-- Language Dropdown -->
                     <div class="dropdown">
-                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="langDropdown"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn dropdown-toggle" type="button" id="langDropdown" data-bs-toggle="dropdown"
+                            aria-expanded="false">
                             <img id="current-lang-flag" src="assets/img/icons/AR-flag.svg"
                                 data-i18n-attr="alt:lang_switcher.current_lang_alt" alt="Current language flag"
-                                class="lang-flag me-1">
+                                class="lang-flag me-1" />
                             <span id="current-lang-label" data-i18n="lang_switcher.current_lang_label">العربية</span>
                         </button>
                         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langDropdown">
                             <li>
                                 <button class="dropdown-item d-flex align-items-center" data-lang="ar">
                                     <img src="assets/img/icons/AR-flag.svg" data-i18n-attr="alt:lang_switcher.ar_alt"
-                                        alt="Arabic language flag" class="lang-flag me-2"><span
-                                        data-i18n="lang_switcher.ar_text">العربية</span>
+                                        alt="Arabic language flag" class="lang-flag me-2" />
+                                    <span data-i18n="lang_switcher.ar_text">العربية</span>
                                 </button>
                             </li>
                             <li>
                                 <button class="dropdown-item d-flex align-items-center" data-lang="en">
                                     <img src="assets/img/icons/US-flag.svg" data-i18n-attr="alt:lang_switcher.en_alt"
-                                        alt="English language flag" class="lang-flag me-2"><span
-                                        data-i18n="lang_switcher.en_text">English</span>
+                                        alt="English language flag" class="lang-flag me-2" />
+                                    <span data-i18n="lang_switcher.en_text">English</span>
                                 </button>
                             </li>
                         </ul>
                     </div>
 
-                    <!-- Theme switch (كما هو) -->
-                    <label class="mx-1 ui-switch">
-                        <input type="checkbox">
+                    <!-- Theme switch -->
+                    <label class="mx-1 ui-switch" aria-label="تبديل الثيم">
+                        <input id="themeSwitch" type="checkbox" role="switch" aria-checked="false" />
                         <div class="slider">
                             <div class="circle"></div>
                         </div>
                     </label>
 
-                    <a href="contact.html" class="btn btn-primary-contact" data-i18n="nav.contact">اتصل بنا</a>
+                    <a href="contact.html" class="btn btn-primary" data-i18n="nav.contact">اتصل بنا</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Event Hero Section -->
-    <section class="event-hero-section">
-        <div class="row">
-            <div class="col-lg-6 order-lg-first">
-                <div class="event-details">
-                    <h1 class="event-title" data-i18n="event_page.hero.title">مهرجان ألوان الشام</h1>
+    <!-- ============ المحتوى الرئيسي ============ -->
+    <main id="main-content" style="padding-top: 72px;">
+        <!-- Hero: تفاصيل + معرض -->
+        <section class="event-hero-section">
+            <div class="container">
+                <div class="row gy-4 align-items-start">
+                    <!-- تفاصيل الفعالية -->
+                    <div class="col-lg-6">
+                        <div class="event-details">
+                            <div class="event-classification">
+                                <span class="badge bg-primary-subtle text-primary-emphasis px-3 py-2 rounded-pill">
+                                    <i class="bi bi-music-note-beamed ms-1"></i>
+                                    <span data-i18n="categories.music">موسيقى</span>
+                                </span>
+                                <span class="badge bg-secondary-subtle text-secondary-emphasis px-3 py-2 rounded-pill">
+                                    <i class="bi bi-geo-alt ms-1"></i>
+                                    <span data-i18n="cities.damascus">دمشق</span>
+                                </span>
+                            </div>
 
-                    <p class="event-subtitle" data-i18n="event_page.hero.subtitle">
-                        تظاهرة فنية تجمع عروضًا حية وورشًا ومعارض فنية لجميع الأعمار.
-                    </p>
+                            <h1 class="event-title u-title" data-i18n="event.sample.title">
+                                أوركسترا السيمفوني السوري — أمسية كلاسيكية
+                            </h1>
 
-                    <div class="event-meta">
-                        <span>
-                            <i class="bi bi-calendar-event" aria-hidden="true"></i>
-                            <!-- NEW: datetime range is auto-formatted per language -->
-                            <span class="event-datetime" data-datetime-start="2025-10-10T18:00"
-                                data-datetime-end="2025-10-10T21:30" aria-live="polite"></span>
-                        </span>
-                    </div>
-
-                    <div class="event-notes">
-                        <h5 data-i18n="event_page.notes.title">ملاحظات</h5>
-                        <ul role="list">
-                            <li data-i18n="event_page.notes.note1">يُفضّل الحضور قبل 30 دقيقة</li>
-                            <li data-i18n="event_page.notes.note2">القاعة مجهّزة بممرات وصول ومقاعد مخصصة</li>
-                        </ul>
-                    </div>
-
-                    <div class="event-classification">
-                        <p class="m-0 p-0">
-                            <strong data-i18n="event_page.classification.category_label">التصنيف:</strong>
-                            <span data-i18n="categories.culture">ثقافة</span>
-                        </p>
-                        <p class="m-0 p-0">
-                            <strong data-i18n="event_page.classification.gov_label">المحافظة:</strong>
-                            <span data-i18n="cities.damascus">دمشق</span>
-                        </p>
-                    </div>
-
-                    <div class="event-actions">
-                        <a href="#" class="calendar-btn py-2 px-5 rounded-2"
-                            data-i18n="buttons.add_to_calendar" role="button"
-                            data-i18n-attr="aria-label:buttons.add_to_calendar">أضف
-                            للتقويم</a>
-                        <a href="#" class="share-btn py-2 px-5 rounded-2" data-i18n="buttons.share_event" role="button"
-                            data-i18n-attr="aria-label:buttons.share_event">شارك
-                            الحدث</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-6 order-lg-last">
-                <div class="hero-gallery">
-                    <div class="main-image mb-3">
-                        <img src="assets/img/events-images/image.png" id="mainEventImage" class="img-fluid rounded"
-                            data-i18n-attr="alt:event_page.gallery.main_alt" alt="Main Event Image">
-                    </div>
-                    <div class="thumbnail-gallery d-flex justify-content-between">
-                        <img src="assets/img/events-images/Frame 1686552792.png" class="img-thumbnail active"
-                            data-i18n-attr="alt:event_page.gallery.thumb1_alt" alt="Thumbnail 1">
-                        <img src="assets/img/events-images/Frame 1686552793.png" class="img-thumbnail"
-                            data-i18n-attr="alt:event_page.gallery.thumb2_alt" alt="Thumbnail 2">
-                        <img src="assets/img/events-images/Frame 1686552794.png" class="img-thumbnail"
-                            data-i18n-attr="alt:event_page.gallery.thumb3_alt" alt="Thumbnail 3">
-                        <img src="assets/img/events-images/Frame 1686552796.png" class="img-thumbnail"
-                            data-i18n-attr="alt:event_page.gallery.thumb4_alt" alt="Thumbnail 4">
-                        <img src="assets/img/events-images/Frame 1686552797.png" class="img-thumbnail"
-                            data-i18n-attr="alt:event_page.gallery.thumb5_alt" alt="Thumbnail 5">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row about-event-section gy-5">
-            <h2 class="section-title" data-i18n="event_page.about_section.title">تفاصيل الفعالية</h2>
-
-            <div class="col-lg-7">
-                <div class="about-event">
-
-                    <div class="event-section">
-                        <h4 data-i18n="event_page.about_section.about_title">عن الفعالية</h4>
-                        <p data-i18n="event_page.about_section.about_text">
-                            يقدّم مهرجان ألوان الشام أمسية متكاملة تجمع الموسيقى الحيّة والعروض الأدائية والمعارض
-                            المصغّرة...
-                        </p>
-                    </div>
-
-                    <div class="event-section">
-                        <h4 data-i18n="event_page.about_section.audience_title">لمن؟</h4>
-                        <p data-i18n="event_page.about_section.audience_text">مناسب للجميع والعائلات</p>
-                    </div>
-
-                    <div class="event-section">
-                        <h4 data-i18n="event_page.about_section.includes_title">ماذا يشمل؟</h4>
-                        <p data-i18n="event_page.about_section.includes_text">عروض حيّة، معرض فنّي مصغّر، أكشاك تذكارية
-                        </p>
-                    </div>
-
-                    <div class="event-section">
-                        <h4 data-i18n="event_page.about_section.services_title">الخدمات</h4>
-                        <p data-i18n="event_page.about_section.services_text">مقاعد مرقّمة، ممرات وصول، نقاط إسعاف أوّلي
-                        </p>
-                    </div>
-
-                    <div class="event-section">
-                        <h4 data-i18n="event_page.about_section.schedule_title">برنامج الفقرات:</h4>
-                        <ul role="list">
-                            <li data-i18n="event_page.about_section.s1">استقبال وموسيقى ترحيبية (6:00-6:30 م)</li>
-                            <li data-i18n="event_page.about_section.s2">افتتاح وعرض رئيسي (6:30-8:00 م)</li>
-                            <li data-i18n="event_page.about_section.s3">استراحة ومعرض فني (8:00-8:30 م)</li>
-                            <li data-i18n="event_page.about_section.s4">عروض ختامية وتحية الجمهور (8:30-10:00 م)</li>
-                        </ul>
-                    </div>
-
-                    <div class="event-section">
-                        <h4 data-i18n="event_page.about_section.organizer_title">الجهة المنظمة</h4>
-                        <p data-i18n="event_page.about_section.organizer_text">مبادرة ثقافية — فريق ألوان الشام</p>
-                    </div>
-
-                    <div class="event-section">
-                        <h4 data-i18n="event_page.about_section.contact_title">تواصل المنظّم</h4>
-                        <p data-i18n="event_page.about_section.contact_text">info@alwan-sham.example</p>
-                    </div>
-
-                </div>
-            </div>
-
-                <div class="col-lg-5">
-                <div class="location-details">
-
-                    <div class="location-section">
-                        <h4 data-i18n="event_page.location.address_title">العنوان</h4>
-                        <p data-i18n="event_page.location.address_text">مبادرة ثقافية — فريق ألوان الشام</p>
-                    </div>
-
-                    <div class="location-section">
-                        <h4 data-i18n="event_page.location.access_title">الوصول</h4>
-                        <ul role="list">
-                            <li data-i18n="event_page.location.a1">مواصلات عامة قريبة (موقف سرفيس/باص)</li>
-                            <li data-i18n="event_page.location.a2">مواقف محدودة للسيارات — الوصول مبكرًا مُستحسن</li>
-                            <li data-i18n="event_page.location.a3">مسارات وصول لذوي الإعاقة ومصعد متاح</li>
-                        </ul>
-                    </div>
-
-                    <div class="location-section">
-                        <h4 data-i18n="event_page.location.map_title">خريطة ثابتة بصورة</h4>
-                        <p data-i18n="event_page.location.map_desc">موقع دار الأسد للثقافة والفنون في دمشق على الخريطة.
-                        </p>
-                    </div>
-
-                    <div class="map-placeholder">
-                        <iframe
-                            id="google-maps-iframe"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3326.572018247317!2d36.28214742450759!3d33.512510473364955!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1518e0b4816d3d5f%3A0x80913fe6396f6b34!2z2KfZhNmF2LnZh9ivINin2YTYudin2YTZiiDZhNmE2YHZhtmI2YYg2KfZhNmF2LPYsdit2YrYqS4!5e0!3m2!1sar!2s!4v1760133313418!5m2!1sar!2s"
-                            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-    <!-- Section: فعاليات ذات صلة -->
-    <section class="related-events">
-        <div class="container">
-            <h3 class="section-title fw-bold mb-4" data-i18n="related_events.title">فعاليات ذات صلة</h3>
-            <div class="row gy-4 gx-4">
-
-                <!-- Card 1 -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="event-card h-100 d-flex flex-column">
-                        <div class="ratio ratio-16x9">
-                            <img class="image-event-card img-fluid w-100 h-100 object-fit-cover"
-                                src="assets/img/events-images/event$-1.png"
-                                data-i18n-attr="alt:events.common.image_alt" alt="Event Image" loading="lazy">
-                        </div>
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.music">موسيقى</span>
-                            <span class="city" data-i18n="cities.damascus">دمشق</span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0 text-start" data-i18n="events.today.card1.title">أوركسترا السيمفوني
-                                السوري</p>
-                            <p class="text-start text-secondary p-0 m-0" data-i18n="events.today.card1.subtitle">
-                                أمسية كلاسيكية وعروض حيّة على مسرح الدراما.
+                            <p class="event-subtitle u-muted mb-3" data-i18n="event.sample.subtitle">
+                                رحلة موسيقية بصحبة أعمال سيمفونية مختارة على مسرح الدراما.
                             </p>
-                            <div class="date py-3 m-0 text-start">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2025-11-15"></time>
+
+                            <div class="event-meta d-flex flex-column gap-2">
+                                <span>
+                                    <i class="bi bi-calendar3 ms-2"></i>
+                                    <time data-date-iso="2025-11-15" aria-live="polite"></time>
+                                </span>
+                                <span>
+                                    <i class="bi bi-pin-map ms-2"></i>
+                                    <span data-i18n="event.sample.venue">دار الأوبرا — مسرح الدراما</span>
+                                </span>
+                                <span>
+                                    <i class="bi bi-cash-coin ms-2"></i>
+                                    <span data-i18n="event.sample.price">الدخول مجاني — حجز مسبق</span>
+                                </span>
                             </div>
-                            <div class="card-buttons mt-auto d-flex flex-wrap gap-2">
-                                <a href="event.html" class="btn btn-primary w-100 w-md-auto"
-                                    data-i18n="buttons.details">التفاصيل</a>
-                                <button type="button" class="btn btn-outline-primary w-100 w-md-auto"
-                                    data-i18n="buttons.add_to_calendar">أضف
-                                    للتقويم</button>
+
+                            <div class="event-actions mt-4">
+                                <a href="#" class="btn btn-primary px-4" data-i18n="buttons.add_to_calendar">أضف
+                                    للتقويم</a>
+                                <button class="btn btn-outline-primary px-4" data-i18n="buttons.share_event">شارك
+                                    الحدث</button>
+                            </div>
+
+                            <div class="event-notes">
+                                <h5 class="mt-4" data-i18n="event.sample.notes_title">ملاحظات مهمة</h5>
+                                <ul class="m-0">
+                                    <li data-i18n="event.sample.note_1">يفضل الحضور قبل نصف ساعة.</li>
+                                    <li data-i18n="event.sample.note_2">ممنوع التصوير أثناء العزف.</li>
+                                    <li data-i18n="event.sample.note_3">أماكن مخصصة لذوي الإعاقة.</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Card 2 -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="event-card h-100 d-flex flex-column">
-                        <div class="ratio ratio-16x9">
-                            <img class="image-event-card img-fluid w-100 h-100 object-fit-cover"
-                                src="assets/img/events-images/event$-2.png"
-                                data-i18n-attr="alt:events.common.image_alt" alt="Event Image" loading="lazy">
-                        </div>
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.art">فن</span>
-                            <span class="city" data-i18n="cities.aleppo">حلب</span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0 text-start" data-i18n="events.end_week.card1.title">معرض فني</p>
-                            <p class="text-start text-secondary p-0 m-0" data-i18n="events.end_week.card1.subtitle">
-                                معرض للفن التشكيلي يعرض أعمال فنانين محليين.
-                            </p>
-                            <div class="date py-3 m-0 text-start">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2025-11-20"></time>
+                    <!-- معرض الصور -->
+                    <div class="col-lg-6">
+                        <div class="hero-gallery">
+                            <div class="main-image">
+                                <img id="mainImage" src="assets/img/events-images/event$-1.png"
+                                    class="img-fluid rounded-4" data-i18n-attr="alt:events.common.image_alt"
+                                    alt="Event Image" />
                             </div>
-                            <div class="card-buttons mt-auto d-flex flex-wrap gap-2">
-                                <a href="event.html" class="btn btn-primary w-100 w-md-auto"
-                                    data-i18n="buttons.details">التفاصيل</a>
-                                <button type="button" class="btn btn-outline-primary w-100 w-md-auto"
-                                    data-i18n="buttons.add_to_calendar">أضف
-                                    للتقويم</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="event-card h-100 d-flex flex-column">
-                        <div class="ratio ratio-16x9">
-                            <img class="image-event-card img-fluid w-100 h-100 object-fit-cover"
-                                src="assets/img/events-images/event$-3.png"
-                                data-i18n-attr="alt:events.common.image_alt" alt="Event Image" loading="lazy">
-                        </div>
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.sport">رياضة</span>
-                            <span class="city" data-i18n="cities.homs">حمص</span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0 text-start" data-i18n="events.end_week.card2.title">مباراة كرة قدم
-                            </p>
-                            <p class="text-start text-secondary p-0 m-0" data-i18n="events.end_week.card2.subtitle">
-                                مباراة ودية بين فريقين محليين على الملعب البلدي.
-                            </p>
-                            <div class="date py-3 m-0 text-start">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2025-11-22"></time>
-                            </div>
-                            <div class="card-buttons mt-auto d-flex flex-wrap gap-2">
-                                <a href="event.html" class="btn btn-primary w-100 w-md-auto"
-                                    data-i18n="buttons.details">التفاصيل</a>
-                                <button type="button" class="btn btn-outline-primary w-100 w-md-auto"
-                                    data-i18n="buttons.add_to_calendar">أضف
-                                    للتقويم</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="event-card h-100 d-flex flex-column">
-                        <div class="ratio ratio-16x9">
-                            <img class="image-event-card img-fluid w-100 h-100 object-fit-cover"
-                                src="assets/img/events-images/event$-4.png"
-                                data-i18n-attr="alt:events.common.image_alt" alt="Event Image" loading="lazy">
-                        </div>
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.culture">ثقافة</span>
-                            <span class="city" data-i18n="cities.damascus">دمشق</span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0 text-start" data-i18n="events.latest.card2.title">أمسية شعرية</p>
-                            <p class="text-start text-secondary p-0 m-0" data-i18n="events.latest.card2.subtitle">
-                                أمسية شعرية يشارك فيها عدد من الشعراء السوريين.
-                            </p>
-                            <div class="date py-3 m-0 text-start">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2025-11-25"></time>
-                            </div>
-                            <div class="card-buttons mt-auto d-flex flex-wrap gap-2">
-                                <a href="event.html" class="btn btn-primary w-100 w-md-auto"
-                                    data-i18n="buttons.details">التفاصيل</a>
-                                <button type="button" class="btn btn-outline-primary w-100 w-md-auto"
-                                    data-i18n="buttons.add_to_calendar">أضف
-                                    للتقويم</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 5 -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="event-card h-100 d-flex flex-column">
-                        <div class="ratio ratio-16x9">
-                            <img class="image-event-card img-fluid w-100 h-100 object-fit-cover"
-                                src="assets/img/events-images/event$-5.png"
-                                data-i18n-attr="alt:events.common.image_alt" alt="Event Image" loading="lazy">
-                        </div>
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.tech">تكنولوجيا</span>
-                            <span class="city" data-i18n="cities.aleppo">حلب</span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0 text-start" data-i18n="events.month.card1.title">ورشة عمل</p>
-                            <p class="text-start text-secondary p-0 m-0" data-i18n="events.month.card1.subtitle">
-                                ورشة عمل حول أحدث التقنيات في عالم البرمجة.
-                            </p>
-                            <div class="date py-3 m-0 text-start">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2025-11-30"></time>
-                            </div>
-                            <div class="card-buttons mt-auto d-flex flex-wrap gap-2">
-                                <a href="event.html" class="btn btn-primary w-100 w-md-auto"
-                                    data-i18n="buttons.details">التفاصيل</a>
-                                <button type="button" class="btn btn-outline-primary w-100 w-md-auto"
-                                    data-i18n="buttons.add_to_calendar">أضف
-                                    للتقويم</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 6 -->
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="event-card h-100 d-flex flex-column">
-                        <div class="ratio ratio-16x9">
-                            <img class="image-event-card img-fluid w-100 h-100 object-fit-cover"
-                                src="assets/img/events-images/event$-3.png"
-                                data-i18n-attr="alt:events.common.image_alt" alt="Event Image" loading="lazy">
-                        </div>
-                        <div class="event-card-header">
-                            <span class="tag" data-i18n="categories.sport">رياضة</span>
-                            <span class="city" data-i18n="cities.homs">حمص</span>
-                        </div>
-                        <div class="event-card-content">
-                            <p class="text-dark fw-bold p-0 m-0 text-start" data-i18n="events.end_week.card2.title">مباراة كرة قدم
-                            </p>
-                            <p class="text-start text-secondary p-0 m-0" data-i18n="events.end_week.card2.subtitle">
-                                مباراة ودية بين فريقين محليين على الملعب البلدي.
-                            </p>
-                            <div class="date py-3 m-0 text-start">
-                                <i class="bi bi-calendar3" aria-hidden="true"></i>
-                                <time data-date-iso="2025-11-22"></time>
-                            </div>
-                            <div class="card-buttons mt-auto d-flex flex-wrap gap-2">
-                                <a href="event.html" class="btn btn-primary w-100 w-md-auto"
-                                    data-i18n="buttons.details">التفاصيل</a>
-                                <button type="button" class="btn btn-outline-primary w-100 w-md-auto"
-                                    data-i18n="buttons.add_to_calendar">أضف
-                                    للتقويم</button>
+                            <div class="thumbnail-gallery" aria-label="معرض مصغرات">
+                                <img class="img-thumbnail rounded-4 active" src="assets/img/events-images/event$-1.png"
+                                    data-full="assets/img/events-images/event$-1.png" alt="thumb 1" />
+                                <img class="img-thumbnail rounded-4" src="assets/img/events-images/event$-2.png"
+                                    data-full="assets/img/events-images/event$-2.png" alt="thumb 2" />
+                                <img class="img-thumbnail rounded-4" src="assets/img/events-images/event$-3.png"
+                                    data-full="assets/img/events-images/event$-3.png" alt="thumb 3" />
+                                <img class="img-thumbnail rounded-4" src="assets/img/events-images/event$-4.png"
+                                    data-full="assets/img/events-images/event$-4.png" alt="thumb 4" />
+                                <img class="img-thumbnail rounded-4" src="assets/img/events-images/event$-5.png"
+                                    data-full="assets/img/events-images/event$-5.png" alt="thumb 5" />
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer Section -->
+        <!-- عن الفعالية + الموقع -->
+        <section class="about-event-section">
+            <div class="container">
+                <div class="row g-4">
+                    <!-- عن الفعالية -->
+                    <div class="col-lg-7">
+                        <div class="event-section">
+                            <h2 class="section-title" data-i18n="event.about.title">عن الفعالية</h2>
+                            <div class="about-event mt-3">
+                                <h4 data-i18n="event.about.h4_1">المحتوى الموسيقي</h4>
+                                <p data-i18n="event.about.p_1">
+                                    يتضمّن البرنامج أعمالًا مختارة من السيمفونيات الكلاسيكية مع توزيع حديث يقدّم التجربة
+                                    للجمهور بشكل سلس وممتع.
+                                </p>
+
+                                <h4 data-i18n="event.about.h4_2">لمن هذه الفعالية؟</h4>
+                                <ul class="mb-3">
+                                    <li data-i18n="event.about.li_1">عشّاق الموسيقى الكلاسيكية.</li>
+                                    <li data-i18n="event.about.li_2">الطلاب والمهتمون بتعلّم أساسيات العزف.</li>
+                                    <li data-i18n="event.about.li_3">العائلات الباحثة عن تجربة ثقافية هادئة.</li>
+                                </ul>
+
+                                <h4 data-i18n="event.about.h4_3">ما الذي تحتاجه؟</h4>
+                                <p data-i18n="event.about.p_2">
+                                    يكفي الحجز المسبق عبر الموقع وإبراز رمز الحجز عند المدخل. لا توجد متطلبات لباس
+                                    محدّدة.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- الموقع -->
+                    <div class="col-lg-5">
+                        <div class="location-section">
+                            <h2 class="section-title" data-i18n="event.location.title">الموقع</h2>
+                            <div class="location-details mt-3">
+                                <h4 data-i18n="event.location.h4">العنوان</h4>
+                                <p class="mb-2" data-i18n="event.location.address">
+                                    دمشق — دار الأوبرا، ساحة الأمويين، مسرح الدراما
+                                </p>
+
+                                <h4 class="mt-4" data-i18n="event.location.h4_map">الخريطة</h4>
+                                <div class="map-placeholder ratio ratio-16x9">
+                                    <iframe
+                                        src="https://maps.google.com/maps?q=Damascus%20Opera%20House&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                                        loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                                        title="Google map"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- فعاليات ذات صلة -->
+        <section class="related-events">
+            <div class="container">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                    <h2 class="u-title fs-5 fw-bold font-family-Tajawal m-0" data-i18n="event.related.title">فعاليات
+                        مشابهة</h2>
+                    <a href="events.html" class="btn btn-outline-primary px-3" data-i18n="event.related.all">عرض
+                        الكل</a>
+                </div>
+
+                <div class="row">
+                    <!-- Card 1 -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="event-card">
+                            <div class="ratio ratio-16x9">
+                                <img src="assets/img/events-images/event$-2.png" class="w-100"
+                                    data-i18n-attr="alt:events.common.image_alt" alt="Event Image" />
+                            </div>
+                            <div class="event-card-header">
+                                <span class="tag" data-i18n="categories.culture">ثقافة</span>
+                                <span class="city" data-i18n="cities.damascus">دمشق</span>
+                            </div>
+                            <div class="event-card-content">
+                                <p class="fw-bold m-0" data-i18n="events.latest.card2.title">أمسية شعرية</p>
+                                <p class="m-0" data-i18n="events.latest.card2.subtitle">أمسية شعرية يشارك فيها عدد من
+                                    الشعراء السوريين.</p>
+                                <div class="date py-3 m-0">
+                                    <i class="bi bi-calendar3"></i>
+                                    <span data-date-iso="2025-11-25"></span>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <a href="event.html" class="btn btn-primary"
+                                        data-i18n="buttons.details">التفاصيل</a>
+                                    <button class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar">أضف
+                                        للتقويم</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="event-card">
+                            <div class="ratio ratio-16x9">
+                                <img src="assets/img/events-images/event$-3.png" class="w-100"
+                                    data-i18n-attr="alt:events.common.image_alt" alt="Event Image" />
+                            </div>
+                            <div class="event-card-header">
+                                <span class="tag" data-i18n="categories.sport">رياضة</span>
+                                <span class="city" data-i18n="cities.homs">حمص</span>
+                            </div>
+                            <div class="event-card-content">
+                                <p class="fw-bold m-0" data-i18n="events.end_week.card2.title">مباراة كرة قدم</p>
+                                <p class="m-0" data-i18n="events.end_week.card2.subtitle">مباراة ودية بين فريقين محليين
+                                    على الملعب البلدي.</p>
+                                <div class="date py-3 m-0">
+                                    <i class="bi bi-calendar3"></i>
+                                    <span data-date-iso="2025-11-22"></span>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <a href="event.html" class="btn btn-primary"
+                                        data-i18n="buttons.details">التفاصيل</a>
+                                    <button class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar">أضف
+                                        للتقويم</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="event-card">
+                            <div class="ratio ratio-16x9">
+                                <img src="assets/img/events-images/event$-5.png" class="w-100"
+                                    data-i18n-attr="alt:events.common.image_alt" alt="Event Image" />
+                            </div>
+                            <div class="event-card-header">
+                                <span class="tag" data-i18n="categories.tech">تكنولوجيا</span>
+                                <span class="city" data-i18n="cities.aleppo">حلب</span>
+                            </div>
+                            <div class="event-card-content">
+                                <p class="fw-bold m-0" data-i18n="events.month.card1.title">ورشة عمل</p>
+                                <p class="m-0" data-i18n="events.month.card1.subtitle">ورشة عمل حول أحدث التقنيات في
+                                    عالم البرمجة.</p>
+                                <div class="date py-3 m-0">
+                                    <i class="bi bi-calendar3"></i>
+                                    <span data-date-iso="2025-11-30"></span>
+                                </div>
+                                <div class="d-flex gap-2">
+                                    <a href="event.html" class="btn btn-primary"
+                                        data-i18n="buttons.details">التفاصيل</a>
+                                    <button class="btn btn-outline-primary" data-i18n="buttons.add_to_calendar">أضف
+                                        للتقويم</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /cards -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
     <footer class="footer" aria-labelledby="footer-title">
         <div class="footer-container container">
             <h2 id="footer-title" class="visually-hidden" data-i18n="footer.a11y_title">تذييل الموقع</h2>
@@ -468,7 +360,7 @@
             <div class="row gy-4">
                 <div class="col-lg-4 col-md-12 footer-logo">
                     <img src="assets/img/icons/Logo.svg" class="mb-2" data-i18n-attr="alt:footer.logo_alt"
-                        alt="EventCom Syria Logo">
+                        alt="EventCom Syria Logo" />
                     <p class="fw-bold" data-i18n="footer.slogan">اكتشف. خطّط. احضر!</p>
                     <p data-i18n="footer.subtitle">منصّة محدثة يوميًا لاكتشاف الفعاليات في جميع المحافظات.</p>
                 </div>
@@ -504,7 +396,7 @@
                         </div>
                         <div class="info-item">
                             <i class="bi bi-envelope ms-2"></i>
-                            <span data-i18n="footer.contact.email">support@eventcomsyria.com</span>
+                            <span class="force-ltr">support@eventcomsyria.com</span>
                         </div>
                     </div>
                 </div>
@@ -523,15 +415,14 @@
                             aria-label="Instagram"><i class="bi bi-instagram"></i></a>
                     </div>
                     <div class="copyright">
-                        <p class="copyright-text" data-i18n="footer.copyright">
-                            EventCom Syria © 2025
-                            <strong>
-                                جميع الحقوق محفوظة.
-                            </strong>
+                        <p class="copyright-text">
+                            <span data-i18n="footer.copyright_prefix">EventCom Syria ©</span>
+                            <span data-i18n-number>2025</span>
+                            <strong data-i18n="footer.copyright_suffix">جميع الحقوق محفوظة.</strong>
                         </p>
-                        <p class="disclaimer-text" data-i18n="footer.disclaimer">المحتوى مسؤولية الجهات المنظمة. نحرص
-                            على
-                            دقّة المعلومات قدر الإمكان.</p>
+                        <p class="disclaimer-text" data-i18n="footer.disclaimer">
+                            المحتوى مسؤولية الجهات المنظمة. نحرص على دقّة المعلومات قدر الإمكان.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -539,15 +430,34 @@
     </footer>
 
     <!-- Scroll to Top -->
-    <a href="#" class="scroll-to-top" data-i18n-attr="aria-label:footer.scroll_top_aria"><img
-            src="./assets/img/icons/arrow-up.svg" data-i18n-attr="alt:footer.scroll_top_alt" alt="arrow-up"
-            class="icon-mirror"></a>
+    <a href="#" class="scroll-to-top">
+        <img src="./assets/img/icons/arrow-up.svg" data-i18n-attr="alt:footer.scroll_top_alt" alt="arrow-up" />
+    </a>
 
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <script src="assets/js/i18n.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <!-- سكربت خفيف لتبديل صور المعرض (تنسيق التاريخ يتم من main.js) -->
+    <script>
+        (function () {
+            var main = document.getElementById('mainImage');
+            var thumbs = document.querySelectorAll('.thumbnail-gallery .img-thumbnail');
+            if (main && thumbs.length) {
+                thumbs.forEach(function (t) {
+                    t.addEventListener('click', function () {
+                        thumbs.forEach(function (x) { x.classList.remove('active'); });
+                        t.classList.add('active');
+                        var full = t.getAttribute('data-full') || t.src;
+                        main.src = full;
+                    });
+                });
+            }
+        })();
+    </script>
 </body>
 
 </html>
