@@ -583,3 +583,31 @@ html[dir="rtl"] .scroll-to-top {
 .navbar .navbar-toggler {
   --bs-navbar-toggler-focus-width: 2px;
 }
+
+/* إظهار/إخفاء اللوغو حسب الثيم */
+.logo--light {
+  display: inline-block;
+}
+.logo--dark {
+  display: none;
+}
+
+[data-theme="dark"] .logo--light {
+  display: none;
+}
+[data-theme="dark"] .logo--dark {
+  display: inline-block;
+}
+
+/* حجم موحّد (عدّل الارتفاع كما يلزم تصميمك) */
+.logo {
+  height: 64px;
+  inline-size: auto;
+}
+
+/* غلاف اختياري لضبط المحاذاة إن لزم */
+.about-hero-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
