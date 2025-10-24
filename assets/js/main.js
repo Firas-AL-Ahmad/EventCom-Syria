@@ -319,3 +319,36 @@ function ecFormatISO(iso, locale) {
     }).observe(html, { attributes: true });
   } catch (_) {}
 })();
+
+(function attachThemeAwareLogos() {
+  const KEY = "ec:theme";
+  const $logos = document.querySelectorAll(
+    "img[data-logo-light][data-logo-dark]"
+  );
+  if (!$logos.length) return;
+
+  const apply = (theme) => {
+    $logos.forEach((img) => {
+      const lightSrc = img.getAttribute("data-logo-light");
+      const darkSrc = img.getAttribute("data-logo-dark");
+      img.src = theme === "dark" ? darkSrc : lightSrc;
+    });
+  };
+
+  // أول تحميل
+  const current =
+    document.documentElement.getAttribute("data-theme") ||
+    localStorage.getItem(KEY) ||
+    "light";
+  apply(current);
+
+  // عند تبديل الثيم (لو عندك زر يغيّر data-theme)
+  const observer = new MutationObserver((muts) => {
+    for (const m of muts) {
+      if (m.type === "attributes" && m.attributeName === "data-theme") {
+        apply(document.documentElement.getAttribute("data-theme") || "light");
+      }
+    }
+  });
+  observer.observe(document.documentElement, { attributes: true });
+})();
