@@ -271,3 +271,51 @@ function ecFormatISO(iso, locale) {
   window.addEventListener("load", toggle);
   btn.addEventListener("click", toTop);
 })();
+
+// تبديل favicon تلقائياً حسب الثيم (فاتح/داكن)
+(function themeAwareFavicon() {
+  var html = document.documentElement;
+
+  function currentTheme() {
+    return (html.getAttribute("data-theme") || "light").toLowerCase();
+  }
+
+  function applyFavicon() {
+    var dark = currentTheme() === "dark";
+    var svg = document.getElementById("favicon-svg");
+    var png = document.getElementById("favicon-png");
+
+    if (svg) {
+      svg.href = dark
+        ? "assets/img/icons/favicon-dark.svg"
+        : "assets/img/icons/favicon-light.svg";
+    }
+    if (png) {
+      png.href = dark
+        ? "assets/img/icons/favicon-dark-32.png"
+        : "assets/img/icons/favicon-light-32.png";
+    }
+  }
+
+  // عند التحميل
+  applyFavicon();
+
+  // التبديل عبر زر الثيم إن وُجد
+  var themeSwitch = document.getElementById("themeSwitch");
+  if (themeSwitch) themeSwitch.addEventListener("change", applyFavicon);
+
+  // رصد أي تغيير على data-theme من أي سكربت آخر
+  try {
+    new MutationObserver(function (muts) {
+      for (var i = 0; i < muts.length; i++) {
+        if (
+          muts[i].type === "attributes" &&
+          muts[i].attributeName === "data-theme"
+        ) {
+          applyFavicon();
+          break;
+        }
+      }
+    }).observe(html, { attributes: true });
+  } catch (_) {}
+})();
