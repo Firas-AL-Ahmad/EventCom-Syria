@@ -518,3 +518,52 @@ select:focus {
   background-color: var(--secondary-700);
   border-color: var(--secondary-700);
 }
+
+/* ===== Scroll To Top (fix) ===== */
+.scroll-to-top {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem; /* للـ LTR */
+  width: 64px;
+  height: 64px;
+  display: grid; /* لإبقاء الأيقونة بالوسط */
+  place-items: center;
+  background: var(--surface, var(--secondary-500));
+  backdrop-filter: blur(6px);
+  border-radius: 50%;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  z-index: 9999; /* فوق كل شيء */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s ease;
+}
+.scroll-to-top img {
+  width: 40px;
+  height: 40px;
+}
+
+html[data-theme="dark"] .scroll-to-top {
+  background: color-mix(in oklab, #000 70%, transparent);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+/* تظهر عند التمرير */
+.scroll-to-top.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* تموضع للـ RTL */
+html[dir="rtl"] .scroll-to-top {
+  right: auto;
+  left: 1rem;
+}
+
+/* تحسين إمكانية الضغط على الموبايل */
+@media (hover: hover) {
+  .scroll-to-top:hover {
+    transform: translateY(-2px);
+  }
+}

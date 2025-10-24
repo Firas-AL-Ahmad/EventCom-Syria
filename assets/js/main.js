@@ -186,34 +186,39 @@ function ecFormatISO(iso, locale) {
   }
 })();
 
-// === Swap navbar logo based on theme ===
-(function setupThemeAwareLogo() {
+// === Theme-aware logos (navbar + footer + أي صور محددة) ===
+(function setupThemeAwareLogos() {
   var html = document.documentElement;
-  var img = document.getElementById("site-logo");
-  if (!img) return;
-
-  var lightSrc = img.getAttribute("data-logo-light");
-  var darkSrc = img.getAttribute("data-logo-dark");
 
   function currentTheme() {
     return (html.getAttribute("data-theme") || "light").toLowerCase();
   }
 
-  function applyLogo() {
-    var t = currentTheme();
-    img.src = (t === "dark" ? darkSrc : lightSrc) || img.src;
+  function applyTo(img) {
+    if (!img) return;
+    var lightSrc = img.getAttribute("data-logo-light");
+    var darkSrc = img.getAttribute("data-logo-dark");
+    if (!lightSrc || !darkSrc) return;
+    img.src = currentTheme() === "dark" ? darkSrc : lightSrc;
+  }
+
+  function applyAll() {
+    var logos = document.querySelectorAll(
+      "img[data-logo-light][data-logo-dark]"
+    );
+    logos.forEach(applyTo);
   }
 
   // 1) عند التحميل
-  applyLogo();
+  applyAll();
 
-  // 2) لو عندك سويتش ثيم في الصفحة
+  // 2) لو في زر تبديل الثيم
   var themeSwitch = document.getElementById("themeSwitch");
   if (themeSwitch) {
-    themeSwitch.addEventListener("change", applyLogo);
+    themeSwitch.addEventListener("change", applyAll);
   }
 
-  // 3) راقب أي تغيير على data-theme (لو تغيّر من سكربت آخر)
+  // 3) راقب تغييرات خاصية data-theme (من أي سكربت آخر)
   try {
     var mo = new MutationObserver(function (muts) {
       for (var i = 0; i < muts.length; i++) {
@@ -221,7 +226,7 @@ function ecFormatISO(iso, locale) {
           muts[i].type === "attributes" &&
           muts[i].attributeName === "data-theme"
         ) {
-          applyLogo();
+          applyAll();
           break;
         }
       }
@@ -230,4 +235,39 @@ function ecFormatISO(iso, locale) {
   } catch (e) {
     /* no-op */
   }
+})();
+
+// ===== Scroll-To-Top Button (restore & wire-up) =====
+(function setupScrollToTop() {
+  var btn = document.querySelector(".scroll-to-top");
+  if (!btn) return;
+
+  // ضمان ظهورها فوق العناصر التفاعلية
+  btn.style.pointerEvents = "auto";
+
+  // إظهار/إخفاء حسب التمرير
+  function toggle() {
+    if (window.scrollY > 300) {
+      btn.classList.add("show");
+    } else {
+      btn.classList.remove("show");
+    }
+  }
+
+  // تمرير سلس للأعلى
+  function toTop(e) {
+    e.preventDefault();
+    try {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } catch (_) {
+      // متصفحات قديمة
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    }
+  }
+
+  // مستمعات
+  window.addEventListener("scroll", toggle, { passive: true });
+  window.addEventListener("load", toggle);
+  btn.addEventListener("click", toTop);
 })();
